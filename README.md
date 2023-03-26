@@ -1,36 +1,29 @@
-# Inicijalne upute za prijavu projekta iz Programskog inženjerstva
-
-Poštovane kolegice i kolege, 
-
-uspješno ste prijavili svoj projektni tim na kolegiju Programsko inženjerstvo, te je za vas automatski kreiran repozitorij koji ćete koristiti za verzioniranje vašega koda, ali i za pisanje dokumentacije.
-
-Ovaj dokument (README.md) predstavlja **osobnu iskaznicu vašeg projekta**. Vaš prvi zadatak je **prijaviti vlastiti projektni prijedlog** na način da ćete prijavu vašeg projekta, sukladno uputama danim u ovom tekstu, napisati upravo u ovaj dokument, umjesto ovoga teksta.
-
-Za upute o sintaksi koju možete koristiti u ovom dokumentu i kod pisanje vaše projektne dokumentacije pogledajte [ovaj link](https://guides.github.com/features/mastering-markdown/).
-Sav programski kod potrebno je verzionirati u glavnoj **master** grani i **obvezno** smjestiti u mapu Software. Sve artefakte (npr. slike) koje ćete koristiti u vašoj dokumentaciju obvezno verzionirati u posebnoj grani koja je već kreirana i koja se naziva **master-docs** i smjestiti u mapu Documentation.
-
-Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra raditi na ovom projektu. A sada, vrijeme je da prijavite vaš projekt. Za prijavu vašeg projektnog prijedloga molimo vas koristite **predložak** koji je naveden u nastavku, a započnite tako da kliknete na *olovku* u desnom gornjem kutu ovoga dokumenta :) 
-
-# Naziv projekta
-(u redak iznad navedite kratki proizvoljni naziv projekta prikladan akademskoj zajednici, a ovaj tekst obrišite)
+# Aplikacija za kafiće 
 
 ## Projektni tim
 
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
-Ime i prezime | mojaadresa@foi.hr | 000000000 | githubuser
-Ime i prezime | ... | ... | ...
+Ivan Gadžić   | igadzic@foi.hr      | 0016140379 | geki07
+Robert Habdija | rhabdija@foi.hr    | 0016142191 | HabacJr
+Andrija Slavić | aslavic@foi.hr     | 0016143295 | weis25
+Karlo Ipša     | kipsa@foi.hr       | 0016145835 | Bajastera
 
 ## Opis domene
-Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
+Projekt će se baviti izradom dinamične okoline sa svrhom omogućavanja korisnicima naše aplikacije za ispis proizvoda u kafiću, također omogućit ćemo naručivanje pića od veliki proizvođača, odnosno slajnje upita. Obavijesti pregleda ponude i plaćanja nabave. 
 
 ## Specifikacija projekta
-Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda. Pobrojite osnovne funkcionalnosti i za svaku naznačite ime odgovornog člana tima. Opišite buduću arhitekturu programskog proizvoda. Obratite pozornost da bi arhitektura trebala biti višeslojna s odvojenom (dislociranom) bazom podatka. Također uzmite u obzir da bi svaki član tima treba biti odgovorana za otprilike 3 funkcionalnosti, te da bi opterećenje članova tima trebalo biti ujednačeno. Priložite odgovarajuće dijagrame i skice gdje je to prikladno. Funkcionalnosti sustava bobrojite u tablici ispod koristeći predložak koji slijedi:
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login | Za pristup dnevniku potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom ... | Zlatko Stapić
-F02 | Pregled dnevnika | .... | ...
+F01 | Registracija korisnika | Omogućavamo administratoru da regisitra svoje nove korisnike i dodjeljuje svakom korisniku (zaposleniku) njegov ID | Ivan Gadžić
+F02 | Prijava u aplikaciju | Korisnici koji su registirani, prilikom početka rada moraju se prijaviti u aplikaciju kako bi mogli započeti s radom | Ivan Gadžić
+F03 | Kreiranje upita | Administrator uvijek ima pregled u dostupna pića u korišetnju i uvijek može napraviti ispist trenutnog stanja | Ivan Gadžić
+F04 | Plaćanje naručenih pića | Korisnik izdaje naručena pića i račun, vrši se radnja ispisa trenutno izadnih pića, odnosno račun | Ivan Gadžić 
+F05 | Upravljanje korisnicima | Administrator se može u bilo kojem trenutku prijaviti i vidjeti koji zaposlenik trenutno radi i može praviti izmjene u slučaju greške | Ivan Gadžić 
+F06 | Kreiranje rasporeda | Adiminstrator ili glavni zaposlenik imaju mogučnost krieranja rasporeda, kako bi zaposlenici mogu znati koji dan moraju raditi | Ivan Gadžić
+F07 | Početna stranica | Svaki zaposlenik nakon prijave u aplikaciju se nalazi na početnoj stranici gdje može započeti izvršavati željene aktivnosti | Andrija Slavić
+F08 | Obavijesti | Zaposlenici nakon prijave, dobivaju obavijesti na početnoj stranici od strane sustava o bitnim stvarima koje zahtijevaju njihovu pažnju, poput kritično niske količine nekog proizvoda u inventaru | Andrija Slavić 
 
 ## Tehnologije i oprema
-Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete koristiti pri implementaciji vašeg rješenja. Ne zaboravite planirati korištenje tehnologija u aktivnostima kao što su projektni menadžment ili priprema dokumentacije. Tehnologije koje ćete koristiti bi trebale biti javno dostupne, a ako ih ne budemo obrađivali na vježbama u vašoj dokumentaciji ćete morati navesti način preuzimanja, instaliranja i korištenja onih tehnologija koje su neopbodne kako bi se vaš programski proizvod preveo i pokrenuo. Pazite da svi alati koje ćete koristiti moraju imati odgovarajuću licencu.
+Visual Studio 2022. C#, .NET Framework, Microsoft SQL Server, GitHub, Microsoft Word,Microsoft Project Profesional, GitHub Destop.
