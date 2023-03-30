@@ -27,7 +27,7 @@ F08 | Prijava manjka robe | Registrirani korisnici imaju mogućnost prijaviti ma
 F09 | Automatsko slanje upita dobavljačima | Sustav vodi evidenciju robe po dobavljačima te uz pomoć prijavljenih manjkova automatski generira i šalje upite dobavljačima na zadani datum te u zadanoj količini. | Ivan Gadžić
 F10 | Interna tablica minimuma robe | Unutar sustava postoji tablica unutar koje se zapisuju minimalne potrebne količine robe koja mora biti na zalihi. | Andrija Slavić
 F11 | Pregled dobivenih ponuda | Pri zaprimanju ponuda od strane dobavljača, sustav ih prikazuje u tabličnom obliku uzimajući u obzir sve troškove nabave. | Karlo Ipša
-F12 | Pregled prometa | Sustav vodi evidenciju prodanih pića po danu te može prikazati ukupnu mjesečnu sumu prometa. | Andrija Slavić
+F12 | Pregled prometa | Sustav vodi evidenciju prodanih pića po danu te može prikazati ukupnu mjesečnu sumu prometa. | Robert Habdija
 
 
 ## Tehnologije i oprema
