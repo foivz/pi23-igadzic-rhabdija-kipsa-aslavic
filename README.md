@@ -16,15 +16,15 @@ Projekt će se baviti izradom dinamične okoline u svrhu omogućavanja korisnici
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Registracija korisnika | Omogućavamo administratoru da regisitra svoje nove korisnike i dodjeljuje svakom korisniku (zaposleniku) njegov ID. | Ivan Gadžić
+F01 | Registracija korisnika | Omogućavamo administratoru da regisitra svoje nove korisnike i dodjeljuje svakom korisniku (zaposleniku) njegov ID. | Andrija Slavić
 F02 | Prijava u aplikaciju | Registrirani korisnici se početkom rada moraju prijaviti u aplikaciju uz pomoć dobivenog ID broja i lozinke. | Ivan Gadžić
-F03 | Početna stranica | Nakon prijave se svaki zaposlenik nalazi na početnoj stranici gdje može izvršiti željene aktivnosti. | Robert Habdija
+F03 | Implementacija početna stranica | Nakon prijave se svaki zaposlenik nalazi na početnoj stranici gdje može izvršiti željene aktivnosti. | Robert Habdija
 F04 | Pregled zaliha | Administrator uvijek ima uvid u stanje dostupnih pića na zalihi te uvijek može napraviti ispis trenutnog stanja. | Andrija Slavić
 F05 | Plaćanje naručenih pića | Korisnik odabire naručena pića i izdaje račun te se vrši radnja ispisa trenutno naručenih pića. | Karlo Ipša
 F06 | Upravljanje korisnicima | Administrator se može u bilo kojem trenutku prijaviti i vidjeti koji zaposlenik trenutno radi i može raditi izmjene u slučaju greške. | Ivan Gadžić
 F07 | Kreiranje rasporeda | Adiminstrator ili voditelj smjene ima mogućnost kreiranja rasporeda kako bi zaposlenici mogli znati koji dan i u kojem vremenskom periodu moraju raditi. | Karlo Ipša
 F08 | Prijava manjka robe | Registrirani korisnici imaju mogućnost prijaviti manjak određene robe kako bi se ista naručila od dobavljača. | Robert Habdija
-F09 | Automatsko slanje upita dobavljačima | Sustav vodi evidenciju robe po dobavljačima te uz pomoć prijavljenih manjkova automatski generira i šalje upite dobavljačima na zadani datum te u zadanoj količini. | Robert Habdija
+F09 | Automatsko slanje upita dobavljačima | Sustav vodi evidenciju robe po dobavljačima te uz pomoć prijavljenih manjkova automatski generira i šalje upite dobavljačima na zadani datum te u zadanoj količini. | Ivan Gadžić
 F10 | Interna tablica minimuma robe | Unutar sustava postoji tablica unutar koje se zapisuju minimalne potrebne količine robe koja mora biti na zalihi. | Andrija Slavić
 F11 | Pregled dobivenih ponuda | Pri zaprimanju ponuda od strane dobavljača, sustav ih prikazuje u tabličnom obliku uzimajući u obzir sve troškove nabave. | Karlo Ipša
 F12 | Pregled prometa | Sustav vodi evidenciju prodanih pića po danu te može prikazati ukupnu mjesečnu sumu prometa. | Andrija Slavić
