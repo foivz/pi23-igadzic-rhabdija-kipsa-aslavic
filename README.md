@@ -1,4 +1,4 @@
-# Aplikacija za kafiće 
+# CoffeeApp
 
 ## Projektni tim
 
