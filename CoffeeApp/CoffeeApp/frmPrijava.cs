@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CoffeeApp
 {
-    public partial class Form1 : Form
+    public partial class frmPrijava : Form
     {
-        public Form1()
+        public frmPrijava()
         {
             InitializeComponent();
         }
