@@ -16,5 +16,20 @@ namespace CoffeeApp
         {
             InitializeComponent();
         }
+
+        RepozitorijKorisnika repozitorij = new RepozitorijKorisnika(); 
+
+        private void btnPrijava_Click(object sender, EventArgs e)
+        {
+            string username = txtbUsername.Text;
+            string password = txtbPassword.Text;
+            if(txtbUsername.Text == "" || txtbPassword.Text == "")
+            {
+                MessageBox.Show("Polja ne mogu biti prazna");
+            }
+            txtbUsername.Clear();
+            txtbPassword.Clear();
+            repozitorij.ProvjeriPrijavu(username, password);
+        }
     }
 }
