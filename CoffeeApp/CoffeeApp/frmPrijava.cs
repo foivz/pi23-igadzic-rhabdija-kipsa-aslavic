@@ -31,5 +31,10 @@ namespace CoffeeApp
             txtbPassword.Clear();
             repozitorij.ProvjeriPrijavu(username, password);
         }
+
+        private void btnOdustani_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

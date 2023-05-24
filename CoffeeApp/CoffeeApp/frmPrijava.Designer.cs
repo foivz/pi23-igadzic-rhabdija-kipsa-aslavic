@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnPrijava = new System.Windows.Forms.Button();
             this.CoffeeApp = new System.Windows.Forms.Label();
+            this.btnOdustani = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtbUsername
@@ -47,6 +48,7 @@
             // 
             this.txtbPassword.Location = new System.Drawing.Point(93, 163);
             this.txtbPassword.Name = "txtbPassword";
+            this.txtbPassword.PasswordChar = '*';
             this.txtbPassword.Size = new System.Drawing.Size(146, 20);
             this.txtbPassword.TabIndex = 1;
             // 
@@ -89,11 +91,22 @@
             this.CoffeeApp.TabIndex = 5;
             this.CoffeeApp.Text = "CoffeeApp";
             // 
+            // btnOdustani
+            // 
+            this.btnOdustani.Location = new System.Drawing.Point(93, 255);
+            this.btnOdustani.Name = "btnOdustani";
+            this.btnOdustani.Size = new System.Drawing.Size(146, 26);
+            this.btnOdustani.TabIndex = 6;
+            this.btnOdustani.Text = "Odustani";
+            this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
+            // 
             // frmPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(271, 293);
+            this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.CoffeeApp);
             this.Controls.Add(this.btnPrijava);
             this.Controls.Add(this.label2);
@@ -116,5 +129,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPrijava;
         private System.Windows.Forms.Label CoffeeApp;
+        private System.Windows.Forms.Button btnOdustani;
     }
 }

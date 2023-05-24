@@ -28,5 +28,23 @@ namespace CoffeeApp
                 }
             }
         }
+
+        public void DodajKorisnika(string ime, string prezime, string email, string username, string passowrd, string uloga)
+        {
+            using(var context = new PI2313_DBEntities7())
+            {
+                Korisnik korisnik = new Korisnik
+                {
+                    Ime = ime,
+                    Prezime = prezime,
+                    Email = email,
+                    Username = username,
+                    Password = passowrd,
+                    Uloga = uloga
+                };
+                context.Korisniks.Add(korisnik);
+                context.SaveChanges();
+            }
+        }
     }
 }

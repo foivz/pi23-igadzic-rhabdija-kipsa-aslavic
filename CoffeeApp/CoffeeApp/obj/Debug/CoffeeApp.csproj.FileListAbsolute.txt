@@ -15,3 +15,4 @@ C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\Co
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.xml
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.csproj.CopyComplete
+C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmRegistracija.resources
