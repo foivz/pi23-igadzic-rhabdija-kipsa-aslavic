@@ -9,3 +9,10 @@ C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\Co
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.csproj.CoreCompileInputs.cache
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.exe
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.pdb
+C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPrijava.resources
+C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.dll
+C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.xml
+C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.csproj.CopyComplete
+C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmRegistracija.resources
