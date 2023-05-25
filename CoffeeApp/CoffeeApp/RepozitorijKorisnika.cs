@@ -46,5 +46,26 @@ namespace CoffeeApp
                 context.SaveChanges();
             }
         }
+
+        public Korisnik DohvatiKorisnika(string username, string password)
+        {
+            Korisnik odabrani = new Korisnik();
+            List<Korisnik> listaKorisnika = new List<Korisnik>();
+            using (var context = new PI2313_DBEntities7())
+            {
+                var query = from p in context.Korisniks
+                            select p;
+                listaKorisnika = query.ToList();
+            }
+            foreach (Korisnik item in listaKorisnika)
+            {
+                if (item.Password == password && username == item.Username)
+                {
+                    odabrani = item;
+                    break;
+                }
+            }
+            return odabrani;
+        }
     }
 }

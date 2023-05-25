@@ -71,6 +71,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="frmAdminPocetna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminPocetna.Designer.cs">
+      <DependentUpon>frmAdminPocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGlavniKonobarPocetna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGlavniKonobarPocetna.Designer.cs">
+      <DependentUpon>frmGlavniKonobarPocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKonobarPocetna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKonobarPocetna.Designer.cs">
+      <DependentUpon>frmKonobarPocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKorisnikPocetna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKorisnikPocetna.Designer.cs">
+      <DependentUpon>frmKorisnikPocetna.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPocetna.cs">
       <SubType>Form</SubType>
     </Compile>
