@@ -88,7 +88,7 @@
             this.dgvUpravljajKatalogom.Name = "dgvUpravljajKatalogom";
             this.dgvUpravljajKatalogom.RowHeadersWidth = 51;
             this.dgvUpravljajKatalogom.RowTemplate.Height = 24;
-            this.dgvUpravljajKatalogom.Size = new System.Drawing.Size(456, 340);
+            this.dgvUpravljajKatalogom.Size = new System.Drawing.Size(483, 340);
             this.dgvUpravljajKatalogom.TabIndex = 4;
             // 
             // btnDodajPice

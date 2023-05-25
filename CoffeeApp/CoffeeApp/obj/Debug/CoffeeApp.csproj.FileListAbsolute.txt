@@ -22,3 +22,4 @@ C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\Co
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmIzmjenaPica.resources
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPregledZaliha.resources
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmDodajPice.resources
+C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmGlavniKonobarPocetna.resources

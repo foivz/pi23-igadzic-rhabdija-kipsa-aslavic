@@ -143,14 +143,14 @@
     <Compile Include="frmUrediKorisnika.Designer.cs">
       <DependentUpon>frmUrediKorisnika.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvalidInputException.cs" />
+    <Compile Include="Exception\InvalidInputException.cs" />
     <Compile Include="Katalog_Pica.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Korisnik.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="PasswordMissMatchException.cs" />
+    <Compile Include="Exception\PasswordMissMatchException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepozitorijKorisnika.cs" />
@@ -160,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDodajPice.resx">
       <DependentUpon>frmDodajPice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGlavniKonobarPocetna.resx">
+      <DependentUpon>frmGlavniKonobarPocetna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIzmjenaPica.resx">
       <DependentUpon>frmIzmjenaPica.cs</DependentUpon>
