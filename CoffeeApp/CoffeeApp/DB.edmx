@@ -6,6 +6,19 @@
     <edmx:StorageModels>
       <Schema Namespace="PI2313_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
+warning 6002: The table/view 'PI2313_DB.dbo.Katalog_Pica' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Katalog_Pica">
+          <Key>
+            <PropertyRef Name="Naziv_Pica" />
+            <PropertyRef Name="Kolicina" />
+            <PropertyRef Name="Cijena" />
+          </Key>
+          <Property Name="ID_Pica" Type="int" />
+          <Property Name="Naziv_Pica" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kolicina" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cijena" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'PI2313_DB.dbo.Korisnik' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Korisnik">
           <Key>
@@ -25,6 +38,14 @@ warning 6002: The table/view 'PI2313_DB.dbo.Korisnik' does not have a primary ke
           <Property Name="Uloga" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PI2313_DBModelStoreContainer">
+          <EntitySet Name="Katalog_Pica" EntityType="Self.Katalog_Pica" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Katalog_Pica].[ID_Pica] AS [ID_Pica], 
+    [Katalog_Pica].[Naziv_Pica] AS [Naziv_Pica], 
+    [Katalog_Pica].[Kolicina] AS [Kolicina], 
+    [Katalog_Pica].[Cijena] AS [Cijena]
+    FROM [dbo].[Katalog_Pica] AS [Katalog_Pica]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Korisnik" EntityType="Self.Korisnik" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Korisnik].[ID_Korisnika] AS [ID_Korisnika], 
@@ -42,6 +63,17 @@ warning 6002: The table/view 'PI2313_DB.dbo.Korisnik' does not have a primary ke
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PI2313_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Katalog_Pica">
+          <Key>
+            <PropertyRef Name="Naziv_Pica" />
+            <PropertyRef Name="Kolicina" />
+            <PropertyRef Name="Cijena" />
+          </Key>
+          <Property Name="ID_Pica" Type="Int32" />
+          <Property Name="Naziv_Pica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kolicina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cijena" Type="Double" Nullable="false" />
+        </EntityType>
         <EntityType Name="Korisnik">
           <Key>
             <PropertyRef Name="Ime" />
@@ -59,7 +91,8 @@ warning 6002: The table/view 'PI2313_DB.dbo.Korisnik' does not have a primary ke
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Uloga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="PI2313_DBEntities7" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PI2313_DBEntities8" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Katalog_Pica" EntityType="Self.Katalog_Pica" />
           <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
         </EntityContainer>
       </Schema>
@@ -67,7 +100,17 @@ warning 6002: The table/view 'PI2313_DB.dbo.Korisnik' does not have a primary ke
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PI2313_DBModelStoreContainer" CdmEntityContainer="PI2313_DBEntities7">
+        <EntityContainerMapping StorageEntityContainer="PI2313_DBModelStoreContainer" CdmEntityContainer="PI2313_DBEntities8">
+          <EntitySetMapping Name="Katalog_Pica">
+            <EntityTypeMapping TypeName="PI2313_DBModel.Katalog_Pica">
+              <MappingFragment StoreEntitySet="Katalog_Pica">
+                <ScalarProperty Name="ID_Pica" ColumnName="ID_Pica" />
+                <ScalarProperty Name="Naziv_Pica" ColumnName="Naziv_Pica" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Korisniks">
             <EntityTypeMapping TypeName="PI2313_DBModel.Korisnik">
               <MappingFragment StoreEntitySet="Korisnik">

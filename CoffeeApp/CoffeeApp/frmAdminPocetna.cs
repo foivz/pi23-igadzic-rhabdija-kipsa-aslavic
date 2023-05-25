@@ -16,5 +16,22 @@ namespace CoffeeApp
         {
             InitializeComponent();
         }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnUpravljanjeKorisnicima_Click(object sender, EventArgs e)
+        {
+            frmUpravljanjeKorisnicima forma = new frmUpravljanjeKorisnicima();
+            forma.ShowDialog();
+        }
+
+        private void btnPregeldZaliha_Click(object sender, EventArgs e)
+        {
+            frmPregledZaliha form = new frmPregledZaliha();
+            form.ShowDialog();
+        }
     }
 }

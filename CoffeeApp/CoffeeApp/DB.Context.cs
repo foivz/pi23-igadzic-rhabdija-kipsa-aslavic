@@ -13,10 +13,10 @@ namespace CoffeeApp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PI2313_DBEntities7 : DbContext
+    public partial class PI2313_DBEntities8 : DbContext
     {
-        public PI2313_DBEntities7()
-            : base("name=PI2313_DBEntities7")
+        public PI2313_DBEntities8()
+            : base("name=PI2313_DBEntities8")
         {
         }
     
@@ -25,6 +25,7 @@ namespace CoffeeApp
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Katalog_Pica> Katalog_Pica { get; set; }
         public virtual DbSet<Korisnik> Korisniks { get; set; }
     }
 }

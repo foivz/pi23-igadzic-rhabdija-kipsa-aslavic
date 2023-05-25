@@ -77,11 +77,23 @@
     <Compile Include="frmAdminPocetna.Designer.cs">
       <DependentUpon>frmAdminPocetna.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDodajPice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDodajPice.Designer.cs">
+      <DependentUpon>frmDodajPice.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGlavniKonobarPocetna.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmGlavniKonobarPocetna.Designer.cs">
       <DependentUpon>frmGlavniKonobarPocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIzmjenaPica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIzmjenaPica.Designer.cs">
+      <DependentUpon>frmIzmjenaPica.cs</DependentUpon>
     </Compile>
     <Compile Include="frmKonobarPocetna.cs">
       <SubType>Form</SubType>
@@ -101,6 +113,12 @@
     <Compile Include="frmPocetna.Designer.cs">
       <DependentUpon>frmPocetna.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPregledZaliha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPregledZaliha.Designer.cs">
+      <DependentUpon>frmPregledZaliha.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,7 +131,22 @@
     <Compile Include="frmRegistracija.Designer.cs">
       <DependentUpon>frmRegistracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUpravljanjeKorisnicima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpravljanjeKorisnicima.Designer.cs">
+      <DependentUpon>frmUpravljanjeKorisnicima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUrediKorisnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUrediKorisnika.Designer.cs">
+      <DependentUpon>frmUrediKorisnika.cs</DependentUpon>
+    </Compile>
     <Compile Include="InvalidInputException.cs" />
+    <Compile Include="Katalog_Pica.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Korisnik.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
@@ -121,14 +154,33 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepozitorijKorisnika.cs" />
+    <Compile Include="RepozitorijPica.cs" />
+    <EmbeddedResource Include="frmAdminPocetna.resx">
+      <DependentUpon>frmAdminPocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDodajPice.resx">
+      <DependentUpon>frmDodajPice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIzmjenaPica.resx">
+      <DependentUpon>frmIzmjenaPica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPocetna.resx">
       <DependentUpon>frmPocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPregledZaliha.resx">
+      <DependentUpon>frmPregledZaliha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrijava.resx">
       <DependentUpon>frmPrijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistracija.resx">
       <DependentUpon>frmRegistracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpravljanjeKorisnicima.resx">
+      <DependentUpon>frmUpravljanjeKorisnicima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUrediKorisnika.resx">
+      <DependentUpon>frmUrediKorisnika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

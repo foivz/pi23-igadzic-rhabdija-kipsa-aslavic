@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PI2313_DBModelStoreContainer" CdmEntityContainer="PI2313_DBEntities7">
+  <EntityContainerMapping StorageEntityContainer="PI2313_DBModelStoreContainer" CdmEntityContainer="PI2313_DBEntities8">
+    <EntitySetMapping Name="Katalog_Pica">
+      <EntityTypeMapping TypeName="PI2313_DBModel.Katalog_Pica">
+        <MappingFragment StoreEntitySet="Katalog_Pica">
+          <ScalarProperty Name="ID_Pica" ColumnName="ID_Pica" />
+          <ScalarProperty Name="Naziv_Pica" ColumnName="Naziv_Pica" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Korisniks">
       <EntityTypeMapping TypeName="PI2313_DBModel.Korisnik">
         <MappingFragment StoreEntitySet="Korisnik">
