@@ -29,9 +29,9 @@ namespace CoffeeApp
 
         public void DohvatiKatalogPica()
         {
-            using (var context = new PI2313_DBEntities9())
+            using (var context = new PI2313_DBEntities10())
             {
-                var query = from p in context.Katalog_Pica
+                var query = from p in context.Artiklis
                             select p;
                 dgvUpravljajKatalogom.DataSource = query.ToList();
 
@@ -41,11 +41,11 @@ namespace CoffeeApp
 
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
-            using (var context = new PI2313_DBEntities9())
+            using (var context = new PI2313_DBEntities10())
             {
-                Katalog_Pica selektiranoPice = dgvUpravljajKatalogom.CurrentRow.DataBoundItem as Katalog_Pica;
-                context.Katalog_Pica.Attach(selektiranoPice);
-                context.Katalog_Pica.Remove(selektiranoPice);
+                Artikli selektiranoPice = dgvUpravljajKatalogom.CurrentRow.DataBoundItem as Artikli;
+                context.Artiklis.Attach(selektiranoPice);
+                context.Artiklis.Remove(selektiranoPice);
                 context.SaveChanges();
                 DohvatiKatalogPica();
             }
@@ -53,7 +53,7 @@ namespace CoffeeApp
 
         private void btnUrediPice_Click(object sender, EventArgs e)
         {
-            Katalog_Pica selektiranoPice = dgvUpravljajKatalogom.CurrentRow.DataBoundItem as Katalog_Pica;
+            Artikli selektiranoPice = dgvUpravljajKatalogom.CurrentRow.DataBoundItem as Artikli;
             frmIzmjenaPica forma = new frmIzmjenaPica(selektiranoPice);
             forma.ShowDialog();
             DohvatiKatalogPica();
@@ -63,6 +63,7 @@ namespace CoffeeApp
         {
             frmDodajPice forma = new frmDodajPice();
             forma.ShowDialog();
+            DohvatiKatalogPica();
         }
     }
 }

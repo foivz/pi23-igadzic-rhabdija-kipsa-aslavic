@@ -14,7 +14,7 @@ namespace CoffeeApp
     
     public partial class Korisnik
     {
-        public Nullable<int> ID_Korisnika { get; set; }
+        public int ID_Korisnika { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string Username { get; set; }

@@ -10,15 +10,15 @@ namespace CoffeeApp
     {
         public void DodajPice(string naziv, double cijena, string kolicina)
         {
-            using (var context = new PI2313_DBEntities9())
+            using (var context = new PI2313_DBEntities10())
             {
-                Katalog_Pica katalog_Pica = new Katalog_Pica
+                Artikli katalog_Pica = new  Artikli
                 {
                     Naziv_Pica = naziv,
                     Cijena = cijena,
                     Kolicina = kolicina
                 };
-                context.Katalog_Pica.Add(katalog_Pica);
+                context.Artiklis.Add(katalog_Pica);
                 context.SaveChanges();
             }
         }

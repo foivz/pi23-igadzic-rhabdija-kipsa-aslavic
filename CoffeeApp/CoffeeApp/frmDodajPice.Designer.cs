@@ -84,7 +84,6 @@
             this.txtbCijena.Location = new System.Drawing.Point(232, 153);
             this.txtbCijena.Margin = new System.Windows.Forms.Padding(4);
             this.txtbCijena.Name = "txtbCijena";
-            this.txtbCijena.ReadOnly = true;
             this.txtbCijena.Size = new System.Drawing.Size(253, 22);
             this.txtbCijena.TabIndex = 44;
             // 
@@ -93,7 +92,6 @@
             this.txtbNaziv.Location = new System.Drawing.Point(232, 92);
             this.txtbNaziv.Margin = new System.Windows.Forms.Padding(4);
             this.txtbNaziv.Name = "txtbNaziv";
-            this.txtbNaziv.ReadOnly = true;
             this.txtbNaziv.Size = new System.Drawing.Size(253, 22);
             this.txtbNaziv.TabIndex = 43;
             // 
@@ -144,6 +142,7 @@
             this.Name = "frmDodajPice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj piće CoffeeApp";
+            this.Load += new System.EventHandler(this.frmDodajPice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

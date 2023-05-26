@@ -25,7 +25,7 @@ namespace CoffeeApp
 
         public void DohvatiZaposlenika()
         {
-            using (var context = new PI2313_DBEntities9())
+            using (var context = new PI2313_DBEntities10())
             {
                 var query = from p in context.Korisniks
                             where p.Uloga == "Konobar"
@@ -51,6 +51,10 @@ namespace CoffeeApp
         private void btnPromjeniRaspored_Click(object sender, EventArgs e)
         {
             Korisnik selektirani = dgvZaposlenici.CurrentRow.DataBoundItem as Korisnik;
+            if (selektirani == null)
+            {
+                MessageBox.Show("Morate odabrati zaposlenika");
+            }
             frmPromjenaRasporeda form = new frmPromjenaRasporeda(selektirani);
             form.ShowDialog();
             DohvatiZaposlenika();

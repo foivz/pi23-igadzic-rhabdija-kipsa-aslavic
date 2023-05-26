@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artikli.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Autentifikator.cs" />
     <Compile Include="DB.Context.cs">
       <AutoGen>True</AutoGen>
@@ -151,9 +154,6 @@
     </Compile>
     <Compile Include="Exception\InvalidInputException.cs" />
     <Compile Include="Exception\PasswordMissMatchException.cs" />
-    <Compile Include="Katalog_Pica.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Korisnik.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>

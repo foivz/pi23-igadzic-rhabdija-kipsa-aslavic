@@ -31,6 +31,12 @@ namespace CoffeeApp
             string kolicina = txtbKolicina.Text;
 
             odabranoPice.DodajPice(naziv, cijena, kolicina);
+            Close();
+        }
+
+        private void frmDodajPice_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

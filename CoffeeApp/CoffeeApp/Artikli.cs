@@ -12,9 +12,9 @@ namespace CoffeeApp
     using System;
     using System.Collections.Generic;
     
-    public partial class Katalog_Pica
+    public partial class Artikli
     {
-        public Nullable<int> ID_Pica { get; set; }
+        public int ID_Pica { get; set; }
         public string Naziv_Pica { get; set; }
         public string Kolicina { get; set; }
         public double Cijena { get; set; }

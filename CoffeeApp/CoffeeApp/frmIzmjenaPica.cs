@@ -12,12 +12,12 @@ namespace CoffeeApp
 {
     public partial class frmIzmjenaPica : Form
     {
-        public frmIzmjenaPica(Katalog_Pica odabranoPice)
+        public frmIzmjenaPica(Artikli odabranoPice)
         {
             InitializeComponent();
             this.pice = odabranoPice;
         }
-        public Katalog_Pica pice;
+        public Artikli pice;
 
         private void btnOdustani_Click(object sender, EventArgs e)
         {
@@ -26,13 +26,13 @@ namespace CoffeeApp
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            using(var context = new PI2313_DBEntities9())
+            using(var context = new PI2313_DBEntities10())
             {
                 string nazivPica = txtbNaziv.Text;
                 double cijenaPica = double.Parse(txtbCijena.Text);
                 string kolicinaPica = txtbKolicina.Text;
 
-                context.Katalog_Pica.Attach(pice);
+                context.Artiklis.Attach(pice);
                 pice.Naziv_Pica = nazivPica;
                 pice.Cijena = cijenaPica;
                 pice.Kolicina = kolicinaPica;
