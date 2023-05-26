@@ -41,12 +41,12 @@
             this.dgvZaposlenici.Location = new System.Drawing.Point(29, 36);
             this.dgvZaposlenici.Name = "dgvZaposlenici";
             this.dgvZaposlenici.RowTemplate.Height = 24;
-            this.dgvZaposlenici.Size = new System.Drawing.Size(535, 223);
+            this.dgvZaposlenici.Size = new System.Drawing.Size(627, 223);
             this.dgvZaposlenici.TabIndex = 0;
             // 
             // btnKatalogPica
             // 
-            this.btnKatalogPica.Location = new System.Drawing.Point(215, 280);
+            this.btnKatalogPica.Location = new System.Drawing.Point(257, 280);
             this.btnKatalogPica.Name = "btnKatalogPica";
             this.btnKatalogPica.Size = new System.Drawing.Size(165, 59);
             this.btnKatalogPica.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             // btnOdjava
             // 
-            this.btnOdjava.Location = new System.Drawing.Point(399, 280);
+            this.btnOdjava.Location = new System.Drawing.Point(491, 280);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(165, 59);
             this.btnOdjava.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 383);
+            this.ClientSize = new System.Drawing.Size(711, 383);
             this.Controls.Add(this.btnOdjava);
             this.Controls.Add(this.btnPromjeniRaspored);
             this.Controls.Add(this.btnKatalogPica);
