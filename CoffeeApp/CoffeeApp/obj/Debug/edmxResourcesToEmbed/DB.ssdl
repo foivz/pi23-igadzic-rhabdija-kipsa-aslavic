@@ -23,14 +23,16 @@ warning 6002: The table/view 'PI2313_DB.dbo.Korisnik' does not have a primary ke
       <PropertyRef Name="Password" />
       <PropertyRef Name="Email" />
       <PropertyRef Name="Uloga" />
+      <PropertyRef Name="Smjena" />
     </Key>
     <Property Name="ID_Korisnika" Type="int" />
-    <Property Name="Ime" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Prezime" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Uloga" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ime" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prezime" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Uloga" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Smjena" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityContainer Name="PI2313_DBModelStoreContainer">
     <EntitySet Name="Katalog_Pica" EntityType="Self.Katalog_Pica" store:Type="Tables" store:Schema="dbo">
@@ -49,7 +51,8 @@ warning 6002: The table/view 'PI2313_DB.dbo.Korisnik' does not have a primary ke
     [Korisnik].[Username] AS [Username], 
     [Korisnik].[Password] AS [Password], 
     [Korisnik].[Email] AS [Email], 
-    [Korisnik].[Uloga] AS [Uloga]
+    [Korisnik].[Uloga] AS [Uloga], 
+    [Korisnik].[Smjena] AS [Smjena]
     FROM [dbo].[Korisnik] AS [Korisnik]</DefiningQuery>
     </EntitySet>
   </EntityContainer>

@@ -29,7 +29,7 @@ namespace CoffeeApp
 
         public void DohvatiKatalogPica()
         {
-            using (var context = new PI2313_DBEntities8())
+            using (var context = new PI2313_DBEntities9())
             {
                 var query = from p in context.Katalog_Pica
                             select p;
@@ -41,7 +41,7 @@ namespace CoffeeApp
 
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
-            using (var context = new PI2313_DBEntities8())
+            using (var context = new PI2313_DBEntities9())
             {
                 Katalog_Pica selektiranoPice = dgvUpravljajKatalogom.CurrentRow.DataBoundItem as Katalog_Pica;
                 context.Katalog_Pica.Attach(selektiranoPice);

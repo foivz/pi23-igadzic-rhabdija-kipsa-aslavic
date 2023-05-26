@@ -14,7 +14,8 @@ namespace CoffeeApp
             ProvjeriLozinku(password, passwordrep);
             VerificirajRegistraciju(ime, prezime, email, username, password, passwordrep);
             string uloga = "Korisnik";
-            repozitorij.DodajKorisnika(ime, prezime, email, username, password, uloga);
+            string smjena = "Prijepodne";
+            repozitorij.DodajKorisnika(ime, prezime, email, username, password, uloga, smjena);
         }
 
         public void ProvjeriLozinku(string password, string passwordrep)

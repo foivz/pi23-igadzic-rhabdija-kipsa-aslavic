@@ -13,10 +13,10 @@ namespace CoffeeApp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PI2313_DBEntities8 : DbContext
+    public partial class PI2313_DBEntities9 : DbContext
     {
-        public PI2313_DBEntities8()
-            : base("name=PI2313_DBEntities8")
+        public PI2313_DBEntities9()
+            : base("name=PI2313_DBEntities9")
         {
         }
     

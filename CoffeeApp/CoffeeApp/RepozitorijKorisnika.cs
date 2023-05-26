@@ -11,7 +11,7 @@ namespace CoffeeApp
     {
         public bool ProvjeriPrijavu(string username, string passowrd)
         {
-            using(var context = new PI2313_DBEntities8())
+            using(var context = new PI2313_DBEntities9())
             {
                 var query = from p in context.Korisniks
                             where p.Username == username && p.Password == passowrd
@@ -29,9 +29,9 @@ namespace CoffeeApp
             }
         }
 
-        public void DodajKorisnika(string ime, string prezime, string email, string username, string passowrd, string uloga)
+        public void DodajKorisnika(string ime, string prezime, string email, string username, string passowrd, string uloga, string smjena)
         {
-            using(var context = new PI2313_DBEntities8())
+            using(var context = new PI2313_DBEntities9())
             {
                 Korisnik korisnik = new Korisnik
                 {
@@ -40,7 +40,8 @@ namespace CoffeeApp
                     Email = email,
                     Username = username,
                     Password = passowrd,
-                    Uloga = uloga
+                    Uloga = uloga,
+                    Smjena = smjena
                 };
                 context.Korisniks.Add(korisnik);
                 context.SaveChanges();
@@ -51,7 +52,7 @@ namespace CoffeeApp
         {
             Korisnik odabrani = new Korisnik();
             List<Korisnik> listaKorisnika = new List<Korisnik>();
-            using (var context = new PI2313_DBEntities8())
+            using (var context = new PI2313_DBEntities9())
             {
                 var query = from p in context.Korisniks
                             select p;

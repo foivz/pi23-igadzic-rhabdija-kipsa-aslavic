@@ -31,6 +31,7 @@
             this.dgvZaposlenici = new System.Windows.Forms.DataGridView();
             this.btnKatalogPica = new System.Windows.Forms.Button();
             this.btnPromjeniRaspored = new System.Windows.Forms.Button();
+            this.btnOdjava = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,12 +41,12 @@
             this.dgvZaposlenici.Location = new System.Drawing.Point(29, 36);
             this.dgvZaposlenici.Name = "dgvZaposlenici";
             this.dgvZaposlenici.RowTemplate.Height = 24;
-            this.dgvZaposlenici.Size = new System.Drawing.Size(439, 223);
+            this.dgvZaposlenici.Size = new System.Drawing.Size(535, 223);
             this.dgvZaposlenici.TabIndex = 0;
             // 
             // btnKatalogPica
             // 
-            this.btnKatalogPica.Location = new System.Drawing.Point(497, 36);
+            this.btnKatalogPica.Location = new System.Drawing.Point(215, 280);
             this.btnKatalogPica.Name = "btnKatalogPica";
             this.btnKatalogPica.Size = new System.Drawing.Size(165, 59);
             this.btnKatalogPica.TabIndex = 1;
@@ -61,12 +62,24 @@
             this.btnPromjeniRaspored.TabIndex = 2;
             this.btnPromjeniRaspored.Text = "Promjeni raspored";
             this.btnPromjeniRaspored.UseVisualStyleBackColor = true;
+            this.btnPromjeniRaspored.Click += new System.EventHandler(this.btnPromjeniRaspored_Click);
+            // 
+            // btnOdjava
+            // 
+            this.btnOdjava.Location = new System.Drawing.Point(399, 280);
+            this.btnOdjava.Name = "btnOdjava";
+            this.btnOdjava.Size = new System.Drawing.Size(165, 59);
+            this.btnOdjava.TabIndex = 3;
+            this.btnOdjava.Text = "Odjava";
+            this.btnOdjava.UseVisualStyleBackColor = true;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
             // 
             // frmGlavniKonobarPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 383);
+            this.ClientSize = new System.Drawing.Size(636, 383);
+            this.Controls.Add(this.btnOdjava);
             this.Controls.Add(this.btnPromjeniRaspored);
             this.Controls.Add(this.btnKatalogPica);
             this.Controls.Add(this.dgvZaposlenici);
@@ -84,5 +97,6 @@
         private System.Windows.Forms.DataGridView dgvZaposlenici;
         private System.Windows.Forms.Button btnKatalogPica;
         private System.Windows.Forms.Button btnPromjeniRaspored;
+        private System.Windows.Forms.Button btnOdjava;
     }
 }

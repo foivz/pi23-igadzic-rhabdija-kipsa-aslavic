@@ -17,8 +17,6 @@ namespace CoffeeApp
             InitializeComponent();
         }
 
-        RepozitorijKorisnika repozitorij = new RepozitorijKorisnika();
-
         private void btnKatalogPica_Click(object sender, EventArgs e)
         {
             frmPregledZaliha froma = new frmPregledZaliha();
@@ -27,7 +25,7 @@ namespace CoffeeApp
 
         public void DohvatiZaposlenika()
         {
-            using (var context = new PI2313_DBEntities8())
+            using (var context = new PI2313_DBEntities9())
             {
                 var query = from p in context.Korisniks
                             where p.Uloga == "Konobar"
@@ -42,6 +40,19 @@ namespace CoffeeApp
 
         private void frmGlavniKonobarPocetna_Load(object sender, EventArgs e)
         {
+            DohvatiZaposlenika();
+        }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnPromjeniRaspored_Click(object sender, EventArgs e)
+        {
+            Korisnik selektirani = dgvZaposlenici.CurrentRow.DataBoundItem as Korisnik;
+            frmPromjenaRasporeda form = new frmPromjenaRasporeda(selektirani);
+            form.ShowDialog();
             DohvatiZaposlenika();
         }
     }
