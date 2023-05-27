@@ -74,7 +74,6 @@
             this.txtbCijena.Location = new System.Drawing.Point(240, 149);
             this.txtbCijena.Margin = new System.Windows.Forms.Padding(4);
             this.txtbCijena.Name = "txtbCijena";
-            this.txtbCijena.ReadOnly = true;
             this.txtbCijena.Size = new System.Drawing.Size(253, 22);
             this.txtbCijena.TabIndex = 31;
             // 
@@ -123,7 +122,7 @@
             this.CoffeeApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CoffeeApp.Location = new System.Drawing.Point(195, 9);
             this.CoffeeApp.Name = "CoffeeApp";
-            this.CoffeeApp.Size = new System.Drawing.Size(122, 25);
+            this.CoffeeApp.Size = new System.Drawing.Size(152, 31);
             this.CoffeeApp.TabIndex = 39;
             this.CoffeeApp.Text = "CoffeeApp";
             // 

@@ -43,7 +43,7 @@
             this.dgvUpravljanjeKorsincima.Name = "dgvUpravljanjeKorsincima";
             this.dgvUpravljanjeKorsincima.RowHeadersWidth = 51;
             this.dgvUpravljanjeKorsincima.RowTemplate.Height = 24;
-            this.dgvUpravljanjeKorsincima.Size = new System.Drawing.Size(1152, 340);
+            this.dgvUpravljanjeKorsincima.Size = new System.Drawing.Size(1315, 340);
             this.dgvUpravljanjeKorsincima.TabIndex = 1;
             // 
             // btnUrediKorisnika
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 504);
+            this.ClientSize = new System.Drawing.Size(1365, 504);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnIzbrisi);
             this.Controls.Add(this.btnUrediKorisnika);

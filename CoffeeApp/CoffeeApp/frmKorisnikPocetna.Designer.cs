@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvArtikli = new System.Windows.Forms.DataGridView();
             this.dgvOdabranaPica = new System.Windows.Forms.DataGridView();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnPosalji = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnIzbrisi = new System.Windows.Forms.Button();
             this.btnOdjaviSe = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArtikli)).BeginInit();
+            this.dgvArtikli = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdabranaPica)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArtikli)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -50,17 +50,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Ponuda pića:";
             // 
-            // dgvArtikli
-            // 
-            this.dgvArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArtikli.Location = new System.Drawing.Point(12, 58);
-            this.dgvArtikli.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvArtikli.Name = "dgvArtikli";
-            this.dgvArtikli.RowHeadersWidth = 51;
-            this.dgvArtikli.RowTemplate.Height = 24;
-            this.dgvArtikli.Size = new System.Drawing.Size(483, 340);
-            this.dgvArtikli.TabIndex = 5;
-            // 
             // dgvOdabranaPica
             // 
             this.dgvOdabranaPica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -69,23 +58,23 @@
             this.dgvOdabranaPica.Name = "dgvOdabranaPica";
             this.dgvOdabranaPica.RowHeadersWidth = 51;
             this.dgvOdabranaPica.RowTemplate.Height = 24;
-            this.dgvOdabranaPica.Size = new System.Drawing.Size(483, 340);
+            this.dgvOdabranaPica.Size = new System.Drawing.Size(463, 340);
             this.dgvOdabranaPica.TabIndex = 6;
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(524, 58);
+            this.btnDodaj.Location = new System.Drawing.Point(544, 58);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(213, 63);
+            this.btnDodaj.Size = new System.Drawing.Size(193, 63);
             this.btnDodaj.TabIndex = 7;
             this.btnDodaj.Text = "Dodaj u nardžbu";
             this.btnDodaj.UseVisualStyleBackColor = true;
             // 
             // btnPosalji
             // 
-            this.btnPosalji.Location = new System.Drawing.Point(524, 148);
+            this.btnPosalji.Location = new System.Drawing.Point(544, 148);
             this.btnPosalji.Name = "btnPosalji";
-            this.btnPosalji.Size = new System.Drawing.Size(213, 63);
+            this.btnPosalji.Size = new System.Drawing.Size(193, 63);
             this.btnPosalji.TabIndex = 8;
             this.btnPosalji.Text = "Pošalji narudžbu";
             this.btnPosalji.UseVisualStyleBackColor = true;
@@ -102,28 +91,39 @@
             // 
             // btnIzbrisi
             // 
-            this.btnIzbrisi.Location = new System.Drawing.Point(524, 243);
+            this.btnIzbrisi.Location = new System.Drawing.Point(544, 243);
             this.btnIzbrisi.Name = "btnIzbrisi";
-            this.btnIzbrisi.Size = new System.Drawing.Size(213, 63);
+            this.btnIzbrisi.Size = new System.Drawing.Size(193, 63);
             this.btnIzbrisi.TabIndex = 10;
             this.btnIzbrisi.Text = "Izbriši piće";
             this.btnIzbrisi.UseVisualStyleBackColor = true;
             // 
             // btnOdjaviSe
             // 
-            this.btnOdjaviSe.Location = new System.Drawing.Point(524, 335);
+            this.btnOdjaviSe.Location = new System.Drawing.Point(544, 335);
             this.btnOdjaviSe.Name = "btnOdjaviSe";
-            this.btnOdjaviSe.Size = new System.Drawing.Size(213, 63);
+            this.btnOdjaviSe.Size = new System.Drawing.Size(193, 63);
             this.btnOdjaviSe.TabIndex = 11;
             this.btnOdjaviSe.Text = "Odjavi se";
             this.btnOdjaviSe.UseVisualStyleBackColor = true;
             this.btnOdjaviSe.Click += new System.EventHandler(this.btnOdjaviSe_Click);
             // 
+            // dgvArtikli
+            // 
+            this.dgvArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArtikli.Location = new System.Drawing.Point(25, 58);
+            this.dgvArtikli.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvArtikli.Name = "dgvArtikli";
+            this.dgvArtikli.RowHeadersWidth = 51;
+            this.dgvArtikli.RowTemplate.Height = 24;
+            this.dgvArtikli.Size = new System.Drawing.Size(463, 340);
+            this.dgvArtikli.TabIndex = 5;
+            // 
             // frmKorisnikPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1277, 452);
+            this.ClientSize = new System.Drawing.Size(1294, 454);
             this.Controls.Add(this.btnOdjaviSe);
             this.Controls.Add(this.btnIzbrisi);
             this.Controls.Add(this.label2);
@@ -136,8 +136,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CoffeeApp";
             this.Load += new System.EventHandler(this.frmKorisnikPocetna_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArtikli)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdabranaPica)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArtikli)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,12 +145,12 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvArtikli;
         private System.Windows.Forms.DataGridView dgvOdabranaPica;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnPosalji;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnIzbrisi;
         private System.Windows.Forms.Button btnOdjaviSe;
+        private System.Windows.Forms.DataGridView dgvArtikli;
     }
 }

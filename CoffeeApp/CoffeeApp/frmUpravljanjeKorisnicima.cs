@@ -34,6 +34,7 @@ namespace CoffeeApp
                 var query = from p in context.Korisniks
                             select p;
                 dgvUpravljanjeKorsincima.DataSource = query.ToList();
+                dgvUpravljanjeKorsincima.Columns["Order"].Visible = false;
             }
         }
 

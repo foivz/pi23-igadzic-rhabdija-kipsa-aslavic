@@ -37,6 +37,7 @@ namespace CoffeeApp
                 dgvArtikli.DataSource = query.ToList();
 
                 dgvArtikli.Columns["ID_Pica"].Visible = false;
+                dgvArtikli.Columns["Order_details"].Visible = false;
             }
         }
     }
