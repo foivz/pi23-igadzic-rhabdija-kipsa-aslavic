@@ -43,7 +43,7 @@
             this.dgvUpravljanjeKorsincima.Name = "dgvUpravljanjeKorsincima";
             this.dgvUpravljanjeKorsincima.RowHeadersWidth = 51;
             this.dgvUpravljanjeKorsincima.RowTemplate.Height = 24;
-            this.dgvUpravljanjeKorsincima.Size = new System.Drawing.Size(1012, 340);
+            this.dgvUpravljanjeKorsincima.Size = new System.Drawing.Size(1152, 340);
             this.dgvUpravljanjeKorsincima.TabIndex = 1;
             // 
             // btnUrediKorisnika
@@ -64,13 +64,13 @@
             this.btnIzbrisi.Name = "btnIzbrisi";
             this.btnIzbrisi.Size = new System.Drawing.Size(199, 58);
             this.btnIzbrisi.TabIndex = 3;
-            this.btnIzbrisi.Text = "Izbrisi korisnika";
+            this.btnIzbrisi.Text = "Izbriši korisnika";
             this.btnIzbrisi.UseVisualStyleBackColor = true;
             this.btnIzbrisi.Click += new System.EventHandler(this.btnIzbrisi_Click);
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(825, 377);
+            this.btnOdustani.Location = new System.Drawing.Point(965, 377);
             this.btnOdustani.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(199, 58);
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 504);
+            this.ClientSize = new System.Drawing.Size(1176, 504);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnIzbrisi);
             this.Controls.Add(this.btnUrediKorisnika);

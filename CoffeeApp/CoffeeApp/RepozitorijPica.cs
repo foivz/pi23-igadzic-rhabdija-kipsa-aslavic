@@ -10,7 +10,7 @@ namespace CoffeeApp
     {
         public void DodajPice(string naziv, double cijena, string kolicina)
         {
-            using (var context = new PI2313_DBEntities10())
+            using (var context = new PI2313_DBEntities11())
             {
                 Artikli katalog_Pica = new  Artikli
                 {

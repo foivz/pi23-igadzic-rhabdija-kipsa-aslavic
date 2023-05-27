@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PI2313_DBModelStoreContainer" CdmEntityContainer="PI2313_DBEntities10">
+  <EntityContainerMapping StorageEntityContainer="PI2313_DBModelStoreContainer" CdmEntityContainer="PI2313_DBEntities11">
     <EntitySetMapping Name="Artiklis">
       <EntityTypeMapping TypeName="PI2313_DBModel.Artikli">
         <MappingFragment StoreEntitySet="Artikli">
@@ -22,6 +22,21 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Uloga" ColumnName="Uloga" />
           <ScalarProperty Name="Smjena" ColumnName="Smjena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="PI2313_DBModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
+          <ScalarProperty Name="Ukupna_Cijena" ColumnName="Ukupna_Cijena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_details">
+      <EntityTypeMapping TypeName="PI2313_DBModel.Order_detail">
+        <MappingFragment StoreEntitySet="Order details">
+          <ScalarProperty Name="ID_OrderDetails" ColumnName="ID_OrderDetails" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

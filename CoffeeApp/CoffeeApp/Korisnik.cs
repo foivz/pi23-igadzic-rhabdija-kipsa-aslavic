@@ -22,5 +22,7 @@ namespace CoffeeApp
         public string Email { get; set; }
         public string Uloga { get; set; }
         public string Smjena { get; set; }
+    
+        public virtual Order Order { get; set; }
     }
 }

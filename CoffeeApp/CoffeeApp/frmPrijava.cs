@@ -36,7 +36,7 @@ namespace CoffeeApp
             if(dohvaceniKorisnik.Uloga == "Korisnik")
             {
                 this.Hide();
-                frmKorisnikPocetna forma = new frmKorisnikPocetna(dohvaceniKorisnik);
+                frmKorisnikPocetna forma = new frmKorisnikPocetna();
                 forma.ShowDialog();
             }
             if(dohvaceniKorisnik.Uloga == "Admin")

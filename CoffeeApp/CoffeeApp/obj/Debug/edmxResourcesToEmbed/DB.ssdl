@@ -22,8 +22,71 @@
     <Property Name="Uloga" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="Smjena" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID_Order" />
+    </Key>
+    <Property Name="ID_Order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ukupna_Cijena" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order details">
+    <Key>
+      <PropertyRef Name="ID_OrderDetails" />
+    </Key>
+    <Property Name="ID_OrderDetails" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Order details_Artikli">
+    <End Role="Artikli" Type="Self.Artikli" Multiplicity="1" />
+    <End Role="Order details" Type="Self.Order details" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Artikli">
+        <PropertyRef Name="ID_Pica" />
+      </Principal>
+      <Dependent Role="Order details">
+        <PropertyRef Name="ID_OrderDetails" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Korisnik">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="ID_Korisnika" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ID_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Order details">
+    <End Role="Order details" Type="Self.Order details" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Order details">
+        <PropertyRef Name="ID_OrderDetails" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ID_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="PI2313_DBModelStoreContainer">
     <EntitySet Name="Artikli" EntityType="Self.Artikli" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order details" EntityType="Self.Order details" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Order details_Artikli" Association="Self.FK_Order details_Artikli">
+      <End Role="Artikli" EntitySet="Artikli" />
+      <End Role="Order details" EntitySet="Order details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Korisnik" Association="Self.FK_Order_Korisnik">
+      <End Role="Korisnik" EntitySet="Korisnik" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Order details" Association="Self.FK_Order_Order details">
+      <End Role="Order details" EntitySet="Order details" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

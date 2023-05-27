@@ -25,7 +25,7 @@ namespace CoffeeApp
 
         public void DohvatiZaposlenika()
         {
-            using (var context = new PI2313_DBEntities10())
+            using (var context = new PI2313_DBEntities11())
             {
                 var query = from p in context.Korisniks
                             where p.Uloga == "Konobar"

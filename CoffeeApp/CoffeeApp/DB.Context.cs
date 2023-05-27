@@ -13,10 +13,10 @@ namespace CoffeeApp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PI2313_DBEntities10 : DbContext
+    public partial class PI2313_DBEntities11 : DbContext
     {
-        public PI2313_DBEntities10()
-            : base("name=PI2313_DBEntities10")
+        public PI2313_DBEntities11()
+            : base("name=PI2313_DBEntities11")
         {
         }
     
@@ -27,5 +27,7 @@ namespace CoffeeApp
     
         public virtual DbSet<Artikli> Artiklis { get; set; }
         public virtual DbSet<Korisnik> Korisniks { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Order_detail> Order_details { get; set; }
     }
 }

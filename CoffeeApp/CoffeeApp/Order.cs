@@ -12,13 +12,12 @@ namespace CoffeeApp
     using System;
     using System.Collections.Generic;
     
-    public partial class Artikli
+    public partial class Order
     {
-        public int ID_Pica { get; set; }
-        public string Naziv_Pica { get; set; }
-        public string Kolicina { get; set; }
-        public double Cijena { get; set; }
+        public int ID_Order { get; set; }
+        public double Ukupna_Cijena { get; set; }
     
+        public virtual Korisnik Korisnik { get; set; }
         public virtual Order_detail Order_details { get; set; }
     }
 }

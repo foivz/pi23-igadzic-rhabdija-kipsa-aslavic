@@ -8,6 +8,7 @@
     <Property Name="Naziv_Pica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Kolicina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Cijena" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Order_details" Relationship="Self.FK_Order_details_Artikli" FromRole="Artikli" ToRole="Order_details" />
   </EntityType>
   <EntityType Name="Korisnik">
     <Key>
@@ -21,9 +22,77 @@
     <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Uloga" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Smjena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Korisnik" FromRole="Korisnik" ToRole="Order" />
   </EntityType>
-  <EntityContainer Name="PI2313_DBEntities10" annotation:LazyLoadingEnabled="true">
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID_Order" />
+    </Key>
+    <Property Name="ID_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ukupna_Cijena" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Korisnik" Relationship="Self.FK_Order_Korisnik" FromRole="Order" ToRole="Korisnik" />
+    <NavigationProperty Name="Order_details" Relationship="Self.FK_Order_Order_details" FromRole="Order" ToRole="Order_details" />
+  </EntityType>
+  <EntityType Name="Order_detail">
+    <Key>
+      <PropertyRef Name="ID_OrderDetails" />
+    </Key>
+    <Property Name="ID_OrderDetails" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Artikli" Relationship="Self.FK_Order_details_Artikli" FromRole="Order_details" ToRole="Artikli" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Order_details" FromRole="Order_details" ToRole="Order" />
+  </EntityType>
+  <Association Name="FK_Order_details_Artikli">
+    <End Role="Artikli" Type="Self.Artikli" Multiplicity="1" />
+    <End Role="Order_details" Type="Self.Order_detail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Artikli">
+        <PropertyRef Name="ID_Pica" />
+      </Principal>
+      <Dependent Role="Order_details">
+        <PropertyRef Name="ID_OrderDetails" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Korisnik">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="ID_Korisnika" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ID_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Order_details">
+    <End Role="Order_details" Type="Self.Order_detail" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Order_details">
+        <PropertyRef Name="ID_OrderDetails" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ID_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PI2313_DBEntities11" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Artiklis" EntityType="Self.Artikli" />
     <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Order_details" EntityType="Self.Order_detail" />
+    <AssociationSet Name="FK_Order_details_Artikli" Association="Self.FK_Order_details_Artikli">
+      <End Role="Artikli" EntitySet="Artiklis" />
+      <End Role="Order_details" EntitySet="Order_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Korisnik" Association="Self.FK_Order_Korisnik">
+      <End Role="Korisnik" EntitySet="Korisniks" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Order_details" Association="Self.FK_Order_Order_details">
+      <End Role="Order_details" EntitySet="Order_details" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

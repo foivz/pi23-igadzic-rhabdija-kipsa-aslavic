@@ -17,11 +17,27 @@ namespace CoffeeApp
             InitializeComponent();
         }
 
-        public frmKorisnikPocetna(Korisnik dohvaceniKorisnik)
+        private void btnOdjaviSe_Click(object sender, EventArgs e)
         {
-            DohvaceniKorisnik = dohvaceniKorisnik;
+            Close();
         }
 
-        public Korisnik DohvaceniKorisnik { get; }
+        private void frmKorisnikPocetna_Load(object sender, EventArgs e)
+        {
+            DohvatiArtikle();
+        }
+        
+
+        public void DohvatiArtikle()
+        {
+            using (var context = new PI2313_DBEntities11())
+            {
+                var query = from p in context.Artiklis
+                            select p;
+                dgvArtikli.DataSource = query.ToList();
+
+                dgvArtikli.Columns["ID_Pica"].Visible = false;
+            }
+        }
     }
 }

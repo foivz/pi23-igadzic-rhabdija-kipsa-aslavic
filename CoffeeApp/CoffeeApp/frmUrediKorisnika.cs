@@ -21,7 +21,7 @@ namespace CoffeeApp
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            using (var contex = new PI2313_DBEntities10())
+            using (var contex = new PI2313_DBEntities11())
             {
                 string ime = txtbIme.Text.ToString();
                 string prezime = txtbPrezime.Text.ToString();
