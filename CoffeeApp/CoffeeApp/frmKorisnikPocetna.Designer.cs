@@ -69,6 +69,7 @@
             this.btnDodaj.TabIndex = 7;
             this.btnDodaj.Text = "Dodaj u nardžbu";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnPosalji
             // 
@@ -97,6 +98,7 @@
             this.btnIzbrisi.TabIndex = 10;
             this.btnIzbrisi.Text = "Izbriši piće";
             this.btnIzbrisi.UseVisualStyleBackColor = true;
+            this.btnIzbrisi.Click += new System.EventHandler(this.btnIzbrisi_Click);
             // 
             // btnOdjaviSe
             // 

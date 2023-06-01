@@ -26,7 +26,7 @@ namespace CoffeeApp
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            using(var context = new PI2313_DBEntities11())
+            using(var context = new PI2313_DBEntities13())
             {
                 string nazivPica = txtbNaziv.Text;
                 double cijenaPica = double.Parse(txtbCijena.Text);

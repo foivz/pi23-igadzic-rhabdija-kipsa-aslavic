@@ -167,6 +167,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepozitorijKorisnika.cs" />
     <Compile Include="RepozitorijPica.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAdminPocetna.resx">
       <DependentUpon>frmAdminPocetna.cs</DependentUpon>
     </EmbeddedResource>

@@ -29,6 +29,9 @@
       <PropertyRef Name="ID_Order" />
     </Key>
     <Property Name="ID_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv_Pica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Kolicina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cijena" Type="Double" Nullable="false" />
     <Property Name="Ukupna_Cijena" Type="Double" Nullable="false" />
     <NavigationProperty Name="Korisnik" Relationship="Self.FK_Order_Korisnik" FromRole="Order" ToRole="Korisnik" />
     <NavigationProperty Name="Order_details" Relationship="Self.FK_Order_Order_details" FromRole="Order" ToRole="Order_details" />
@@ -37,9 +40,22 @@
     <Key>
       <PropertyRef Name="ID_OrderDetails" />
     </Key>
-    <Property Name="ID_OrderDetails" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_OrderDetails" Type="Int32" Nullable="false" />
+    <Property Name="Naziv_Pica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Kolicina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cijena" Type="Double" Nullable="false" />
     <NavigationProperty Name="Artikli" Relationship="Self.FK_Order_details_Artikli" FromRole="Order_details" ToRole="Artikli" />
     <NavigationProperty Name="Order" Relationship="Self.FK_Order_Order_details" FromRole="Order_details" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="FK_Order_details_Artikli">
     <End Role="Artikli" Type="Self.Artikli" Multiplicity="1" />
@@ -77,11 +93,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="PI2313_DBEntities11" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="PI2313_DBEntities13" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Artiklis" EntityType="Self.Artikli" />
     <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
     <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="Order_details" EntityType="Self.Order_detail" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="FK_Order_details_Artikli" Association="Self.FK_Order_details_Artikli">
       <End Role="Artikli" EntitySet="Artiklis" />
       <End Role="Order_details" EntitySet="Order_details" />

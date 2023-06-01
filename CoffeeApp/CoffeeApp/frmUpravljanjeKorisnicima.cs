@@ -29,7 +29,7 @@ namespace CoffeeApp
 
         public void DohvatiKorisnike()
         {
-            using(var context = new PI2313_DBEntities11())
+            using(var context = new PI2313_DBEntities13())
             {
                 var query = from p in context.Korisniks
                             select p;
@@ -40,7 +40,7 @@ namespace CoffeeApp
 
         public void btnIzbrisi_Click(object sender, EventArgs e)
         {
-            using (var context = new PI2313_DBEntities11())
+            using (var context = new PI2313_DBEntities13())
             {
                 Korisnik selektirani = dgvUpravljanjeKorsincima.CurrentRow.DataBoundItem as Korisnik;
                 if (selektirani.Uloga != "Admin")

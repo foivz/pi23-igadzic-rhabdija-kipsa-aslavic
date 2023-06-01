@@ -15,6 +15,9 @@ namespace CoffeeApp
     public partial class Order
     {
         public int ID_Order { get; set; }
+        public string Naziv_Pica { get; set; }
+        public string Kolicina { get; set; }
+        public double Cijena { get; set; }
         public double Ukupna_Cijena { get; set; }
     
         public virtual Korisnik Korisnik { get; set; }
