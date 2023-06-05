@@ -140,6 +140,10 @@
     <Compile Include="frmRegistracija.Designer.cs">
       <DependentUpon>frmRegistracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStolRezervacija.cs" />
+    <Compile Include="frmStolRezervacija.Designer.cs">
+      <DependentUpon>frmStolRezervacija.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUpravljanjeKorisnicima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistracija.resx">
       <DependentUpon>frmRegistracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStolRezervacija.resx">
+      <DependentUpon>frmStolRezervacija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpravljanjeKorisnicima.resx">
       <DependentUpon>frmUpravljanjeKorisnicima.cs</DependentUpon>
