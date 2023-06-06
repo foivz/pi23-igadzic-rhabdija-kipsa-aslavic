@@ -13,6 +13,8 @@
         <AssociationConnector Association="PI2313_DBModel.FK_Order_details_Artikli" ManuallyRouted="false" />
         <AssociationConnector Association="PI2313_DBModel.FK_Order_Korisnik" ManuallyRouted="false" />
         <AssociationConnector Association="PI2313_DBModel.FK_Order_Order_details" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PI2313_DBModel.Stol" Width="1.5" PointX="1.875" PointY="8.5" />
+        <AssociationConnector Association="PI2313_DBModel.FK_Stol_Korisnik" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

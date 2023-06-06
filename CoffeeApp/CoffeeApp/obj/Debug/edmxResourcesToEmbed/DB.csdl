@@ -23,6 +23,7 @@
     <Property Name="Uloga" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Smjena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Order" Relationship="Self.FK_Order_Korisnik" FromRole="Korisnik" ToRole="Order" />
+    <NavigationProperty Name="Stols" Relationship="PI2313_DBModel.FK_Stol_Korisnik" FromRole="Korisnik" ToRole="Stol" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -111,5 +112,32 @@
       <End Role="Order_details" EntitySet="Order_details" />
       <End Role="Order" EntitySet="Orders" />
     </AssociationSet>
+    <EntitySet Name="Stols" EntityType="PI2313_DBModel.Stol" />
+    <AssociationSet Name="FK_Stol_Korisnik" Association="PI2313_DBModel.FK_Stol_Korisnik">
+      <End Role="Korisnik" EntitySet="Korisniks" />
+      <End Role="Stol" EntitySet="Stols" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Stol">
+    <Key>
+      <PropertyRef Name="ID_stol" />
+    </Key>
+    <Property Name="ID_stol" Type="Int32" Nullable="false" />
+    <Property Name="opis" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_korisnika" Type="Int32" />
+    <NavigationProperty Name="Korisnik" Relationship="PI2313_DBModel.FK_Stol_Korisnik" FromRole="Stol" ToRole="Korisnik" />
+  </EntityType>
+  <Association Name="FK_Stol_Korisnik">
+    <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="0..1" />
+    <End Type="PI2313_DBModel.Stol" Role="Stol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="ID_Korisnika" />
+      </Principal>
+      <Dependent Role="Stol">
+        <PropertyRef Name="ID_korisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

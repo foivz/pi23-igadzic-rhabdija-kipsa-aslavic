@@ -36,6 +36,7 @@
             this.btnIzbrisi = new System.Windows.Forms.Button();
             this.btnOdjaviSe = new System.Windows.Forms.Button();
             this.dgvArtikli = new System.Windows.Forms.DataGridView();
+            this.btnRezervirajStol = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdabranaPica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArtikli)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +104,7 @@
             // 
             // btnOdjaviSe
             // 
-            this.btnOdjaviSe.Location = new System.Drawing.Point(544, 335);
+            this.btnOdjaviSe.Location = new System.Drawing.Point(544, 432);
             this.btnOdjaviSe.Name = "btnOdjaviSe";
             this.btnOdjaviSe.Size = new System.Drawing.Size(193, 63);
             this.btnOdjaviSe.TabIndex = 11;
@@ -122,11 +123,22 @@
             this.dgvArtikli.Size = new System.Drawing.Size(463, 340);
             this.dgvArtikli.TabIndex = 5;
             // 
+            // btnRezervirajStol
+            // 
+            this.btnRezervirajStol.Location = new System.Drawing.Point(544, 335);
+            this.btnRezervirajStol.Name = "btnRezervirajStol";
+            this.btnRezervirajStol.Size = new System.Drawing.Size(193, 63);
+            this.btnRezervirajStol.TabIndex = 12;
+            this.btnRezervirajStol.Text = "Rezerviraj Stol";
+            this.btnRezervirajStol.UseVisualStyleBackColor = true;
+            this.btnRezervirajStol.Click += new System.EventHandler(this.btnRezervirajStol_Click);
+            // 
             // frmKorisnikPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1294, 454);
+            this.ClientSize = new System.Drawing.Size(1294, 550);
+            this.Controls.Add(this.btnRezervirajStol);
             this.Controls.Add(this.btnOdjaviSe);
             this.Controls.Add(this.btnIzbrisi);
             this.Controls.Add(this.label2);
@@ -155,5 +167,6 @@
         private System.Windows.Forms.Button btnIzbrisi;
         private System.Windows.Forms.Button btnOdjaviSe;
         private System.Windows.Forms.DataGridView dgvArtikli;
+        private System.Windows.Forms.Button btnRezervirajStol;
     }
 }

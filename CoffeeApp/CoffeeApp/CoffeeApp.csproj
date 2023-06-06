@@ -140,12 +140,6 @@
     <Compile Include="frmRegistracija.Designer.cs">
       <DependentUpon>frmRegistracija.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStolRezervacija.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmStolRezervacija.Designer.cs">
-      <DependentUpon>frmStolRezervacija.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmUpravljanjeKorisnicima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,9 +167,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepozitorijKorisnika.cs" />
     <Compile Include="RepozitorijPica.cs" />
+    <Compile Include="frmRezervacijaStola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRezervacijaStola.Designer.cs">
+      <DependentUpon>frmRezervacijaStola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stol.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="UlogiraniKorisnik.cs" />
     <EmbeddedResource Include="frmAdminPocetna.resx">
       <DependentUpon>frmAdminPocetna.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,8 +210,8 @@
     <EmbeddedResource Include="frmRegistracija.resx">
       <DependentUpon>frmRegistracija.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStolRezervacija.resx">
-      <DependentUpon>frmStolRezervacija.cs</DependentUpon>
+    <EmbeddedResource Include="frmRezervacijaStola.resx">
+      <DependentUpon>frmRezervacijaStola.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpravljanjeKorisnicima.resx">
       <DependentUpon>frmUpravljanjeKorisnicima.cs</DependentUpon>

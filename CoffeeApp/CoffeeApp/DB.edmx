@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PI2313_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PI2313_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Artikli">
           <Key>
             <PropertyRef Name="ID_Pica" />
@@ -45,6 +45,15 @@
           <Property Name="Naziv_Pica" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Kolicina" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Cijena" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stol">
+          <Key>
+            <PropertyRef Name="ID_stol" />
+          </Key>
+          <Property Name="ID_stol" Type="int" Nullable="false" />
+          <Property Name="opis" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_korisnika" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -92,11 +101,55 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Stol_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
+          <End Role="Stol" Type="Self.Stol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="ID_Korisnika" />
+            </Principal>
+            <Dependent Role="Stol">
+              <PropertyRef Name="ID_korisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="PI2313_DBModelStoreContainer">
           <EntitySet Name="Artikli" EntityType="Self.Artikli" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order details" EntityType="Self.Order details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stol" EntityType="Self.Stol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Order details_Artikli" Association="Self.FK_Order details_Artikli">
             <End Role="Artikli" EntitySet="Artikli" />
@@ -110,9 +163,12 @@
             <End Role="Order details" EntitySet="Order details" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
+          <AssociationSet Name="FK_Stol_Korisnik" Association="Self.FK_Stol_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Stol" EntitySet="Stol" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PI2313_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -139,6 +195,7 @@
           <Property Name="Uloga" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Smjena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="Self.FK_Order_Korisnik" FromRole="Korisnik" ToRole="Order" />
+          <NavigationProperty Name="Stols" Relationship="PI2313_DBModel.FK_Stol_Korisnik" FromRole="Korisnik" ToRole="Stol" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -227,7 +284,34 @@
             <End Role="Order_details" EntitySet="Order_details" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
+          <EntitySet Name="Stols" EntityType="PI2313_DBModel.Stol" />
+          <AssociationSet Name="FK_Stol_Korisnik" Association="PI2313_DBModel.FK_Stol_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisniks" />
+            <End Role="Stol" EntitySet="Stols" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Stol">
+          <Key>
+            <PropertyRef Name="ID_stol" />
+          </Key>
+          <Property Name="ID_stol" Type="Int32" Nullable="false" />
+          <Property Name="opis" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID_korisnika" Type="Int32" />
+          <NavigationProperty Name="Korisnik" Relationship="PI2313_DBModel.FK_Stol_Korisnik" FromRole="Stol" ToRole="Korisnik" />
+        </EntityType>
+        <Association Name="FK_Stol_Korisnik">
+          <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="0..1" />
+          <End Type="PI2313_DBModel.Stol" Role="Stol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="ID_Korisnika" />
+            </Principal>
+            <Dependent Role="Stol">
+              <PropertyRef Name="ID_korisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -287,6 +371,16 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stols">
+            <EntityTypeMapping TypeName="PI2313_DBModel.Stol">
+              <MappingFragment StoreEntitySet="Stol">
+                <ScalarProperty Name="ID_korisnika" ColumnName="ID_korisnika" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="ID_stol" ColumnName="ID_stol" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
