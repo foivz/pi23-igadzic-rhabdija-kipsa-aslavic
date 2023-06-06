@@ -57,5 +57,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Stols">
+      <EntityTypeMapping TypeName="PI2313_DBModel.Stol">
+        <MappingFragment StoreEntitySet="Stol">
+          <ScalarProperty Name="ID_korisnika" ColumnName="ID_korisnika" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="ID_stol" ColumnName="ID_stol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

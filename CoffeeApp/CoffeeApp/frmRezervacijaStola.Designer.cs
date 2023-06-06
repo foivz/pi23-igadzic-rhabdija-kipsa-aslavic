@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvStolovi = new System.Windows.Forms.DataGridView();
             this.btnRezerviraj = new System.Windows.Forms.Button();
             this.btnPonisti = new System.Windows.Forms.Button();
             this.btnIzlaz = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStolovi)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvStolovi
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(592, 375);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvStolovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStolovi.Location = new System.Drawing.Point(12, 55);
+            this.dgvStolovi.Name = "dgvStolovi";
+            this.dgvStolovi.RowHeadersWidth = 51;
+            this.dgvStolovi.RowTemplate.Height = 24;
+            this.dgvStolovi.Size = new System.Drawing.Size(592, 375);
+            this.dgvStolovi.TabIndex = 0;
             // 
             // btnRezerviraj
             // 
@@ -53,6 +53,7 @@
             this.btnRezerviraj.TabIndex = 1;
             this.btnRezerviraj.Text = "Rezerviraj stol";
             this.btnRezerviraj.UseVisualStyleBackColor = true;
+            this.btnRezerviraj.Click += new System.EventHandler(this.btnRezerviraj_Click);
             // 
             // btnPonisti
             // 
@@ -60,8 +61,9 @@
             this.btnPonisti.Name = "btnPonisti";
             this.btnPonisti.Size = new System.Drawing.Size(154, 94);
             this.btnPonisti.TabIndex = 2;
-            this.btnPonisti.Text = "Poništi rezervaciju";
+            this.btnPonisti.Text = "Poništi postojeću rezervaciju";
             this.btnPonisti.UseVisualStyleBackColor = true;
+            this.btnPonisti.Click += new System.EventHandler(this.btnPonisti_Click);
             // 
             // btnIzlaz
             // 
@@ -71,6 +73,7 @@
             this.btnIzlaz.TabIndex = 3;
             this.btnIzlaz.Text = "Izlaz";
             this.btnIzlaz.UseVisualStyleBackColor = true;
+            this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);
             // 
             // frmRezervacijaStola
             // 
@@ -80,17 +83,18 @@
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.btnPonisti);
             this.Controls.Add(this.btnRezerviraj);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvStolovi);
             this.Name = "frmRezervacijaStola";
             this.Text = "RezervacijaStola";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmRezervacijaStola_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStolovi)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvStolovi;
         private System.Windows.Forms.Button btnRezerviraj;
         private System.Windows.Forms.Button btnPonisti;
         private System.Windows.Forms.Button btnIzlaz;

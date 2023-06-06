@@ -33,7 +33,8 @@ namespace CoffeeApp
             repozitorij.ProvjeriPrijavu(username, password);
             Korisnik dohvaceniKorisnik = repozitorij.DohvatiKorisnika(username, password);
             ulogirani = dohvaceniKorisnik;
-            if(dohvaceniKorisnik.Uloga == "Korisnik")
+            UlogiraniKorisnik.ulogirani = dohvaceniKorisnik;
+            if (dohvaceniKorisnik.Uloga == "Korisnik")
             {
                 this.Hide();
                 frmKorisnikPocetna forma = new frmKorisnikPocetna();

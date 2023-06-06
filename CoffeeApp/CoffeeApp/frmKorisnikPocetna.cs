@@ -102,5 +102,11 @@ namespace CoffeeApp
                 DohvatiDetaljeNarudzbe();
             }
         }
+
+        private void btnRezervirajStol_Click(object sender, EventArgs e)
+        {
+            frmRezervacijaStola forma = new frmRezervacijaStola();
+            forma.ShowDialog();
+        }
     }
 }

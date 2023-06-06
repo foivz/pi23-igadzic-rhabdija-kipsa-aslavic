@@ -14,6 +14,12 @@ namespace CoffeeApp
     
     public partial class Korisnik
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Korisnik()
+        {
+            this.Stols = new HashSet<Stol>();
+        }
+    
         public int ID_Korisnika { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
@@ -24,5 +30,7 @@ namespace CoffeeApp
         public string Smjena { get; set; }
     
         public virtual Order Order { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Stol> Stols { get; set; }
     }
 }
