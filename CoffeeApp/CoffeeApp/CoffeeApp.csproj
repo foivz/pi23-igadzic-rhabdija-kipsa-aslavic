@@ -140,7 +140,9 @@
     <Compile Include="frmRegistracija.Designer.cs">
       <DependentUpon>frmRegistracija.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStolRezervacija.cs" />
+    <Compile Include="frmStolRezervacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmStolRezervacija.Designer.cs">
       <DependentUpon>frmStolRezervacija.cs</DependentUpon>
     </Compile>

@@ -79,6 +79,7 @@
             this.btnPosalji.TabIndex = 8;
             this.btnPosalji.Text = "Pošalji narudžbu";
             this.btnPosalji.UseVisualStyleBackColor = true;
+            this.btnPosalji.Click += new System.EventHandler(this.btnPosalji_Click);
             // 
             // label2
             // 

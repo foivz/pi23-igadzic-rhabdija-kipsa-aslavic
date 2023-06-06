@@ -25,3 +25,4 @@ C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\Co
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmGlavniKonobarPocetna.resources
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPromjenaRasporeda.resources
 C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmKorisnikPocetna.resources
+C:\Users\ivang\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmStolRezevacija.resources

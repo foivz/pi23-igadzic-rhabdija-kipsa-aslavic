@@ -102,5 +102,25 @@ namespace CoffeeApp
                 DohvatiDetaljeNarudzbe();
             }
         }
+
+        private void btnPosalji_Click(object sender, EventArgs e)
+        {
+            var context = new PI2313_DBEntities13();
+
+            foreach(DataGridViewRow row in dgvOdabranaPica.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    var item = new Order_detail
+                    {
+                        Naziv_Pica = row.Cells["Naziv_Pica"].Value.ToString(),
+                        Kolicina = row.Cells["Kolicina"].Value.ToString(),
+                        Cijena = double.Parse(row.Cells["Cijena"].Value.ToString()),
+                    };
+                    context.Order_details.Add(item);
+                }
+            }
+            context.SaveChanges();
+        }
     }
 }
