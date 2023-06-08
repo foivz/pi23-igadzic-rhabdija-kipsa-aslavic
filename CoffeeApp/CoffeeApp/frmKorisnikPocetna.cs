@@ -108,5 +108,11 @@ namespace CoffeeApp
             frmRezervacijaStola forma = new frmRezervacijaStola();
             forma.ShowDialog();
         }
+
+        private void btnPosalji_Click(object sender, EventArgs e)
+        {
+            frmRezervacijaStola forma = new frmRezervacijaStola();
+            forma.ShowDialog();
+        }
     }
 }
