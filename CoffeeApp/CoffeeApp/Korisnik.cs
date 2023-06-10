@@ -18,6 +18,7 @@ namespace CoffeeApp
         public Korisnik()
         {
             this.Stols = new HashSet<Stol>();
+            this.Orders = new HashSet<Order>();
         }
     
         public int ID_Korisnika { get; set; }
@@ -29,8 +30,9 @@ namespace CoffeeApp
         public string Uloga { get; set; }
         public string Smjena { get; set; }
     
-        public virtual Order Order { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Stol> Stols { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

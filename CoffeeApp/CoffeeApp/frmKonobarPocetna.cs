@@ -16,5 +16,16 @@ namespace CoffeeApp
         {
             InitializeComponent();
         }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnPlacanjeNarudzbe_Click(object sender, EventArgs e)
+        {
+            frmPlacanjeNarudzbe forma = new frmPlacanjeNarudzbe();
+            forma.ShowDialog();
+        }
     }
 }

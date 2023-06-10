@@ -28,10 +28,10 @@
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="PI2313_DBModel.Order">
         <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="ID_Korisnika" ColumnName="ID_Korisnika" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="kupac" ColumnName="kupac" />
           <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
-          <ScalarProperty Name="Naziv_Pica" ColumnName="Naziv_Pica" />
-          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
-          <ScalarProperty Name="Cijena" ColumnName="Cijena" />
           <ScalarProperty Name="Ukupna_Cijena" ColumnName="Ukupna_Cijena" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -39,6 +39,8 @@
     <EntitySetMapping Name="Order_details">
       <EntityTypeMapping TypeName="PI2313_DBModel.Order_detail">
         <MappingFragment StoreEntitySet="Order details">
+          <ScalarProperty Name="ID_Pica" ColumnName="ID_Pica" />
+          <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
           <ScalarProperty Name="ID_OrderDetails" ColumnName="ID_OrderDetails" />
           <ScalarProperty Name="Naziv_Pica" ColumnName="Naziv_Pica" />
           <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
