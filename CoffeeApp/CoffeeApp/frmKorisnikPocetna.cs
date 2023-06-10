@@ -17,15 +17,26 @@ namespace CoffeeApp
             InitializeComponent();
         }
 
+        Order aktivnaNarudzba = new Order();
+        List<Order_detail> listaArtikalaZaNarudzbu = new List<Order_detail>();
+
+
+
         private void btnOdjaviSe_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void frmKorisnikPocetna_Load(object sender, EventArgs e)
+        public void frmKorisnikPocetna_Load(object sender, EventArgs e)
         {
             DohvatiArtikle();
             DohvatiDetaljeNarudzbe();
+            using (var context = new PI2313_DBEntities13())
+            {
+                aktivnaNarudzba.ID_Order=GeneriranjeKljucaNarudzba(context);
+                aktivnaNarudzba.ID_Korisnika = UlogiraniKorisnik.ulogirani.ID_Korisnika;
+                aktivnaNarudzba.kupac = UlogiraniKorisnik.ulogirani.Username;
+            }
         }
         
 
@@ -44,23 +55,25 @@ namespace CoffeeApp
 
         public void DohvatiDetaljeNarudzbe()
         {
-            using(var context = new PI2313_DBEntities13())
-            {
-                var query = from p in context.Order_details
-                            select p;
-                dgvOdabranaPica.DataSource = query.ToList();
 
+            dgvOdabranaPica.DataSource = null;
+            
+            if (listaArtikalaZaNarudzbu != null && listaArtikalaZaNarudzbu.Count > 0) 
+            {               
+                dgvOdabranaPica.DataSource = listaArtikalaZaNarudzbu;
                 dgvOdabranaPica.Columns["ID_OrderDetails"].Visible = false;
+                dgvOdabranaPica.Columns["ID_Order"].Visible = false;
+                dgvOdabranaPica.Columns["ID_Pica"].Visible = false;
+                dgvOdabranaPica.Columns["Artikli"].Visible = false;
+                dgvOdabranaPica.Columns["Order"].Visible = false;
             }
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             if (dgvArtikli.SelectedRows.Count > 0)
-            {
-                DataGridViewRow odabraniRed = dgvArtikli.SelectedRows[0];
-
-                Artikli selctedArtikls = odabraniRed.DataBoundItem as Artikli;
+            {               
+                Artikli selctedArtikls = dgvArtikli.CurrentRow.DataBoundItem as Artikli;
 
                 if (selctedArtikls != null)
                 {
@@ -69,15 +82,33 @@ namespace CoffeeApp
                         Order_detail order_Detail = new Order_detail();
 
                         order_Detail.ID_OrderDetails = GeneriranjeKljuca(context);
+                        order_Detail.ID_Order = aktivnaNarudzba.ID_Order;
+                        order_Detail.ID_Pica = selctedArtikls.ID_Pica;
                         order_Detail.Naziv_Pica = selctedArtikls.Naziv_Pica;
                         order_Detail.Kolicina = selctedArtikls.Kolicina;
                         order_Detail.Cijena = selctedArtikls.Cijena;
 
-                        context.Order_details.Add(order_Detail);
-                        context.SaveChanges();
-                    }
+                        listaArtikalaZaNarudzbu.Add(order_Detail);
+                    }                    
                 }
-                DohvatiDetaljeNarudzbe();
+            DohvatiDetaljeNarudzbe();
+            }
+        }
+
+        private void btnIzbrisi_Click(object sender, EventArgs e)
+        {
+            if (listaArtikalaZaNarudzbu != null && listaArtikalaZaNarudzbu.Count > 0)
+            {
+                if (dgvOdabranaPica.SelectedRows.Count > 0)
+                {
+                    Order_detail selectedDetail = dgvOdabranaPica.CurrentRow.DataBoundItem as Order_detail;
+
+                    if (selectedDetail != null)
+                    {
+                        listaArtikalaZaNarudzbu.Remove(selectedDetail);
+                    }
+                    DohvatiDetaljeNarudzbe();
+                }
             }
         }
 
@@ -91,25 +122,48 @@ namespace CoffeeApp
             return kljuc;
         }
 
-        private void btnIzbrisi_Click(object sender, EventArgs e)
+        public int GeneriranjeKljucaNarudzba(PI2313_DBEntities13 context)
+        {
+            List<int> postojeciKLjucevi = context.Orders.Select(o => o.ID_Order).ToList();
+            int maxID = postojeciKLjucevi.Count > 0 ? postojeciKLjucevi.Max() : 0;
+
+            int kljuc = maxID + 1;
+
+            return kljuc;
+        }
+
+        private void btnPosalji_Click(object sender, EventArgs e)
         {
             using (var context = new PI2313_DBEntities13())
             {
-                Order_detail odabranaNarudzba = dgvOdabranaPica.CurrentRow.DataBoundItem as Order_detail;
-                context.Order_details.Attach(odabranaNarudzba);
-                context.Order_details.Remove(odabranaNarudzba);
+                double zbroj = 0;
+
+                aktivnaNarudzba.ID_Order = GeneriranjeKljucaNarudzba(context);
+
+                aktivnaNarudzba.status = "aktivna";
+                foreach(Order_detail o in listaArtikalaZaNarudzbu)
+                {
+                    zbroj = zbroj + o.Cijena;
+                                     
+                }
+                aktivnaNarudzba.Ukupna_Cijena = zbroj;
+                context.Orders.Add(aktivnaNarudzba);
                 context.SaveChanges();
-                DohvatiDetaljeNarudzbe();
+
+                foreach (Order_detail o in listaArtikalaZaNarudzbu)
+                {
+                    o.ID_OrderDetails = GeneriranjeKljuca(context);
+                    o.ID_Order = aktivnaNarudzba.ID_Order;
+                    context.Order_details.Add(o);
+                    context.SaveChanges();
+                }
+
+                aktivnaNarudzba.ID_Order = GeneriranjeKljucaNarudzba(context);
+                dgvOdabranaPica.DataSource = null;
             }
         }
 
         private void btnRezervirajStol_Click(object sender, EventArgs e)
-        {
-            frmRezervacijaStola forma = new frmRezervacijaStola();
-            forma.ShowDialog();
-        }
-
-        private void btnPosalji_Click(object sender, EventArgs e)
         {
             frmRezervacijaStola forma = new frmRezervacijaStola();
             forma.ShowDialog();

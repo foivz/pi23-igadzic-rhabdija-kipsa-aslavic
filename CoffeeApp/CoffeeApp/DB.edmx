@@ -32,16 +32,18 @@
             <PropertyRef Name="ID_Order" />
           </Key>
           <Property Name="ID_Order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Naziv_Pica" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Kolicina" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Cijena" Type="float" Nullable="false" />
           <Property Name="Ukupna_Cijena" Type="float" Nullable="false" />
+          <Property Name="kupac" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_Korisnika" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Order details">
           <Key>
             <PropertyRef Name="ID_OrderDetails" />
           </Key>
           <Property Name="ID_OrderDetails" Type="int" Nullable="false" />
+          <Property Name="ID_Order" Type="int" Nullable="false" />
+          <Property Name="ID_Pica" Type="int" Nullable="false" />
           <Property Name="Naziv_Pica" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Kolicina" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Cijena" Type="float" Nullable="false" />
@@ -67,37 +69,37 @@
         </EntityType>
         <Association Name="FK_Order details_Artikli">
           <End Role="Artikli" Type="Self.Artikli" Multiplicity="1" />
-          <End Role="Order details" Type="Self.Order details" Multiplicity="0..1" />
+          <End Role="Order details" Type="Self.Order details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Artikli">
               <PropertyRef Name="ID_Pica" />
             </Principal>
             <Dependent Role="Order details">
-              <PropertyRef Name="ID_OrderDetails" />
+              <PropertyRef Name="ID_Pica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order details_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="Order details" Type="Self.Order details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID_Order" />
+            </Principal>
+            <Dependent Role="Order details">
+              <PropertyRef Name="ID_Order" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Korisnik">
           <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Korisnik">
               <PropertyRef Name="ID_Korisnika" />
             </Principal>
             <Dependent Role="Order">
-              <PropertyRef Name="ID_Order" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_Order details">
-          <End Role="Order details" Type="Self.Order details" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Order details">
-              <PropertyRef Name="ID_OrderDetails" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="ID_Order" />
+              <PropertyRef Name="ID_Korisnika" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -113,7 +115,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -155,12 +156,12 @@
             <End Role="Artikli" EntitySet="Artikli" />
             <End Role="Order details" EntitySet="Order details" />
           </AssociationSet>
+          <AssociationSet Name="FK_Order details_Order" Association="Self.FK_Order details_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Order details" EntitySet="Order details" />
+          </AssociationSet>
           <AssociationSet Name="FK_Order_Korisnik" Association="Self.FK_Order_Korisnik">
             <End Role="Korisnik" EntitySet="Korisnik" />
-            <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Order details" Association="Self.FK_Order_Order details">
-            <End Role="Order details" EntitySet="Order details" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
           <AssociationSet Name="FK_Stol_Korisnik" Association="Self.FK_Stol_Korisnik">
@@ -180,7 +181,7 @@
           <Property Name="Naziv_Pica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Kolicina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cijena" Type="Double" Nullable="false" />
-          <NavigationProperty Name="Order_details" Relationship="Self.FK_Order_details_Artikli" FromRole="Artikli" ToRole="Order_details" />
+          <NavigationProperty Name="Order_details" Relationship="PI2313_DBModel.FK_Order_details_Artikli" FromRole="Artikli" ToRole="Order_detail" />
         </EntityType>
         <EntityType Name="Korisnik">
           <Key>
@@ -194,20 +195,20 @@
           <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Uloga" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Smjena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Order" Relationship="Self.FK_Order_Korisnik" FromRole="Korisnik" ToRole="Order" />
           <NavigationProperty Name="Stols" Relationship="PI2313_DBModel.FK_Stol_Korisnik" FromRole="Korisnik" ToRole="Stol" />
+          <NavigationProperty Name="Orders" Relationship="PI2313_DBModel.FK_Order_Korisnik" FromRole="Korisnik" ToRole="Order" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="ID_Order" />
           </Key>
           <Property Name="ID_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Naziv_Pica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Kolicina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Cijena" Type="Double" Nullable="false" />
           <Property Name="Ukupna_Cijena" Type="Double" Nullable="false" />
-          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Order_Korisnik" FromRole="Order" ToRole="Korisnik" />
-          <NavigationProperty Name="Order_details" Relationship="Self.FK_Order_Order_details" FromRole="Order" ToRole="Order_details" />
+          <Property Name="kupac" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Korisnika" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Korisnik" Relationship="PI2313_DBModel.FK_Order_Korisnik" FromRole="Order" ToRole="Korisnik" />
+          <NavigationProperty Name="Order_details" Relationship="PI2313_DBModel.FK_Order_details_Order" FromRole="Order" ToRole="Order_detail" />
         </EntityType>
         <EntityType Name="Order_detail">
           <Key>
@@ -215,10 +216,12 @@
           </Key>
           <Property Name="ID_OrderDetails" Type="Int32" Nullable="false" />
           <Property Name="Naziv_Pica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Kolicina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kolicina" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Cijena" Type="Double" Nullable="false" />
-          <NavigationProperty Name="Artikli" Relationship="Self.FK_Order_details_Artikli" FromRole="Order_details" ToRole="Artikli" />
-          <NavigationProperty Name="Order" Relationship="Self.FK_Order_Order_details" FromRole="Order_details" ToRole="Order" />
+          <Property Name="ID_Order" Type="Int32" Nullable="false" />
+          <Property Name="ID_Pica" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Artikli" Relationship="PI2313_DBModel.FK_Order_details_Artikli" FromRole="Order_detail" ToRole="Artikli" />
+          <NavigationProperty Name="Order" Relationship="PI2313_DBModel.FK_Order_details_Order" FromRole="Order_detail" ToRole="Order" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -230,64 +233,28 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK_Order_details_Artikli">
-          <End Role="Artikli" Type="Self.Artikli" Multiplicity="1" />
-          <End Role="Order_details" Type="Self.Order_detail" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Artikli">
-              <PropertyRef Name="ID_Pica" />
-            </Principal>
-            <Dependent Role="Order_details">
-              <PropertyRef Name="ID_OrderDetails" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_Korisnik">
-          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Korisnik">
-              <PropertyRef Name="ID_Korisnika" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="ID_Order" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_Order_details">
-          <End Role="Order_details" Type="Self.Order_detail" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Order_details">
-              <PropertyRef Name="ID_OrderDetails" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="ID_Order" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="PI2313_DBEntities13" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Artiklis" EntityType="Self.Artikli" />
           <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="Order_details" EntityType="Self.Order_detail" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <AssociationSet Name="FK_Order_details_Artikli" Association="Self.FK_Order_details_Artikli">
-            <End Role="Artikli" EntitySet="Artiklis" />
-            <End Role="Order_details" EntitySet="Order_details" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Korisnik" Association="Self.FK_Order_Korisnik">
-            <End Role="Korisnik" EntitySet="Korisniks" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Order_details" Association="Self.FK_Order_Order_details">
-            <End Role="Order_details" EntitySet="Order_details" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
           <EntitySet Name="Stols" EntityType="PI2313_DBModel.Stol" />
           <AssociationSet Name="FK_Stol_Korisnik" Association="PI2313_DBModel.FK_Stol_Korisnik">
             <End Role="Korisnik" EntitySet="Korisniks" />
             <End Role="Stol" EntitySet="Stols" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_details_Artikli" Association="PI2313_DBModel.FK_Order_details_Artikli">
+            <End Role="Artikli" EntitySet="Artiklis" />
+            <End Role="Order_detail" EntitySet="Order_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Korisnik" Association="PI2313_DBModel.FK_Order_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisniks" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_details_Order" Association="PI2313_DBModel.FK_Order_details_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Order_detail" EntitySet="Order_details" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Stol">
@@ -309,6 +276,42 @@
             </Principal>
             <Dependent Role="Stol">
               <PropertyRef Name="ID_korisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_details_Artikli">
+          <End Type="PI2313_DBModel.Artikli" Role="Artikli" Multiplicity="1" />
+          <End Type="PI2313_DBModel.Order_detail" Role="Order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikli">
+              <PropertyRef Name="ID_Pica" />
+            </Principal>
+            <Dependent Role="Order_detail">
+              <PropertyRef Name="ID_Pica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Korisnik">
+          <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="1" />
+          <End Type="PI2313_DBModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="ID_Korisnika" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_Korisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_details_Order">
+          <End Type="PI2313_DBModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="PI2313_DBModel.Order_detail" Role="Order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID_Order" />
+            </Principal>
+            <Dependent Role="Order_detail">
+              <PropertyRef Name="ID_Order" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -345,10 +348,10 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="PI2313_DBModel.Order">
               <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="ID_Korisnika" ColumnName="ID_Korisnika" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="kupac" ColumnName="kupac" />
                 <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
-                <ScalarProperty Name="Naziv_Pica" ColumnName="Naziv_Pica" />
-                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
-                <ScalarProperty Name="Cijena" ColumnName="Cijena" />
                 <ScalarProperty Name="Ukupna_Cijena" ColumnName="Ukupna_Cijena" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -356,6 +359,8 @@
           <EntitySetMapping Name="Order_details">
             <EntityTypeMapping TypeName="PI2313_DBModel.Order_detail">
               <MappingFragment StoreEntitySet="Order details">
+                <ScalarProperty Name="ID_Pica" ColumnName="ID_Pica" />
+                <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
                 <ScalarProperty Name="ID_OrderDetails" ColumnName="ID_OrderDetails" />
                 <ScalarProperty Name="Naziv_Pica" ColumnName="Naziv_Pica" />
                 <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />

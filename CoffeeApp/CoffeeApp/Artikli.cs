@@ -14,11 +14,18 @@ namespace CoffeeApp
     
     public partial class Artikli
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Artikli()
+        {
+            this.Order_details = new HashSet<Order_detail>();
+        }
+    
         public int ID_Pica { get; set; }
         public string Naziv_Pica { get; set; }
         public string Kolicina { get; set; }
         public double Cijena { get; set; }
     
-        public virtual Order_detail Order_details { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_detail> Order_details { get; set; }
     }
 }

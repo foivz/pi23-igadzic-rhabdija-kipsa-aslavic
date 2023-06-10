@@ -110,6 +110,12 @@
     <Compile Include="frmKorisnikPocetna.Designer.cs">
       <DependentUpon>frmKorisnikPocetna.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPlacanjeNarudzbe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlacanjeNarudzbe.Designer.cs">
+      <DependentUpon>frmPlacanjeNarudzbe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPocetna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,8 +198,14 @@
     <EmbeddedResource Include="frmIzmjenaPica.resx">
       <DependentUpon>frmIzmjenaPica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmKonobarPocetna.resx">
+      <DependentUpon>frmKonobarPocetna.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKorisnikPocetna.resx">
       <DependentUpon>frmKorisnikPocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlacanjeNarudzbe.resx">
+      <DependentUpon>frmPlacanjeNarudzbe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPocetna.resx">
       <DependentUpon>frmPocetna.cs</DependentUpon>

@@ -81,3 +81,5 @@ C:\Users\Robert\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\C
 C:\Users\Robert\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.xml
 C:\Users\Robert\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Robert\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.csproj.CopyComplete
+C:\Users\Korisnik\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPlacanjeNarudzbe.resources
+C:\Users\Korisnik\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmKonobarPocetna.resources

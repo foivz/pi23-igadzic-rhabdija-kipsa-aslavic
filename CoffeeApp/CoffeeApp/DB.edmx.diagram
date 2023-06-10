@@ -5,16 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="76d72f5f7dd746ec91946f4444885ad9" Name="Diagram1">
-        <EntityTypeShape EntityType="PI2313_DBModel.Artikli" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2313_DBModel.Korisnik" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2313_DBModel.Order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2313_DBModel.Order_detail" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2313_DBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="PI2313_DBModel.FK_Order_details_Artikli" ManuallyRouted="false" />
-        <AssociationConnector Association="PI2313_DBModel.FK_Order_Korisnik" ManuallyRouted="false" />
-        <AssociationConnector Association="PI2313_DBModel.FK_Order_Order_details" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="PI2313_DBModel.Stol" Width="1.5" PointX="1.875" PointY="8.5" />
+        <EntityTypeShape EntityType="PI2313_DBModel.Artikli" Width="1.5" PointX="1.375" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2313_DBModel.Korisnik" Width="1.5" PointX="1.125" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2313_DBModel.Order" Width="1.5" PointX="4.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2313_DBModel.Order_detail" Width="1.5" PointX="4.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2313_DBModel.sysdiagram" Width="1.5" PointX="6.375" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2313_DBModel.Stol" Width="1.5" PointX="1.125" PointY="8.5" />
         <AssociationConnector Association="PI2313_DBModel.FK_Stol_Korisnik" />
+        <AssociationConnector Association="PI2313_DBModel.FK_Order_details_Artikli" />
+        <AssociationConnector Association="PI2313_DBModel.FK_Order_Korisnik" />
+        <AssociationConnector Association="PI2313_DBModel.FK_Order_details_Order" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
