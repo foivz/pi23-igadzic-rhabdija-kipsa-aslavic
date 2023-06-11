@@ -35,6 +35,8 @@ namespace CoffeeApp
                 dgvZaposlenici.Columns["Password"].Visible = false;
                 dgvZaposlenici.Columns["Username"].Visible = false;
                 dgvZaposlenici.Columns["Email"].Visible = false;
+                dgvZaposlenici.Columns["Stols"].Visible = false;
+                dgvZaposlenici.Columns["Orders"].Visible = false;
             }
         }
 

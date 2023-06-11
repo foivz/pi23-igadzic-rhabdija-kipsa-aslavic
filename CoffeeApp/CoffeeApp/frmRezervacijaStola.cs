@@ -76,15 +76,16 @@ namespace CoffeeApp
         {
             using (var context = new PI2313_DBEntities13())
             {
-                Stol odabraniStol = dgvStolovi.CurrentRow.DataBoundItem as Stol;
-                
+                if (dgvStolovi.CurrentRow != null)
+                {
+                    Stol odabraniStol = dgvStolovi.CurrentRow.DataBoundItem as Stol;
+                    context.Stols.Attach(odabraniStol);
 
-                context.Stols.Attach(odabraniStol);
+                    odabraniStol.status = "rezerviran";
+                    odabraniStol.ID_korisnika = UlogiraniKorisnik.ulogirani.ID_Korisnika;
 
-                odabraniStol.status = "rezerviran";
-                odabraniStol.ID_korisnika = UlogiraniKorisnik.ulogirani.ID_Korisnika;
-
-                context.SaveChanges();
+                    context.SaveChanges();
+                }
             }
             DohvatiStolove();
             ProvjeraPostoceRezervacije();
