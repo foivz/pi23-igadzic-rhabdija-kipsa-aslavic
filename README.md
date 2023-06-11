@@ -17,7 +17,7 @@ Projekt će se baviti izradom dinamične okoline u svrhu omogućavanja korisnici
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Registracija korisnika | Omogućavamo administratoru da registrira svoje nove konobare i dodjeljuje svakom konobaru (zaposleniku) korisničko ime i lozinku. | Andrija Slavić
-F02 | Prijava u aplikaciju | Registrirani korisnici se početkom rada moraju prijaviti u aplikaciju uz pomoć dobivenog korisničkog imena i lozinke, dok se kupci prijavlju sa dobivenim QR kodom ili unosom korisničkog imena i lozinke | Ivan Gadžić
+F02 | Prijava u aplikaciju | Registrirani korisnici se početkom rada moraju prijaviti u aplikaciju uz pomoć dobivenog korisničkog imena i lozinke, dok se kupci prijavlju sa unosom korisničkog imena i lozinke | Ivan Gadžić
 F03 | Kreiranje rasporeda za zaposlenike | Glavni konobar će moći krajem svakog tjedna kreirati raspored za zaposlenike kako bi mogli znati koje smjene odrađuje koji zaposlenik. | Robert Habdija
 F04 | Pregled kataloga proizvoda | Administrator uvijek ima uvid u stanje dostupnih pića na zalihi te uvijek može napraviti ispis trenutnog stanja. | Karlo Ipša
 F05 | Plaćanje naručenih pića | Konobar ima pregled narudžbi po stolovima i izradu računa na temelju odabrane narudžbe tj. može potvrditi sustavu da je narudžba plaćena. | Andrija Slavić
