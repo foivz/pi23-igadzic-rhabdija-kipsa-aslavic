@@ -9,6 +9,7 @@
     <Property Name="Kolicina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Cijena" Type="Double" Nullable="false" />
     <NavigationProperty Name="Order_details" Relationship="PI2313_DBModel.FK_Order_details_Artikli" FromRole="Artikli" ToRole="Order_detail" />
+    <Property Name="Dostupno_Komada" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Korisnik">
     <Key>

@@ -44,25 +44,46 @@ namespace CoffeeApp
         {
             using(var context = new PI2313_DBEntities13())
             {
-                Artikli selektiranoPice = dgvUpravljajKatalogom.CurrentRow.DataBoundItem as Artikli;
-                context.Artiklis.Attach(selektiranoPice);
-                context.Artiklis.Remove(selektiranoPice);
-                context.SaveChanges();
+                if (dgvUpravljajKatalogom.CurrentRow != null)
+                {
+                    Artikli selektiranoPice = dgvUpravljajKatalogom.CurrentRow.DataBoundItem as Artikli;
+                    context.Artiklis.Attach(selektiranoPice);
+                    context.Artiklis.Remove(selektiranoPice);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Morate odabrati piće!");
+                }
                 DohvatiKatalogPica();
             }
         }
 
         private void btnUrediPice_Click(object sender, EventArgs e)
         {
-            Artikli selektiranoPice = dgvUpravljajKatalogom.CurrentRow.DataBoundItem as Artikli;
-            frmIzmjenaPica forma = new frmIzmjenaPica(selektiranoPice);
-            forma.ShowDialog();
+            if(dgvUpravljajKatalogom.CurrentRow != null)
+            {
+                Artikli selektiranoPice = dgvUpravljajKatalogom.CurrentRow.DataBoundItem as Artikli;
+                frmIzmjenaPica forma = new frmIzmjenaPica(selektiranoPice);
+                forma.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Morate odabrati piće!");
+            }
             DohvatiKatalogPica();
         }
 
         private void btnDodajPice_Click(object sender, EventArgs e)
         {
             frmDodajPice forma = new frmDodajPice();
+            forma.ShowDialog();
+            DohvatiKatalogPica();
+        }
+
+        private void btnInventura_Click(object sender, EventArgs e)
+        {
+            frmInventura forma = new frmInventura();
             forma.ShowDialog();
             DohvatiKatalogPica();
         }

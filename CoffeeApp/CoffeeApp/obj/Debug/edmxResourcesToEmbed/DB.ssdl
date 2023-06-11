@@ -8,6 +8,7 @@
     <Property Name="Naziv_Pica" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Kolicina" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Cijena" Type="float" Nullable="false" />
+    <Property Name="Dostupno_Komada" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Korisnik">
     <Key>
