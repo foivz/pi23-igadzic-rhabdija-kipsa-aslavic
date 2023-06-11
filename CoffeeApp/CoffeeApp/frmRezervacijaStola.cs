@@ -86,6 +86,10 @@ namespace CoffeeApp
 
                     context.SaveChanges();
                 }
+                else
+                {
+                    MessageBox.Show("Morate odabrati stol!");
+                }
             }
             DohvatiStolove();
             ProvjeraPostoceRezervacije();

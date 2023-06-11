@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Artiklis">
       <EntityTypeMapping TypeName="PI2313_DBModel.Artikli">
         <MappingFragment StoreEntitySet="Artikli">
+          <ScalarProperty Name="Dostupno_Komada" ColumnName="Dostupno_Komada" />
           <ScalarProperty Name="ID_Pica" ColumnName="ID_Pica" />
           <ScalarProperty Name="Naziv_Pica" ColumnName="Naziv_Pica" />
           <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />

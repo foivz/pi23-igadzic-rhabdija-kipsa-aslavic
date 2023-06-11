@@ -61,5 +61,11 @@ namespace CoffeeApp
             form.ShowDialog();
             DohvatiZaposlenika();
         }
+
+        private void btnPlacanjeNarudzbe_Click(object sender, EventArgs e)
+        {
+            frmPlacanjeNarudzbe forma = new frmPlacanjeNarudzbe();
+            forma.ShowDialog();
+        }
     }
 }

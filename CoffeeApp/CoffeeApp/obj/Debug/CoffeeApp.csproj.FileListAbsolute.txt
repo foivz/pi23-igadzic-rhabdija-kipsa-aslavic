@@ -112,3 +112,4 @@ C:\Users\Infoing\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\
 C:\Users\Infoing\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.csproj.CopyComplete
 C:\Users\Infoing\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.exe
 C:\Users\Infoing\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.pdb
+C:\Users\Infoing\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmInventura.resources
