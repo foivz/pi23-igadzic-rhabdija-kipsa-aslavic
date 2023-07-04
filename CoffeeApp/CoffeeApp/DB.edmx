@@ -13,6 +13,7 @@
           <Property Name="Naziv_Pica" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Kolicina" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Cijena" Type="float" Nullable="false" />
+          <Property Name="Dostupno_Komada" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Korisnik">
           <Key>
@@ -36,6 +37,7 @@
           <Property Name="kupac" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ID_Korisnika" Type="int" Nullable="false" />
+          <Property Name="konobar" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Order details">
           <Key>
@@ -56,6 +58,9 @@
           <Property Name="opis" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ID_korisnika" Type="int" />
+          <Property Name="datum_rezervacije" Type="datetime" />
+          <Property Name="vrijeme_rezervacije_od" Type="datetime" />
+          <Property Name="vrijeme_rezervacije_do" Type="datetime" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -182,6 +187,7 @@
           <Property Name="Kolicina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cijena" Type="Double" Nullable="false" />
           <NavigationProperty Name="Order_details" Relationship="PI2313_DBModel.FK_Order_details_Artikli" FromRole="Artikli" ToRole="Order_detail" />
+          <Property Name="Dostupno_Komada" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Korisnik">
           <Key>
@@ -209,6 +215,7 @@
           <Property Name="ID_Korisnika" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Korisnik" Relationship="PI2313_DBModel.FK_Order_Korisnik" FromRole="Order" ToRole="Korisnik" />
           <NavigationProperty Name="Order_details" Relationship="PI2313_DBModel.FK_Order_details_Order" FromRole="Order" ToRole="Order_detail" />
+          <Property Name="konobar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Order_detail">
           <Key>
@@ -266,6 +273,9 @@
           <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ID_korisnika" Type="Int32" />
           <NavigationProperty Name="Korisnik" Relationship="PI2313_DBModel.FK_Stol_Korisnik" FromRole="Stol" ToRole="Korisnik" />
+          <Property Name="datum_rezervacije" Type="DateTime" Precision="3" />
+          <Property Name="vrijeme_rezervacije_od" Type="DateTime" Precision="3" />
+          <Property Name="vrijeme_rezervacije_do" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="FK_Stol_Korisnik">
           <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="0..1" />
@@ -324,6 +334,7 @@
           <EntitySetMapping Name="Artiklis">
             <EntityTypeMapping TypeName="PI2313_DBModel.Artikli">
               <MappingFragment StoreEntitySet="Artikli">
+                <ScalarProperty Name="Dostupno_Komada" ColumnName="Dostupno_Komada" />
                 <ScalarProperty Name="ID_Pica" ColumnName="ID_Pica" />
                 <ScalarProperty Name="Naziv_Pica" ColumnName="Naziv_Pica" />
                 <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
@@ -348,6 +359,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="PI2313_DBModel.Order">
               <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="konobar" ColumnName="konobar" />
                 <ScalarProperty Name="ID_Korisnika" ColumnName="ID_Korisnika" />
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="kupac" ColumnName="kupac" />
@@ -382,6 +394,9 @@
           <EntitySetMapping Name="Stols">
             <EntityTypeMapping TypeName="PI2313_DBModel.Stol">
               <MappingFragment StoreEntitySet="Stol">
+                <ScalarProperty Name="vrijeme_rezervacije_do" ColumnName="vrijeme_rezervacije_do" />
+                <ScalarProperty Name="vrijeme_rezervacije_od" ColumnName="vrijeme_rezervacije_od" />
+                <ScalarProperty Name="datum_rezervacije" ColumnName="datum_rezervacije" />
                 <ScalarProperty Name="ID_korisnika" ColumnName="ID_korisnika" />
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="opis" ColumnName="opis" />

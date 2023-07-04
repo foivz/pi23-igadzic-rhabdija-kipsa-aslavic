@@ -8,6 +8,7 @@
     <Property Name="Naziv_Pica" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Kolicina" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Cijena" Type="float" Nullable="false" />
+    <Property Name="Dostupno_Komada" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Korisnik">
     <Key>
@@ -31,6 +32,7 @@
     <Property Name="kupac" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="ID_Korisnika" Type="int" Nullable="false" />
+    <Property Name="konobar" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Order details">
     <Key>
@@ -51,6 +53,9 @@
     <Property Name="opis" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="ID_korisnika" Type="int" />
+    <Property Name="datum_rezervacije" Type="datetime" />
+    <Property Name="vrijeme_rezervacije_od" Type="datetime" />
+    <Property Name="vrijeme_rezervacije_do" Type="datetime" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

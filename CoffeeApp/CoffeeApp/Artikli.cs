@@ -24,6 +24,7 @@ namespace CoffeeApp
         public string Naziv_Pica { get; set; }
         public string Kolicina { get; set; }
         public double Cijena { get; set; }
+        public int Dostupno_Komada { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_detail> Order_details { get; set; }

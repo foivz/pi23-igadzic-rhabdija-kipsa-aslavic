@@ -51,7 +51,8 @@ namespace CoffeeApp
                 Order odabranaNarudzba = dgvNarudzbe.CurrentRow.DataBoundItem as Order;
                 
                 context.Orders.Attach(odabranaNarudzba);
-                odabranaNarudzba.status = "placeno";              
+                odabranaNarudzba.status = "placeno";
+                odabranaNarudzba.konobar = UlogiraniKorisnik.ulogirani.Ime + " " + UlogiraniKorisnik.ulogirani.Prezime;
                 context.SaveChanges();
             }
             DohvatiNarudzbe();           
