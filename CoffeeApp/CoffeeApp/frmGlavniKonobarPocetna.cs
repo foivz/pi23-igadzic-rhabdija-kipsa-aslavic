@@ -35,6 +35,8 @@ namespace CoffeeApp
                 dgvZaposlenici.Columns["Password"].Visible = false;
                 dgvZaposlenici.Columns["Username"].Visible = false;
                 dgvZaposlenici.Columns["Email"].Visible = false;
+                dgvZaposlenici.Columns["Stols"].Visible = false;
+                dgvZaposlenici.Columns["Orders"].Visible = false;
             }
         }
 
@@ -58,6 +60,12 @@ namespace CoffeeApp
             frmPromjenaRasporeda form = new frmPromjenaRasporeda(selektirani);
             form.ShowDialog();
             DohvatiZaposlenika();
+        }
+
+        private void btnPlacanjeNarudzbe_Click(object sender, EventArgs e)
+        {
+            frmPlacanjeNarudzbe forma = new frmPlacanjeNarudzbe();
+            forma.ShowDialog();
         }
     }
 }

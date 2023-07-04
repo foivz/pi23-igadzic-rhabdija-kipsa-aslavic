@@ -29,12 +29,14 @@ namespace CoffeeApp
 
         public void DohvatiKorisnike()
         {
+            
             using(var context = new PI2313_DBEntities13())
             {
                 var query = from p in context.Korisniks
                             select p;
                 dgvUpravljanjeKorsincima.DataSource = query.ToList();
-                dgvUpravljanjeKorsincima.Columns["Order"].Visible = false;
+                dgvUpravljanjeKorsincima.Columns["Stols"].Visible = false;
+                dgvUpravljanjeKorsincima.Columns["Orders"].Visible = false;
             }
         }
 

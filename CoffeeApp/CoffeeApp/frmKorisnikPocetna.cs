@@ -70,10 +70,33 @@ namespace CoffeeApp
             }
         }
 
+        public void ProvjeraKolicine(Artikli selectedArtikl)
+        {
+            using (var context = new PI2313_DBEntities13())
+            {
+                double kolicinaSelectedArtikla = 0;
+                foreach (Order_detail o in listaArtikalaZaNarudzbu)
+                {
+                    if (o.Naziv_Pica == selectedArtikl.Naziv_Pica)
+                    {
+                        kolicinaSelectedArtikla += 1;
+                    }
+                }
+                if (selectedArtikl.Dostupno_Komada == kolicinaSelectedArtikla)
+                {
+                    btnDodaj.Enabled = false;
+                }
+                else
+                {
+                    btnDodaj.Enabled = true;
+                }
+            }
+        }
+
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             if (dgvArtikli.SelectedRows.Count > 0)
-            {               
+            {
                 Artikli selctedArtikls = dgvArtikli.CurrentRow.DataBoundItem as Artikli;
 
                 if (selctedArtikls != null)
@@ -92,7 +115,8 @@ namespace CoffeeApp
                         listaArtikalaZaNarudzbu.Add(order_Detail);
                     }                    
                 }
-            DohvatiDetaljeNarudzbe();
+                DohvatiDetaljeNarudzbe();
+                ProvjeraKolicine(selctedArtikls);
             }
         }
 
@@ -109,6 +133,7 @@ namespace CoffeeApp
                         listaArtikalaZaNarudzbu.Remove(selectedDetail);
                     }
                     DohvatiDetaljeNarudzbe();
+                    ProvjeraKolicine(dgvArtikli.CurrentRow.DataBoundItem as Artikli);
                 }
             }
         }
@@ -159,8 +184,27 @@ namespace CoffeeApp
                     context.SaveChanges();
                 }
 
+                foreach (Artikli row in context.Artiklis)
+                {
+                    var brojacArtikla = row.Dostupno_Komada;
+                    foreach (Order_detail stavka in listaArtikalaZaNarudzbu)
+                    {
+                        if (stavka.Naziv_Pica == row.Naziv_Pica)
+                        {
+                            brojacArtikla -= 1;
+                        }
+                    }
+                    context.Artiklis.Attach(row);
+                    row.Dostupno_Komada = brojacArtikla;
+                }
+                context.SaveChanges();
+
                 aktivnaNarudzba.ID_Order = GeneriranjeKljucaNarudzba(context);
                 dgvOdabranaPica.DataSource = null;
+
+                var query = from p in context.Artiklis
+                            select p;
+                dgvArtikli.DataSource = query.ToList();
             }
         }
 
@@ -168,6 +212,15 @@ namespace CoffeeApp
         {
             frmRezervacijaStola forma = new frmRezervacijaStola();
             forma.ShowDialog();
+        }
+
+        private void dgvArtikli_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvArtikli.SelectedRows.Count > 0)
+            {
+                Artikli selectedArtikl = dgvArtikli.CurrentRow.DataBoundItem as Artikli;
+                ProvjeraKolicine(selectedArtikl);
+            }
         }
     }
 }
