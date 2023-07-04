@@ -36,6 +36,7 @@ namespace CoffeeApp
                 aktivnaNarudzba.ID_Order=GeneriranjeKljucaNarudzba(context);
                 aktivnaNarudzba.ID_Korisnika = UlogiraniKorisnik.ulogirani.ID_Korisnika;
                 aktivnaNarudzba.kupac = UlogiraniKorisnik.ulogirani.Username;
+                aktivnaNarudzba.konobar = "";
             }
         }
         

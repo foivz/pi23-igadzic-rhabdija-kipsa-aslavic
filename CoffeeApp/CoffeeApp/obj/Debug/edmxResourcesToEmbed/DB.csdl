@@ -37,6 +37,7 @@
     <Property Name="ID_Korisnika" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Korisnik" Relationship="PI2313_DBModel.FK_Order_Korisnik" FromRole="Order" ToRole="Korisnik" />
     <NavigationProperty Name="Order_details" Relationship="PI2313_DBModel.FK_Order_details_Order" FromRole="Order" ToRole="Order_detail" />
+    <Property Name="konobar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Order_detail">
     <Key>
@@ -94,6 +95,9 @@
     <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ID_korisnika" Type="Int32" />
     <NavigationProperty Name="Korisnik" Relationship="PI2313_DBModel.FK_Stol_Korisnik" FromRole="Stol" ToRole="Korisnik" />
+    <Property Name="datum_rezervacije" Type="DateTime" Precision="3" />
+    <Property Name="vrijeme_rezervacije_od" Type="DateTime" Precision="3" />
+    <Property Name="vrijeme_rezervacije_do" Type="DateTime" Precision="3" />
   </EntityType>
   <Association Name="FK_Stol_Korisnik">
     <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="0..1" />

@@ -18,6 +18,9 @@ namespace CoffeeApp
         public string opis { get; set; }
         public string status { get; set; }
         public Nullable<int> ID_korisnika { get; set; }
+        public Nullable<System.DateTime> datum_rezervacije { get; set; }
+        public Nullable<System.DateTime> vrijeme_rezervacije_od { get; set; }
+        public Nullable<System.DateTime> vrijeme_rezervacije_do { get; set; }
     
         public virtual Korisnik Korisnik { get; set; }
     }

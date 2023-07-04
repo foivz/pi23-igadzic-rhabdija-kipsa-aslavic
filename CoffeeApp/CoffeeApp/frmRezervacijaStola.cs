@@ -24,6 +24,11 @@ namespace CoffeeApp
             btnPonisti.Enabled = false;
             DohvatiStolove();
             ProvjeraPostoceRezervacije();
+            dtpVrijemeRezervacijeOd.Format= DateTimePickerFormat.Time;
+            dtpVrijemeRezervacijeDo.Format = DateTimePickerFormat.Time;
+            dtpVrijemeRezervacijeOd.ShowUpDown = true;
+            dtpVrijemeRezervacijeDo.ShowUpDown = true;
+
         }
 
         private void ProvjeraPostoceRezervacije()
@@ -52,6 +57,9 @@ namespace CoffeeApp
                 dgvStolovi.Columns["ID_stol"].Visible = false;
                 dgvStolovi.Columns["ID_korisnika"].Visible = false;
                 dgvStolovi.Columns["Korisnik"].Visible = false;
+                dgvStolovi.Columns["datum_rezervacije"].Visible = false;
+                dgvStolovi.Columns["vrijeme_rezervacije_od"].Visible = false;
+                dgvStolovi.Columns["vrijeme_rezervacije_do"].Visible = false;
 
                 CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[dgvStolovi.DataSource];
                 currencyManager1.SuspendBinding();               
@@ -76,20 +84,18 @@ namespace CoffeeApp
         {
             using (var context = new PI2313_DBEntities13())
             {
-                if (dgvStolovi.CurrentRow != null)
-                {
-                    Stol odabraniStol = dgvStolovi.CurrentRow.DataBoundItem as Stol;
-                    context.Stols.Attach(odabraniStol);
+                Stol odabraniStol = dgvStolovi.CurrentRow.DataBoundItem as Stol;
+                
 
-                    odabraniStol.status = "rezerviran";
-                    odabraniStol.ID_korisnika = UlogiraniKorisnik.ulogirani.ID_Korisnika;
+                context.Stols.Attach(odabraniStol);
 
-                    context.SaveChanges();
-                }
-                else
-                {
-                    MessageBox.Show("Morate odabrati stol!");
-                }
+                odabraniStol.status = "rezerviran";
+                odabraniStol.ID_korisnika = UlogiraniKorisnik.ulogirani.ID_Korisnika;
+                odabraniStol.datum_rezervacije = dtpDatumRezervacije.Value;
+                odabraniStol.vrijeme_rezervacije_od = dtpVrijemeRezervacijeOd.Value;
+                odabraniStol.vrijeme_rezervacije_do = dtpVrijemeRezervacijeDo.Value;
+
+                context.SaveChanges();
             }
             DohvatiStolove();
             ProvjeraPostoceRezervacije();
@@ -112,6 +118,9 @@ namespace CoffeeApp
 
                             odabraniStol.status = "slobodan";
                             odabraniStol.ID_korisnika = null;
+                            odabraniStol.datum_rezervacije = null;
+                            odabraniStol.vrijeme_rezervacije_od = null;
+                            odabraniStol.vrijeme_rezervacije_do = null;
 
                             context.SaveChanges();
                         }

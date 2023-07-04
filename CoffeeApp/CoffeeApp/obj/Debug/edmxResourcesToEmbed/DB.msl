@@ -29,6 +29,7 @@
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="PI2313_DBModel.Order">
         <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="konobar" ColumnName="konobar" />
           <ScalarProperty Name="ID_Korisnika" ColumnName="ID_Korisnika" />
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="kupac" ColumnName="kupac" />
@@ -63,6 +64,9 @@
     <EntitySetMapping Name="Stols">
       <EntityTypeMapping TypeName="PI2313_DBModel.Stol">
         <MappingFragment StoreEntitySet="Stol">
+          <ScalarProperty Name="vrijeme_rezervacije_do" ColumnName="vrijeme_rezervacije_do" />
+          <ScalarProperty Name="vrijeme_rezervacije_od" ColumnName="vrijeme_rezervacije_od" />
+          <ScalarProperty Name="datum_rezervacije" ColumnName="datum_rezervacije" />
           <ScalarProperty Name="ID_korisnika" ColumnName="ID_korisnika" />
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="opis" ColumnName="opis" />
