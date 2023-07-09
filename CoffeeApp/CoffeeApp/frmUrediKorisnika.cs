@@ -12,17 +12,19 @@ namespace CoffeeApp
 {
     public partial class frmUrediKorisnika : Form
     {
-        public frmUrediKorisnika(Korisnik selektiraniKorisnik)
+        public frmUrediKorisnika(Korisnik selektiraniKorisnik, PI2313_DBEntities13 context1)
         {
             InitializeComponent();
             this.selektirani = selektiraniKorisnik;
+            this.context = context1;
         }
         public Korisnik selektirani;
+        public PI2313_DBEntities13 context;
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            using (var contex = new PI2313_DBEntities13())
-            {
+            //using (var contex = new PI2313_DBEntities13())
+            //{
                 string ime = txtbIme.Text.ToString();
                 string prezime = txtbPrezime.Text.ToString();
                 string email = txtbEmail.Text.ToString();
@@ -30,7 +32,7 @@ namespace CoffeeApp
                 string lozinka = txtbLozinka.Text.ToString();
                 int uloga = cmbUloga.SelectedIndex + 1;
 
-                contex.Korisniks.Attach(selektirani);
+                context.Korisniks.Attach(selektirani);
 
                 selektirani.Ime = ime;
                 selektirani.Prezime = prezime;
@@ -39,8 +41,8 @@ namespace CoffeeApp
                 selektirani.Password = lozinka;
                 selektirani.Uloga = uloga;
 
-                contex.SaveChanges();
-            }
+                context.SaveChanges();
+            //}
             Close();
         }
 
@@ -77,7 +79,7 @@ namespace CoffeeApp
         {
             List<Uloga> uloge;
 
-            using(var context = new PI2313_DBEntities13())
+            //using(var context = new PI2313_DBEntities13())
             {
                 uloge = context.Ulogas.ToList();
             }

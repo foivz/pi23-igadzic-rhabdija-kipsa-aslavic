@@ -185,6 +185,7 @@
     <Compile Include="frmRezervacijaStola.Designer.cs">
       <DependentUpon>frmRezervacijaStola.cs</DependentUpon>
     </Compile>
+    <Compile Include="Smjena.code.cs" />
     <Compile Include="Smjena.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>

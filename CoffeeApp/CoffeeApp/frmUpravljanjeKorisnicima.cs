@@ -34,7 +34,7 @@ namespace CoffeeApp
             {
                 var query = from p in context.Korisniks
                             select p;
-                //var listKorisnici = query.ToList();
+
                 dgvUpravljanjeKorsincima.DataSource = query.ToList();
                 dgvUpravljanjeKorsincima.Columns["Stols"].Visible = false;
                 dgvUpravljanjeKorsincima.Columns["Orders"].Visible = false;
@@ -64,9 +64,29 @@ namespace CoffeeApp
 
         private void btnUrediKorisnika_Click(object sender, EventArgs e)
         {
-            Korisnik selektirani = dgvUpravljanjeKorsincima.CurrentRow.DataBoundItem as Korisnik;
-            frmUrediKorisnika forma = new frmUrediKorisnika(selektirani);
-            forma.ShowDialog();
+            if (dgvUpravljanjeKorsincima.CurrentRow == null)
+            {
+                MessageBox.Show("Morate odabrati zaposlenika");
+            }
+            else
+            {
+                var trazeniID_row = dgvUpravljanjeKorsincima.CurrentRow;
+                var trID = trazeniID_row.Cells["ID_Korisnika"];
+                int ID = int.Parse(trID.Value.ToString());
+
+                using (var context = new PI2313_DBEntities13())
+                {
+
+                    var query = from p in context.Korisniks
+                                where p.ID_Korisnika == ID
+                                select p;
+                    var res = query.ToList();
+                    Korisnik selektirani = res[0] as Korisnik;
+
+                    frmUrediKorisnika forma = new frmUrediKorisnika(selektirani, context);
+                    forma.ShowDialog();
+                }
+            }
             DohvatiKorisnike();
         }
     }

@@ -32,7 +32,7 @@ namespace CoffeeApp
                                 on p.Uloga equals fk1.ID_uloga
                             join fk2 in context.Smjenas
                                 on p.Smjena equals fk2.ID_smjena
-                            where p.Uloga == 3
+                            where p.Uloga == 3 && p.Status_Racuna != "Neaktivan"
                             select new
                             {
                                 ID_Korisnika = p.ID_Korisnika,
@@ -79,7 +79,7 @@ namespace CoffeeApp
                     var res = query.ToList();
                     Korisnik selektirani = res[0] as Korisnik;
 
-                    frmPromjenaRasporeda form = new frmPromjenaRasporeda(selektirani);
+                    frmPromjenaRasporeda form = new frmPromjenaRasporeda(selektirani, context);
                     form.ShowDialog();
                 }
             }
