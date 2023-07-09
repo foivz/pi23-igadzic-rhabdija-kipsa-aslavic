@@ -13,8 +13,8 @@ namespace CoffeeApp
         {
             ProvjeriLozinku(password, passwordrep);
             VerificirajRegistraciju(ime, prezime, email, username, password, passwordrep);
-            string uloga = "Korisnik";
-            string smjena = "Prijepodne";
+            int uloga = 4;
+            int smjena = 1;
             repozitorij.DodajKorisnika(ime, prezime, email, username, password, uloga, smjena);
         }
 

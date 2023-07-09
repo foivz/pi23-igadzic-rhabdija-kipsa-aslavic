@@ -40,49 +40,48 @@
             // 
             // txtbPrezime
             // 
-            this.txtbPrezime.Location = new System.Drawing.Point(108, 105);
-            this.txtbPrezime.Margin = new System.Windows.Forms.Padding(5);
+            this.txtbPrezime.Location = new System.Drawing.Point(81, 85);
+            this.txtbPrezime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbPrezime.Name = "txtbPrezime";
-            this.txtbPrezime.Size = new System.Drawing.Size(204, 22);
+            this.txtbPrezime.Size = new System.Drawing.Size(154, 20);
             this.txtbPrezime.TabIndex = 11;
             // 
             // txtbIme
             // 
-            this.txtbIme.Location = new System.Drawing.Point(108, 43);
-            this.txtbIme.Margin = new System.Windows.Forms.Padding(5);
+            this.txtbIme.Location = new System.Drawing.Point(81, 35);
+            this.txtbIme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbIme.Name = "txtbIme";
-            this.txtbIme.Size = new System.Drawing.Size(204, 22);
+            this.txtbIme.Size = new System.Drawing.Size(154, 20);
             this.txtbIme.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 108);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(12, 88);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Prezime";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(12, 40);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 16);
+            this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Ime:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 174);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(12, 141);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 16);
+            this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 38;
-            this.label6.Text = "Uloga :";
+            this.label6.Text = "Smjena:";
             // 
             // cmbSmjena
             // 
@@ -91,17 +90,18 @@
             "Prijepodne",
             "Poslijepodne",
             "Vecer"});
-            this.cmbSmjena.Location = new System.Drawing.Point(108, 171);
-            this.cmbSmjena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbSmjena.Location = new System.Drawing.Point(81, 139);
+            this.cmbSmjena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbSmjena.Name = "cmbSmjena";
-            this.cmbSmjena.Size = new System.Drawing.Size(204, 24);
+            this.cmbSmjena.Size = new System.Drawing.Size(154, 21);
             this.cmbSmjena.TabIndex = 37;
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(19, 235);
+            this.btnSpremi.Location = new System.Drawing.Point(14, 191);
+            this.btnSpremi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(145, 50);
+            this.btnSpremi.Size = new System.Drawing.Size(109, 41);
             this.btnSpremi.TabIndex = 39;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
@@ -109,9 +109,10 @@
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(202, 235);
+            this.btnOdustani.Location = new System.Drawing.Point(152, 191);
+            this.btnOdustani.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(145, 50);
+            this.btnOdustani.Size = new System.Drawing.Size(109, 41);
             this.btnOdustani.TabIndex = 40;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
@@ -119,9 +120,9 @@
             // 
             // frmPromjenaRasporeda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 331);
+            this.ClientSize = new System.Drawing.Size(281, 269);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.label6);
@@ -130,9 +131,10 @@
             this.Controls.Add(this.txtbIme);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPromjenaRasporeda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPromjenaRasporeda";
+            this.Text = "Promjena rasporeda";
             this.Load += new System.EventHandler(this.frmPromjenaRasporeda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

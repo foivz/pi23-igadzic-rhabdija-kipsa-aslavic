@@ -21,10 +21,13 @@
     <Property Name="Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Uloga" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Smjena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Uloga" Type="Int32" Nullable="false" />
+    <Property Name="Smjena" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Stols" Relationship="PI2313_DBModel.FK_Stol_Korisnik" FromRole="Korisnik" ToRole="Stol" />
     <NavigationProperty Name="Orders" Relationship="PI2313_DBModel.FK_Order_Korisnik" FromRole="Korisnik" ToRole="Order" />
+    <Property Name="Status_Racuna" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Uloga1" Relationship="PI2313_DBModel.FK_Uloga_Korisnik" FromRole="Korisnik" ToRole="Uloga" />
+    <NavigationProperty Name="Smjena1" Relationship="PI2313_DBModel.FK_Smjena_Korisnik" FromRole="Korisnik" ToRole="Smjena" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -85,6 +88,16 @@
       <End Role="Order" EntitySet="Orders" />
       <End Role="Order_detail" EntitySet="Order_details" />
     </AssociationSet>
+    <EntitySet Name="Ulogas" EntityType="PI2313_DBModel.Uloga" />
+    <AssociationSet Name="FK_Uloga_Korisnik" Association="PI2313_DBModel.FK_Uloga_Korisnik">
+      <End Role="Uloga" EntitySet="Ulogas" />
+      <End Role="Korisnik" EntitySet="Korisniks" />
+    </AssociationSet>
+    <EntitySet Name="Smjenas" EntityType="PI2313_DBModel.Smjena" />
+    <AssociationSet Name="FK_Smjena_Korisnik" Association="PI2313_DBModel.FK_Smjena_Korisnik">
+      <End Role="Smjena" EntitySet="Smjenas" />
+      <End Role="Korisnik" EntitySet="Korisniks" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Stol">
     <Key>
@@ -144,6 +157,46 @@
       </Principal>
       <Dependent Role="Order_detail">
         <PropertyRef Name="ID_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Uloga">
+    <Key>
+      <PropertyRef Name="ID_uloga" />
+    </Key>
+    <Property Name="ID_uloga" Type="Int32" Nullable="false" />
+    <Property Name="Naziv_uloge" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Korisniks" Relationship="PI2313_DBModel.FK_Uloga_Korisnik" FromRole="Uloga" ToRole="Korisnik" />
+  </EntityType>
+  <Association Name="FK_Uloga_Korisnik">
+    <End Type="PI2313_DBModel.Uloga" Role="Uloga" Multiplicity="1" />
+    <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uloga">
+        <PropertyRef Name="ID_uloga" />
+      </Principal>
+      <Dependent Role="Korisnik">
+        <PropertyRef Name="Uloga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Smjena">
+    <Key>
+      <PropertyRef Name="ID_smjena" />
+    </Key>
+    <Property Name="ID_smjena" Type="Int32" Nullable="false" />
+    <Property Name="Naziv_smjene" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Korisniks" Relationship="PI2313_DBModel.FK_Smjena_Korisnik" FromRole="Smjena" ToRole="Korisnik" />
+  </EntityType>
+  <Association Name="FK_Smjena_Korisnik">
+    <End Type="PI2313_DBModel.Smjena" Role="Smjena" Multiplicity="1" />
+    <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Smjena">
+        <PropertyRef Name="ID_smjena" />
+      </Principal>
+      <Dependent Role="Korisnik">
+        <PropertyRef Name="Smjena" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

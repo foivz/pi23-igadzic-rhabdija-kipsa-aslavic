@@ -34,25 +34,25 @@ namespace CoffeeApp
             Korisnik dohvaceniKorisnik = repozitorij.DohvatiKorisnika(username, password);
             ulogirani = dohvaceniKorisnik;
             UlogiraniKorisnik.ulogirani = dohvaceniKorisnik;
-            if (dohvaceniKorisnik.Uloga == "Korisnik")
+            if (dohvaceniKorisnik.Uloga == 4 && dohvaceniKorisnik.Status_Racuna == "Aktivan")
             {
                 this.Hide();
                 frmKorisnikPocetna forma = new frmKorisnikPocetna();
                 forma.ShowDialog();
             }
-            if(dohvaceniKorisnik.Uloga == "Admin")
+            if(dohvaceniKorisnik.Uloga == 1 && dohvaceniKorisnik.Status_Racuna == "Aktivan")
             {
                 this.Hide();
                 frmAdminPocetna forma = new frmAdminPocetna();
                 forma.ShowDialog();
             }
-            if(dohvaceniKorisnik.Uloga == "Glavni konobar")
+            if(dohvaceniKorisnik.Uloga == 2 && dohvaceniKorisnik.Status_Racuna == "Aktivan")
             {
                 this.Hide();
                 frmGlavniKonobarPocetna forma = new frmGlavniKonobarPocetna();
                 forma.ShowDialog();
             }
-            if(dohvaceniKorisnik.Uloga == "Konobar")
+            if(dohvaceniKorisnik.Uloga == 3 && dohvaceniKorisnik.Status_Racuna == "Aktivan")
             {
                 this.Hide();
                 frmKonobarPocetna forma = new frmKonobarPocetna();
