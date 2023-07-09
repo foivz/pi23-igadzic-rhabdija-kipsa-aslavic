@@ -27,12 +27,15 @@ namespace CoffeeApp
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public string Uloga { get; set; }
-        public string Smjena { get; set; }
+        public int Uloga { get; set; }
+        public int Smjena { get; set; }
+        public string Status_Racuna { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Stol> Stols { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+        public virtual Uloga Uloga1 { get; set; }
+        public virtual Smjena Smjena1 { get; set; }
     }
 }

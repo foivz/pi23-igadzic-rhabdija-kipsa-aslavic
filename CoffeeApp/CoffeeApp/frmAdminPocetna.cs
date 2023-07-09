@@ -42,18 +42,30 @@ namespace CoffeeApp
 
         private void btnPromjeniRaspored_Click(object sender, EventArgs e)
         {
-            
+
             if (dgvZaposlenici.CurrentRow == null)
             {
                 MessageBox.Show("Morate odabrati zaposlenika");
             }
             else
             {
-                Korisnik selektirani = dgvZaposlenici.CurrentRow.DataBoundItem as Korisnik;
-                frmPromjenaRasporeda form = new frmPromjenaRasporeda(selektirani);
-                form.ShowDialog();
-            }
+                var trazeniID_row = dgvZaposlenici.CurrentRow;
+                var trID = trazeniID_row.Cells["ID_Korisnika"];
+                int ID = int.Parse(trID.Value.ToString());
+                
+                using (var context = new PI2313_DBEntities13())
+                {
 
+                    var query = from p in context.Korisniks
+                                where p.ID_Korisnika == ID
+                                select p;
+                    var res = query.ToList();
+                    Korisnik selektirani = res[0] as Korisnik;
+
+                    frmPromjenaRasporeda form = new frmPromjenaRasporeda(selektirani);
+                    form.ShowDialog();
+                }
+            }
             DohvatiZaposlenika();
         }
 
@@ -62,15 +74,23 @@ namespace CoffeeApp
             using (var context = new PI2313_DBEntities13())
             {
                 var query = from p in context.Korisniks
-                            where p.Uloga == "Konobar"
-                            select p;
+                            join fk1 in context.Ulogas
+                                on p.Uloga equals fk1.ID_uloga
+                            join fk2 in context.Smjenas
+                                on p.Smjena equals fk2.ID_smjena
+                            where p.Uloga == 2 || p.Uloga == 3
+                            select new
+                            {
+                                ID_Korisnika = p.ID_Korisnika,
+                                Ime = p.Ime,
+                                Prezime = p.Prezime,
+                                Uloga = fk1.Naziv_uloge,
+                                Smjena = fk2.Naziv_smjene,
+                                Status_Racuna = p.Status_Racuna
+                            };
+
                 dgvZaposlenici.DataSource = query.ToList();
                 dgvZaposlenici.Columns["ID_Korisnika"].Visible = false;
-                dgvZaposlenici.Columns["Password"].Visible = false;
-                dgvZaposlenici.Columns["Username"].Visible = false;
-                dgvZaposlenici.Columns["Email"].Visible = false;
-                dgvZaposlenici.Columns["Stols"].Visible = false;
-                dgvZaposlenici.Columns["Orders"].Visible = false;
             }
         }
 

@@ -34,9 +34,12 @@ namespace CoffeeApp
             {
                 var query = from p in context.Korisniks
                             select p;
+                //var listKorisnici = query.ToList();
                 dgvUpravljanjeKorsincima.DataSource = query.ToList();
                 dgvUpravljanjeKorsincima.Columns["Stols"].Visible = false;
                 dgvUpravljanjeKorsincima.Columns["Orders"].Visible = false;
+                dgvUpravljanjeKorsincima.Columns["Uloga1"].Visible = false;
+                dgvUpravljanjeKorsincima.Columns["Smjena1"].Visible = false;
             }
         }
 
@@ -45,15 +48,15 @@ namespace CoffeeApp
             using (var context = new PI2313_DBEntities13())
             {
                 Korisnik selektirani = dgvUpravljanjeKorsincima.CurrentRow.DataBoundItem as Korisnik;
-                if (selektirani.Uloga != "Admin")
+                if (selektirani.Uloga != 1)
                 {
                     context.Korisniks.Attach(selektirani);
-                    context.Korisniks.Remove(selektirani);
+                    selektirani.Status_Racuna = "Neaktivan";
                     context.SaveChanges();
                 }
-                if (selektirani.Uloga == "Admin")
+                if (selektirani.Uloga == 1)
                 {
-                    MessageBox.Show("Ne moze se obrisati admin!");
+                    MessageBox.Show("Ne moze se deaktivirati admin!");
                 }
             }
             DohvatiKorisnike();

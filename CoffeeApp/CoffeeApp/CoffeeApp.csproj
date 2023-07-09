@@ -185,10 +185,17 @@
     <Compile Include="frmRezervacijaStola.Designer.cs">
       <DependentUpon>frmRezervacijaStola.cs</DependentUpon>
     </Compile>
+    <Compile Include="Smjena.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Stol.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Uloga.code.cs" />
+    <Compile Include="Uloga.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="UlogiraniKorisnik.cs" />

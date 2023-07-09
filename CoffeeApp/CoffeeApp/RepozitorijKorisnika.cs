@@ -29,7 +29,7 @@ namespace CoffeeApp
             }
         }
 
-        public void DodajKorisnika(string ime, string prezime, string email, string username, string passowrd, string uloga, string smjena)
+        public void DodajKorisnika(string ime, string prezime, string email, string username, string passowrd, int uloga, int smjena)
         {
             using(var context = new PI2313_DBEntities13())
             {
@@ -41,7 +41,8 @@ namespace CoffeeApp
                     Username = username,
                     Password = passowrd,
                     Uloga = uloga,
-                    Smjena = smjena
+                    Smjena = smjena,
+                    Status_Racuna = "Aktivan"
                 };
                 context.Korisniks.Add(korisnik);
                 context.SaveChanges();

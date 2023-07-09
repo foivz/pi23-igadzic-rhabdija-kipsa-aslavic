@@ -20,8 +20,9 @@
     <Property Name="Username" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="Uloga" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="Smjena" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Uloga" Type="int" Nullable="false" />
+    <Property Name="Smjena" Type="int" Nullable="false" />
+    <Property Name="Status_Racuna" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -45,6 +46,13 @@
     <Property Name="Kolicina" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Cijena" Type="float" Nullable="false" />
   </EntityType>
+  <EntityType Name="Smjena">
+    <Key>
+      <PropertyRef Name="ID_smjena" />
+    </Key>
+    <Property Name="ID_smjena" Type="int" Nullable="false" />
+    <Property Name="Naziv_smjene" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
   <EntityType Name="Stol">
     <Key>
       <PropertyRef Name="ID_stol" />
@@ -66,6 +74,13 @@
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Uloga">
+    <Key>
+      <PropertyRef Name="ID_uloga" />
+    </Key>
+    <Property Name="ID_uloga" Type="int" Nullable="false" />
+    <Property Name="Naziv_uloge" Type="varchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <Association Name="FK_Order details_Artikli">
     <End Role="Artikli" Type="Self.Artikli" Multiplicity="1" />
@@ -103,6 +118,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Smjena_Korisnik">
+    <End Role="Smjena" Type="Self.Smjena" Multiplicity="1" />
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Smjena">
+        <PropertyRef Name="ID_smjena" />
+      </Principal>
+      <Dependent Role="Korisnik">
+        <PropertyRef Name="Smjena" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Stol_Korisnik">
     <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
     <End Role="Stol" Type="Self.Stol" Multiplicity="*" />
@@ -112,6 +139,18 @@
       </Principal>
       <Dependent Role="Stol">
         <PropertyRef Name="ID_korisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Uloga_Korisnik">
+    <End Role="Uloga" Type="Self.Uloga" Multiplicity="1" />
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uloga">
+        <PropertyRef Name="ID_uloga" />
+      </Principal>
+      <Dependent Role="Korisnik">
+        <PropertyRef Name="Uloga" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -150,8 +189,10 @@
     <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order details" EntityType="Self.Order details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Smjena" EntityType="Self.Smjena" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Stol" EntityType="Self.Stol" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Uloga" EntityType="Self.Uloga" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Order details_Artikli" Association="Self.FK_Order details_Artikli">
       <End Role="Artikli" EntitySet="Artikli" />
       <End Role="Order details" EntitySet="Order details" />
@@ -164,9 +205,17 @@
       <End Role="Korisnik" EntitySet="Korisnik" />
       <End Role="Order" EntitySet="Order" />
     </AssociationSet>
+    <AssociationSet Name="FK_Smjena_Korisnik" Association="Self.FK_Smjena_Korisnik">
+      <End Role="Smjena" EntitySet="Smjena" />
+      <End Role="Korisnik" EntitySet="Korisnik" />
+    </AssociationSet>
     <AssociationSet Name="FK_Stol_Korisnik" Association="Self.FK_Stol_Korisnik">
       <End Role="Korisnik" EntitySet="Korisnik" />
       <End Role="Stol" EntitySet="Stol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Uloga_Korisnik" Association="Self.FK_Uloga_Korisnik">
+      <End Role="Uloga" EntitySet="Uloga" />
+      <End Role="Korisnik" EntitySet="Korisnik" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

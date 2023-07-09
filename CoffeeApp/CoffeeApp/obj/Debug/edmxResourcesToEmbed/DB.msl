@@ -15,6 +15,7 @@
     <EntitySetMapping Name="Korisniks">
       <EntityTypeMapping TypeName="PI2313_DBModel.Korisnik">
         <MappingFragment StoreEntitySet="Korisnik">
+          <ScalarProperty Name="Status_Racuna" ColumnName="Status_Racuna" />
           <ScalarProperty Name="ID_Korisnika" ColumnName="ID_Korisnika" />
           <ScalarProperty Name="Ime" ColumnName="Ime" />
           <ScalarProperty Name="Prezime" ColumnName="Prezime" />
@@ -71,6 +72,22 @@
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="opis" ColumnName="opis" />
           <ScalarProperty Name="ID_stol" ColumnName="ID_stol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ulogas">
+      <EntityTypeMapping TypeName="PI2313_DBModel.Uloga">
+        <MappingFragment StoreEntitySet="Uloga">
+          <ScalarProperty Name="Naziv_uloge" ColumnName="Naziv_uloge" />
+          <ScalarProperty Name="ID_uloga" ColumnName="ID_uloga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Smjenas">
+      <EntityTypeMapping TypeName="PI2313_DBModel.Smjena">
+        <MappingFragment StoreEntitySet="Smjena">
+          <ScalarProperty Name="Naziv_smjene" ColumnName="Naziv_smjene" />
+          <ScalarProperty Name="ID_smjena" ColumnName="ID_smjena" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -25,8 +25,9 @@
           <Property Name="Username" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Uloga" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Smjena" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Uloga" Type="int" Nullable="false" />
+          <Property Name="Smjena" Type="int" Nullable="false" />
+          <Property Name="Status_Racuna" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -50,6 +51,13 @@
           <Property Name="Kolicina" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Cijena" Type="float" Nullable="false" />
         </EntityType>
+        <EntityType Name="Smjena">
+          <Key>
+            <PropertyRef Name="ID_smjena" />
+          </Key>
+          <Property Name="ID_smjena" Type="int" Nullable="false" />
+          <Property Name="Naziv_smjene" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
         <EntityType Name="Stol">
           <Key>
             <PropertyRef Name="ID_stol" />
@@ -71,6 +79,13 @@
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Uloga">
+          <Key>
+            <PropertyRef Name="ID_uloga" />
+          </Key>
+          <Property Name="ID_uloga" Type="int" Nullable="false" />
+          <Property Name="Naziv_uloge" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <Association Name="FK_Order details_Artikli">
           <End Role="Artikli" Type="Self.Artikli" Multiplicity="1" />
@@ -108,6 +123,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Smjena_Korisnik">
+          <End Role="Smjena" Type="Self.Smjena" Multiplicity="1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Smjena">
+              <PropertyRef Name="ID_smjena" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="Smjena" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Stol_Korisnik">
           <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
           <End Role="Stol" Type="Self.Stol" Multiplicity="*" />
@@ -117,6 +144,18 @@
             </Principal>
             <Dependent Role="Stol">
               <PropertyRef Name="ID_korisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uloga_Korisnik">
+          <End Role="Uloga" Type="Self.Uloga" Multiplicity="1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uloga">
+              <PropertyRef Name="ID_uloga" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="Uloga" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -155,8 +194,10 @@
           <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order details" EntityType="Self.Order details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Smjena" EntityType="Self.Smjena" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Stol" EntityType="Self.Stol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uloga" EntityType="Self.Uloga" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Order details_Artikli" Association="Self.FK_Order details_Artikli">
             <End Role="Artikli" EntitySet="Artikli" />
             <End Role="Order details" EntitySet="Order details" />
@@ -169,9 +210,17 @@
             <End Role="Korisnik" EntitySet="Korisnik" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
+          <AssociationSet Name="FK_Smjena_Korisnik" Association="Self.FK_Smjena_Korisnik">
+            <End Role="Smjena" EntitySet="Smjena" />
+            <End Role="Korisnik" EntitySet="Korisnik" />
+          </AssociationSet>
           <AssociationSet Name="FK_Stol_Korisnik" Association="Self.FK_Stol_Korisnik">
             <End Role="Korisnik" EntitySet="Korisnik" />
             <End Role="Stol" EntitySet="Stol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uloga_Korisnik" Association="Self.FK_Uloga_Korisnik">
+            <End Role="Uloga" EntitySet="Uloga" />
+            <End Role="Korisnik" EntitySet="Korisnik" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -199,10 +248,13 @@
           <Property Name="Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Uloga" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Smjena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Uloga" Type="Int32" Nullable="false" />
+          <Property Name="Smjena" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Stols" Relationship="PI2313_DBModel.FK_Stol_Korisnik" FromRole="Korisnik" ToRole="Stol" />
           <NavigationProperty Name="Orders" Relationship="PI2313_DBModel.FK_Order_Korisnik" FromRole="Korisnik" ToRole="Order" />
+          <Property Name="Status_Racuna" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Uloga1" Relationship="PI2313_DBModel.FK_Uloga_Korisnik" FromRole="Korisnik" ToRole="Uloga" />
+          <NavigationProperty Name="Smjena1" Relationship="PI2313_DBModel.FK_Smjena_Korisnik" FromRole="Korisnik" ToRole="Smjena" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -262,6 +314,16 @@
           <AssociationSet Name="FK_Order_details_Order" Association="PI2313_DBModel.FK_Order_details_Order">
             <End Role="Order" EntitySet="Orders" />
             <End Role="Order_detail" EntitySet="Order_details" />
+          </AssociationSet>
+          <EntitySet Name="Ulogas" EntityType="PI2313_DBModel.Uloga" />
+          <AssociationSet Name="FK_Uloga_Korisnik" Association="PI2313_DBModel.FK_Uloga_Korisnik">
+            <End Role="Uloga" EntitySet="Ulogas" />
+            <End Role="Korisnik" EntitySet="Korisniks" />
+          </AssociationSet>
+          <EntitySet Name="Smjenas" EntityType="PI2313_DBModel.Smjena" />
+          <AssociationSet Name="FK_Smjena_Korisnik" Association="PI2313_DBModel.FK_Smjena_Korisnik">
+            <End Role="Smjena" EntitySet="Smjenas" />
+            <End Role="Korisnik" EntitySet="Korisniks" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Stol">
@@ -325,6 +387,46 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Uloga">
+          <Key>
+            <PropertyRef Name="ID_uloga" />
+          </Key>
+          <Property Name="ID_uloga" Type="Int32" Nullable="false" />
+          <Property Name="Naziv_uloge" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Korisniks" Relationship="PI2313_DBModel.FK_Uloga_Korisnik" FromRole="Uloga" ToRole="Korisnik" />
+        </EntityType>
+        <Association Name="FK_Uloga_Korisnik">
+          <End Type="PI2313_DBModel.Uloga" Role="Uloga" Multiplicity="1" />
+          <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uloga">
+              <PropertyRef Name="ID_uloga" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="Uloga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Smjena">
+          <Key>
+            <PropertyRef Name="ID_smjena" />
+          </Key>
+          <Property Name="ID_smjena" Type="Int32" Nullable="false" />
+          <Property Name="Naziv_smjene" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Korisniks" Relationship="PI2313_DBModel.FK_Smjena_Korisnik" FromRole="Smjena" ToRole="Korisnik" />
+        </EntityType>
+        <Association Name="FK_Smjena_Korisnik">
+          <End Type="PI2313_DBModel.Smjena" Role="Smjena" Multiplicity="1" />
+          <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Smjena">
+              <PropertyRef Name="ID_smjena" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="Smjena" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -345,6 +447,7 @@
           <EntitySetMapping Name="Korisniks">
             <EntityTypeMapping TypeName="PI2313_DBModel.Korisnik">
               <MappingFragment StoreEntitySet="Korisnik">
+                <ScalarProperty Name="Status_Racuna" ColumnName="Status_Racuna" />
                 <ScalarProperty Name="ID_Korisnika" ColumnName="ID_Korisnika" />
                 <ScalarProperty Name="Ime" ColumnName="Ime" />
                 <ScalarProperty Name="Prezime" ColumnName="Prezime" />
@@ -404,6 +507,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Ulogas">
+            <EntityTypeMapping TypeName="PI2313_DBModel.Uloga">
+              <MappingFragment StoreEntitySet="Uloga">
+                <ScalarProperty Name="Naziv_uloge" ColumnName="Naziv_uloge" />
+                <ScalarProperty Name="ID_uloga" ColumnName="ID_uloga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Smjenas">
+            <EntityTypeMapping TypeName="PI2313_DBModel.Smjena">
+              <MappingFragment StoreEntitySet="Smjena">
+                <ScalarProperty Name="Naziv_smjene" ColumnName="Naziv_smjene" />
+                <ScalarProperty Name="ID_smjena" ColumnName="ID_smjena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -419,7 +538,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

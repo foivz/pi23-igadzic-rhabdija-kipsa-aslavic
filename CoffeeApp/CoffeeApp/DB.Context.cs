@@ -31,5 +31,7 @@ namespace CoffeeApp
         public virtual DbSet<Order_detail> Order_details { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Stol> Stols { get; set; }
+        public virtual DbSet<Uloga> Ulogas { get; set; }
+        public virtual DbSet<Smjena> Smjenas { get; set; }
     }
 }

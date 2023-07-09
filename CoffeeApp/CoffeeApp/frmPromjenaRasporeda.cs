@@ -31,12 +31,10 @@ namespace CoffeeApp
             {
                 string ime = txtbIme.Text.ToString();
                 string prezime = txtbPrezime.Text.ToString();
-                string smjena = cmbSmjena.SelectedItem as string;
 
                 contex.Korisniks.Attach(selektirani);
                 selektirani.Ime = ime;
                 selektirani.Prezime = prezime;
-                selektirani.Smjena = smjena;
                 contex.SaveChanges();
             }
             Close();
@@ -48,7 +46,7 @@ namespace CoffeeApp
             txtbPrezime.ReadOnly = true;
             txtbIme.Text = selektirani.Ime;
             txtbPrezime.Text = selektirani.Prezime;
-            cmbSmjena.Text = selektirani.Smjena;
+
         }
     }
 }
