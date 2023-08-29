@@ -10,6 +10,26 @@
     <Property Name="Cijena" Type="float" Nullable="false" />
     <Property Name="Dostupno_Komada" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Dogadaj">
+    <Key>
+      <PropertyRef Name="ID_Dogadaja" />
+    </Key>
+    <Property Name="ID_Dogadaja" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naziv" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Opis" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Datum" Type="date" Nullable="false" />
+    <Property Name="Vrijeme_pocetka" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Cijena" Type="float" />
+    <Property Name="ID_Administratora" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Karta">
+    <Key>
+      <PropertyRef Name="ID_Karte" />
+    </Key>
+    <Property Name="ID_Karte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Dogadaja" Type="int" Nullable="false" />
+    <Property Name="ID_Korisnika" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Korisnik">
     <Key>
       <PropertyRef Name="ID_Korisnika" />
@@ -23,6 +43,16 @@
     <Property Name="Uloga" Type="int" Nullable="false" />
     <Property Name="Smjena" Type="int" Nullable="false" />
     <Property Name="Status_Racuna" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Obavijesti">
+    <Key>
+      <PropertyRef Name="ID_Obavijesti" />
+    </Key>
+    <Property Name="ID_Obavijesti" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naslov" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Opis" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Datum" Type="date" Nullable="false" />
+    <Property Name="ID_Korisnika" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -45,6 +75,16 @@
     <Property Name="Naziv_Pica" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Kolicina" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Cijena" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Radno_Vrijeme">
+    <Key>
+      <PropertyRef Name="ID_RadnoVrijeme" />
+    </Key>
+    <Property Name="ID_RadnoVrijeme" Type="int" Nullable="false" />
+    <Property Name="Dan_Tjedna" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Vrijeme_Od" Type="time" Precision="7" />
+    <Property Name="Vrijeme_Do" Type="time" Precision="7" />
+    <Property Name="ID_Korisnika" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Smjena">
     <Key>
@@ -82,6 +122,66 @@
     <Property Name="ID_uloga" Type="int" Nullable="false" />
     <Property Name="Naziv_uloge" Type="varchar" MaxLength="30" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Dogadaj_Karta_ID_Dogadaja">
+    <End Role="Dogadaj" Type="Self.Dogadaj" Multiplicity="1" />
+    <End Role="Karta" Type="Self.Karta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dogadaj">
+        <PropertyRef Name="ID_Dogadaja" />
+      </Principal>
+      <Dependent Role="Karta">
+        <PropertyRef Name="ID_Dogadaja" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnik_Dogadaj_ID_Administratora">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Dogadaj" Type="Self.Dogadaj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="ID_Korisnika" />
+      </Principal>
+      <Dependent Role="Dogadaj">
+        <PropertyRef Name="ID_Administratora" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnik_Karta_ID_Korisnika">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Karta" Type="Self.Karta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="ID_Korisnika" />
+      </Principal>
+      <Dependent Role="Karta">
+        <PropertyRef Name="ID_Korisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnik_Obavijesti_ID_Korisnika">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Obavijesti" Type="Self.Obavijesti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="ID_Korisnika" />
+      </Principal>
+      <Dependent Role="Obavijesti">
+        <PropertyRef Name="ID_Korisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnik_Radno_Vrijeme_ID_Korisnik">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Radno_Vrijeme" Type="Self.Radno_Vrijeme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="ID_Korisnika" />
+      </Principal>
+      <Dependent Role="Radno_Vrijeme">
+        <PropertyRef Name="ID_Korisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Order details_Artikli">
     <End Role="Artikli" Type="Self.Artikli" Multiplicity="1" />
     <End Role="Order details" Type="Self.Order details" Multiplicity="*" />
@@ -186,13 +286,37 @@
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="PI2313_DBModelStoreContainer">
     <EntitySet Name="Artikli" EntityType="Self.Artikli" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dogadaj" EntityType="Self.Dogadaj" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Karta" EntityType="Self.Karta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Obavijesti" EntityType="Self.Obavijesti" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order details" EntityType="Self.Order details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radno_Vrijeme" EntityType="Self.Radno_Vrijeme" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Smjena" EntityType="Self.Smjena" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Stol" EntityType="Self.Stol" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Uloga" EntityType="Self.Uloga" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Dogadaj_Karta_ID_Dogadaja" Association="Self.FK_Dogadaj_Karta_ID_Dogadaja">
+      <End Role="Dogadaj" EntitySet="Dogadaj" />
+      <End Role="Karta" EntitySet="Karta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnik_Dogadaj_ID_Administratora" Association="Self.FK_Korisnik_Dogadaj_ID_Administratora">
+      <End Role="Korisnik" EntitySet="Korisnik" />
+      <End Role="Dogadaj" EntitySet="Dogadaj" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnik_Karta_ID_Korisnika" Association="Self.FK_Korisnik_Karta_ID_Korisnika">
+      <End Role="Korisnik" EntitySet="Korisnik" />
+      <End Role="Karta" EntitySet="Karta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnik_Obavijesti_ID_Korisnika" Association="Self.FK_Korisnik_Obavijesti_ID_Korisnika">
+      <End Role="Korisnik" EntitySet="Korisnik" />
+      <End Role="Obavijesti" EntitySet="Obavijesti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnik_Radno_Vrijeme_ID_Korisnik" Association="Self.FK_Korisnik_Radno_Vrijeme_ID_Korisnik">
+      <End Role="Korisnik" EntitySet="Korisnik" />
+      <End Role="Radno_Vrijeme" EntitySet="Radno_Vrijeme" />
+    </AssociationSet>
     <AssociationSet Name="FK_Order details_Artikli" Association="Self.FK_Order details_Artikli">
       <End Role="Artikli" EntitySet="Artikli" />
       <End Role="Order details" EntitySet="Order details" />

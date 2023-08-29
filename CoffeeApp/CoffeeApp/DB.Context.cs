@@ -33,5 +33,9 @@ namespace CoffeeApp
         public virtual DbSet<Stol> Stols { get; set; }
         public virtual DbSet<Uloga> Ulogas { get; set; }
         public virtual DbSet<Smjena> Smjenas { get; set; }
+        public virtual DbSet<Dogadaj> Dogadajs { get; set; }
+        public virtual DbSet<Karta> Kartas { get; set; }
+        public virtual DbSet<Obavijesti> Obavijestis { get; set; }
+        public virtual DbSet<Radno_Vrijeme> Radno_Vrijeme { get; set; }
     }
 }

@@ -28,6 +28,10 @@
     <Property Name="Status_Racuna" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Uloga1" Relationship="PI2313_DBModel.FK_Uloga_Korisnik" FromRole="Korisnik" ToRole="Uloga" />
     <NavigationProperty Name="Smjena1" Relationship="PI2313_DBModel.FK_Smjena_Korisnik" FromRole="Korisnik" ToRole="Smjena" />
+    <NavigationProperty Name="Dogadajs" Relationship="PI2313_DBModel.FK_Korisnik_Dogadaj_ID_Administratora" FromRole="Korisnik" ToRole="Dogadaj" />
+    <NavigationProperty Name="Kartas" Relationship="PI2313_DBModel.FK_Korisnik_Karta_ID_Korisnika" FromRole="Korisnik" ToRole="Karta" />
+    <NavigationProperty Name="Obavijestis" Relationship="PI2313_DBModel.FK_Korisnik_Obavijesti_ID_Korisnika" FromRole="Korisnik" ToRole="Obavijesti" />
+    <NavigationProperty Name="Radno_Vrijeme" Relationship="PI2313_DBModel.FK_Korisnik_Radno_Vrijeme_ID_Korisnik" FromRole="Korisnik" ToRole="Radno_Vrijeme" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -97,6 +101,30 @@
     <AssociationSet Name="FK_Smjena_Korisnik" Association="PI2313_DBModel.FK_Smjena_Korisnik">
       <End Role="Smjena" EntitySet="Smjenas" />
       <End Role="Korisnik" EntitySet="Korisniks" />
+    </AssociationSet>
+    <EntitySet Name="Dogadajs" EntityType="PI2313_DBModel.Dogadaj" />
+    <EntitySet Name="Kartas" EntityType="PI2313_DBModel.Karta" />
+    <EntitySet Name="Obavijestis" EntityType="PI2313_DBModel.Obavijesti" />
+    <EntitySet Name="Radno_Vrijeme" EntityType="PI2313_DBModel.Radno_Vrijeme" />
+    <AssociationSet Name="FK_Dogadaj_Karta_ID_Dogadaja" Association="PI2313_DBModel.FK_Dogadaj_Karta_ID_Dogadaja">
+      <End Role="Dogadaj" EntitySet="Dogadajs" />
+      <End Role="Karta" EntitySet="Kartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnik_Dogadaj_ID_Administratora" Association="PI2313_DBModel.FK_Korisnik_Dogadaj_ID_Administratora">
+      <End Role="Korisnik" EntitySet="Korisniks" />
+      <End Role="Dogadaj" EntitySet="Dogadajs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnik_Karta_ID_Korisnika" Association="PI2313_DBModel.FK_Korisnik_Karta_ID_Korisnika">
+      <End Role="Korisnik" EntitySet="Korisniks" />
+      <End Role="Karta" EntitySet="Kartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnik_Obavijesti_ID_Korisnika" Association="PI2313_DBModel.FK_Korisnik_Obavijesti_ID_Korisnika">
+      <End Role="Korisnik" EntitySet="Korisniks" />
+      <End Role="Obavijesti" EntitySet="Obavijestis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnik_Radno_Vrijeme_ID_Korisnik" Association="PI2313_DBModel.FK_Korisnik_Radno_Vrijeme_ID_Korisnik">
+      <End Role="Korisnik" EntitySet="Korisniks" />
+      <End Role="Radno_Vrijeme" EntitySet="Radno_Vrijeme" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Stol">
@@ -197,6 +225,112 @@
       </Principal>
       <Dependent Role="Korisnik">
         <PropertyRef Name="Smjena" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Dogadaj">
+    <Key>
+      <PropertyRef Name="ID_Dogadaja" />
+    </Key>
+    <Property Name="ID_Dogadaja" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Opis" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Vrijeme_pocetka" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Cijena" Type="Double" />
+    <Property Name="ID_Administratora" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Kartas" Relationship="PI2313_DBModel.FK_Dogadaj_Karta_ID_Dogadaja" FromRole="Dogadaj" ToRole="Karta" />
+    <NavigationProperty Name="Korisnik" Relationship="PI2313_DBModel.FK_Korisnik_Dogadaj_ID_Administratora" FromRole="Dogadaj" ToRole="Korisnik" />
+  </EntityType>
+  <EntityType Name="Karta">
+    <Key>
+      <PropertyRef Name="ID_Karte" />
+    </Key>
+    <Property Name="ID_Karte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Dogadaja" Type="Int32" Nullable="false" />
+    <Property Name="ID_Korisnika" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dogadaj" Relationship="PI2313_DBModel.FK_Dogadaj_Karta_ID_Dogadaja" FromRole="Karta" ToRole="Dogadaj" />
+    <NavigationProperty Name="Korisnik" Relationship="PI2313_DBModel.FK_Korisnik_Karta_ID_Korisnika" FromRole="Karta" ToRole="Korisnik" />
+  </EntityType>
+  <EntityType Name="Obavijesti">
+    <Key>
+      <PropertyRef Name="ID_Obavijesti" />
+    </Key>
+    <Property Name="ID_Obavijesti" Type="Int32" Nullable="false" />
+    <Property Name="Naslov" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Opis" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ID_Korisnika" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Korisnik" Relationship="PI2313_DBModel.FK_Korisnik_Obavijesti_ID_Korisnika" FromRole="Obavijesti" ToRole="Korisnik" />
+  </EntityType>
+  <EntityType Name="Radno_Vrijeme">
+    <Key>
+      <PropertyRef Name="ID_RadnoVrijeme" />
+    </Key>
+    <Property Name="ID_RadnoVrijeme" Type="Int32" Nullable="false" />
+    <Property Name="Dan_Tjedna" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Vrijeme_Od" Type="Time" Precision="7" />
+    <Property Name="Vrijeme_Do" Type="Time" Precision="7" />
+    <Property Name="ID_Korisnika" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Korisnik" Relationship="PI2313_DBModel.FK_Korisnik_Radno_Vrijeme_ID_Korisnik" FromRole="Radno_Vrijeme" ToRole="Korisnik" />
+  </EntityType>
+  <Association Name="FK_Dogadaj_Karta_ID_Dogadaja">
+    <End Type="PI2313_DBModel.Dogadaj" Role="Dogadaj" Multiplicity="1" />
+    <End Type="PI2313_DBModel.Karta" Role="Karta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dogadaj">
+        <PropertyRef Name="ID_Dogadaja" />
+      </Principal>
+      <Dependent Role="Karta">
+        <PropertyRef Name="ID_Dogadaja" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnik_Dogadaj_ID_Administratora">
+    <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="1" />
+    <End Type="PI2313_DBModel.Dogadaj" Role="Dogadaj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="ID_Korisnika" />
+      </Principal>
+      <Dependent Role="Dogadaj">
+        <PropertyRef Name="ID_Administratora" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnik_Karta_ID_Korisnika">
+    <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="1" />
+    <End Type="PI2313_DBModel.Karta" Role="Karta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="ID_Korisnika" />
+      </Principal>
+      <Dependent Role="Karta">
+        <PropertyRef Name="ID_Korisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnik_Obavijesti_ID_Korisnika">
+    <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="1" />
+    <End Type="PI2313_DBModel.Obavijesti" Role="Obavijesti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="ID_Korisnika" />
+      </Principal>
+      <Dependent Role="Obavijesti">
+        <PropertyRef Name="ID_Korisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnik_Radno_Vrijeme_ID_Korisnik">
+    <End Type="PI2313_DBModel.Korisnik" Role="Korisnik" Multiplicity="1" />
+    <End Type="PI2313_DBModel.Radno_Vrijeme" Role="Radno_Vrijeme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="ID_Korisnika" />
+      </Principal>
+      <Dependent Role="Radno_Vrijeme">
+        <PropertyRef Name="ID_Korisnika" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

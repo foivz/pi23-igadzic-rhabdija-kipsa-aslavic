@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="76d72f5f7dd746ec91946f4444885ad9" Name="Diagram1">
+      <Diagram DiagramId="76d72f5f7dd746ec91946f4444885ad9" Name="Diagram1" ZoomLevel="86">
         <EntityTypeShape EntityType="PI2313_DBModel.Artikli" Width="1.5" PointX="1.375" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PI2313_DBModel.Korisnik" Width="1.5" PointX="1.125" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PI2313_DBModel.Order" Width="1.5" PointX="4.25" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="PI2313_DBModel.Order_detail" Width="1.5" PointX="4.25" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PI2313_DBModel.sysdiagram" Width="1.5" PointX="8.125" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2313_DBModel.Stol" Width="1.5" PointX="1.125" PointY="8.5" />
+        <EntityTypeShape EntityType="PI2313_DBModel.Stol" Width="1.5" PointX="0.625" PointY="9.875" />
         <AssociationConnector Association="PI2313_DBModel.FK_Stol_Korisnik" />
         <AssociationConnector Association="PI2313_DBModel.FK_Order_details_Artikli" />
         <AssociationConnector Association="PI2313_DBModel.FK_Order_Korisnik" />
@@ -19,6 +19,15 @@
         <AssociationConnector Association="PI2313_DBModel.FK_Uloga_Korisnik" />
         <EntityTypeShape EntityType="PI2313_DBModel.Smjena" Width="1.5" PointX="4.25" PointY="9.25" />
         <AssociationConnector Association="PI2313_DBModel.FK_Smjena_Korisnik" />
+        <EntityTypeShape EntityType="PI2313_DBModel.Dogadaj" Width="1.5" PointX="3.375" PointY="11.625" />
+        <EntityTypeShape EntityType="PI2313_DBModel.Karta" Width="1.5" PointX="6.625" PointY="11.5" />
+        <EntityTypeShape EntityType="PI2313_DBModel.Obavijesti" Width="1.5" PointX="3.375" PointY="15.125" />
+        <EntityTypeShape EntityType="PI2313_DBModel.Radno_Vrijeme" Width="1.5" PointX="3.375" PointY="18" />
+        <AssociationConnector Association="PI2313_DBModel.FK_Dogadaj_Karta_ID_Dogadaja" />
+        <AssociationConnector Association="PI2313_DBModel.FK_Korisnik_Dogadaj_ID_Administratora" />
+        <AssociationConnector Association="PI2313_DBModel.FK_Korisnik_Karta_ID_Korisnika" />
+        <AssociationConnector Association="PI2313_DBModel.FK_Korisnik_Obavijesti_ID_Korisnika" />
+        <AssociationConnector Association="PI2313_DBModel.FK_Korisnik_Radno_Vrijeme_ID_Korisnik" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

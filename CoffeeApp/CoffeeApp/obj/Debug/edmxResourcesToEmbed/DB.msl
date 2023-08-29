@@ -91,5 +91,49 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Dogadajs">
+      <EntityTypeMapping TypeName="PI2313_DBModel.Dogadaj">
+        <MappingFragment StoreEntitySet="Dogadaj">
+          <ScalarProperty Name="ID_Administratora" ColumnName="ID_Administratora" />
+          <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+          <ScalarProperty Name="Vrijeme_pocetka" ColumnName="Vrijeme_pocetka" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="ID_Dogadaja" ColumnName="ID_Dogadaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kartas">
+      <EntityTypeMapping TypeName="PI2313_DBModel.Karta">
+        <MappingFragment StoreEntitySet="Karta">
+          <ScalarProperty Name="ID_Korisnika" ColumnName="ID_Korisnika" />
+          <ScalarProperty Name="ID_Dogadaja" ColumnName="ID_Dogadaja" />
+          <ScalarProperty Name="ID_Karte" ColumnName="ID_Karte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Obavijestis">
+      <EntityTypeMapping TypeName="PI2313_DBModel.Obavijesti">
+        <MappingFragment StoreEntitySet="Obavijesti">
+          <ScalarProperty Name="ID_Korisnika" ColumnName="ID_Korisnika" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+          <ScalarProperty Name="ID_Obavijesti" ColumnName="ID_Obavijesti" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radno_Vrijeme">
+      <EntityTypeMapping TypeName="PI2313_DBModel.Radno_Vrijeme">
+        <MappingFragment StoreEntitySet="Radno_Vrijeme">
+          <ScalarProperty Name="ID_Korisnika" ColumnName="ID_Korisnika" />
+          <ScalarProperty Name="Vrijeme_Do" ColumnName="Vrijeme_Do" />
+          <ScalarProperty Name="Vrijeme_Od" ColumnName="Vrijeme_Od" />
+          <ScalarProperty Name="Dan_Tjedna" ColumnName="Dan_Tjedna" />
+          <ScalarProperty Name="ID_RadnoVrijeme" ColumnName="ID_RadnoVrijeme" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

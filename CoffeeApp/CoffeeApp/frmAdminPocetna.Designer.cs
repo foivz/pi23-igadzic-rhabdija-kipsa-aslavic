@@ -37,6 +37,7 @@
             this.btnPlacanjeNarudzbe = new System.Windows.Forms.Button();
             this.btnPromjeniRaspored = new System.Windows.Forms.Button();
             this.dgvZaposlenici = new System.Windows.Forms.DataGridView();
+            this.btnObavijesti = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +45,7 @@
             // btnUpravljanjeKorisnicima
             // 
             this.btnUpravljanjeKorisnicima.Location = new System.Drawing.Point(124, 47);
-            this.btnUpravljanjeKorisnicima.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpravljanjeKorisnicima.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpravljanjeKorisnicima.Name = "btnUpravljanjeKorisnicima";
             this.btnUpravljanjeKorisnicima.Size = new System.Drawing.Size(128, 65);
             this.btnUpravljanjeKorisnicima.TabIndex = 1;
@@ -55,7 +56,7 @@
             // btnOdjava
             // 
             this.btnOdjava.Location = new System.Drawing.Point(520, 328);
-            this.btnOdjava.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOdjava.Margin = new System.Windows.Forms.Padding(2);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(128, 65);
             this.btnOdjava.TabIndex = 3;
@@ -77,7 +78,7 @@
             // btnPregeldZaliha
             // 
             this.btnPregeldZaliha.Location = new System.Drawing.Point(256, 47);
-            this.btnPregeldZaliha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPregeldZaliha.Margin = new System.Windows.Forms.Padding(2);
             this.btnPregeldZaliha.Name = "btnPregeldZaliha";
             this.btnPregeldZaliha.Size = new System.Drawing.Size(128, 65);
             this.btnPregeldZaliha.TabIndex = 6;
@@ -90,7 +91,7 @@
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
             this.logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("logo.InitialImage")));
             this.logo.Location = new System.Drawing.Point(11, 15);
-            this.logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logo.Margin = new System.Windows.Forms.Padding(2);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(94, 124);
             this.logo.TabIndex = 8;
@@ -128,11 +129,23 @@
             this.dgvZaposlenici.Size = new System.Drawing.Size(611, 181);
             this.dgvZaposlenici.TabIndex = 10;
             // 
+            // btnObavijesti
+            // 
+            this.btnObavijesti.Location = new System.Drawing.Point(500, 47);
+            this.btnObavijesti.Margin = new System.Windows.Forms.Padding(2);
+            this.btnObavijesti.Name = "btnObavijesti";
+            this.btnObavijesti.Size = new System.Drawing.Size(128, 65);
+            this.btnObavijesti.TabIndex = 12;
+            this.btnObavijesti.Text = "Obavijesti";
+            this.btnObavijesti.UseVisualStyleBackColor = true;
+            this.btnObavijesti.Click += new System.EventHandler(this.btnObavijesti_Click);
+            // 
             // frmAdminPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(659, 405);
+            this.Controls.Add(this.btnObavijesti);
             this.Controls.Add(this.CoffeeApp);
             this.Controls.Add(this.btnPromjeniRaspored);
             this.Controls.Add(this.dgvZaposlenici);
@@ -141,7 +154,7 @@
             this.Controls.Add(this.btnPregeldZaliha);
             this.Controls.Add(this.btnOdjava);
             this.Controls.Add(this.btnUpravljanjeKorisnicima);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAdminPocetna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin CoffeeApp";
@@ -163,5 +176,6 @@
         private System.Windows.Forms.Button btnPlacanjeNarudzbe;
         private System.Windows.Forms.Button btnPromjeniRaspored;
         private System.Windows.Forms.DataGridView dgvZaposlenici;
+        private System.Windows.Forms.Button btnObavijesti;
     }
 }

@@ -19,6 +19,10 @@ namespace CoffeeApp
         {
             this.Stols = new HashSet<Stol>();
             this.Orders = new HashSet<Order>();
+            this.Dogadajs = new HashSet<Dogadaj>();
+            this.Kartas = new HashSet<Karta>();
+            this.Obavijestis = new HashSet<Obavijesti>();
+            this.Radno_Vrijeme = new HashSet<Radno_Vrijeme>();
         }
     
         public int ID_Korisnika { get; set; }
@@ -37,5 +41,13 @@ namespace CoffeeApp
         public virtual ICollection<Order> Orders { get; set; }
         public virtual Uloga Uloga1 { get; set; }
         public virtual Smjena Smjena1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Dogadaj> Dogadajs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Karta> Kartas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Obavijesti> Obavijestis { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Radno_Vrijeme> Radno_Vrijeme { get; set; }
     }
 }

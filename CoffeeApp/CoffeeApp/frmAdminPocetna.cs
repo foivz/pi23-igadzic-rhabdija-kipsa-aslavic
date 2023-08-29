@@ -98,5 +98,11 @@ namespace CoffeeApp
         {
             DohvatiZaposlenika();
         }
+
+        private void btnObavijesti_Click(object sender, EventArgs e)
+        {
+            frmObavijesti form = new frmObavijesti();
+            form.ShowDialog();
+        }
     }
 }

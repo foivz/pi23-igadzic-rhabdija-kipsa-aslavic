@@ -117,3 +117,36 @@ C:\Users\Robert\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\C
 C:\Users\Robert\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmKonobarPocetna.resources
 C:\Users\Robert\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPlacanjeNarudzbe.resources
 C:\Users\Infoing\Documents\GitHub\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.csproj.SuggestedBindingRedirects.cache
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\CoffeeApp.exe.config
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\CoffeeApp.exe
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\CoffeeApp.pdb
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.dll
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.SqlServer.dll
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.xml
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\bin\Debug\EntityFramework.SqlServer.xml
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.csproj.AssemblyReference.cache
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.csproj.SuggestedBindingRedirects.cache
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmAdminPocetna.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmDodajPice.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmGlavniKonobarPocetna.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmInventura.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmIzmjenaPica.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmKonobarPocetna.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmKorisnikPocetna.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmObavijesti.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPlacanjeNarudzbe.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPocetna.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPregledZaliha.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPrijava.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPromjenaRasporeda.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmRegistracija.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmRezervacijaStola.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmUpravljanjeKorisnicima.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmUrediKorisnika.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.Properties.Resources.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.csproj.GenerateResource.cache
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.csproj.CoreCompileInputs.cache
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.csproj.CopyComplete
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.exe
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.pdb
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmNovaObavijest.resources
