@@ -38,6 +38,7 @@
             this.btnPromjeniRaspored = new System.Windows.Forms.Button();
             this.dgvZaposlenici = new System.Windows.Forms.DataGridView();
             this.btnObavijesti = new System.Windows.Forms.Button();
+            this.btnRadnoVrijeme = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).BeginInit();
             this.SuspendLayout();
@@ -131,20 +132,31 @@
             // 
             // btnObavijesti
             // 
-            this.btnObavijesti.Location = new System.Drawing.Point(500, 47);
+            this.btnObavijesti.Location = new System.Drawing.Point(540, 11);
             this.btnObavijesti.Margin = new System.Windows.Forms.Padding(2);
             this.btnObavijesti.Name = "btnObavijesti";
-            this.btnObavijesti.Size = new System.Drawing.Size(128, 65);
+            this.btnObavijesti.Size = new System.Drawing.Size(108, 39);
             this.btnObavijesti.TabIndex = 12;
             this.btnObavijesti.Text = "Obavijesti";
             this.btnObavijesti.UseVisualStyleBackColor = true;
             this.btnObavijesti.Click += new System.EventHandler(this.btnObavijesti_Click);
+            // 
+            // btnRadnoVrijeme
+            // 
+            this.btnRadnoVrijeme.Location = new System.Drawing.Point(540, 55);
+            this.btnRadnoVrijeme.Name = "btnRadnoVrijeme";
+            this.btnRadnoVrijeme.Size = new System.Drawing.Size(107, 41);
+            this.btnRadnoVrijeme.TabIndex = 13;
+            this.btnRadnoVrijeme.Text = "Radno Vrijeme";
+            this.btnRadnoVrijeme.UseVisualStyleBackColor = true;
+            this.btnRadnoVrijeme.Click += new System.EventHandler(this.btnRadnoVrijeme_Click);
             // 
             // frmAdminPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(659, 405);
+            this.Controls.Add(this.btnRadnoVrijeme);
             this.Controls.Add(this.btnObavijesti);
             this.Controls.Add(this.CoffeeApp);
             this.Controls.Add(this.btnPromjeniRaspored);
@@ -177,5 +189,6 @@
         private System.Windows.Forms.Button btnPromjeniRaspored;
         private System.Windows.Forms.DataGridView dgvZaposlenici;
         private System.Windows.Forms.Button btnObavijesti;
+        private System.Windows.Forms.Button btnRadnoVrijeme;
     }
 }

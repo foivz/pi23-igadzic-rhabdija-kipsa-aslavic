@@ -43,18 +43,20 @@
             // dgvStolovi
             // 
             this.dgvStolovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStolovi.Location = new System.Drawing.Point(12, 12);
+            this.dgvStolovi.Location = new System.Drawing.Point(9, 10);
+            this.dgvStolovi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvStolovi.Name = "dgvStolovi";
             this.dgvStolovi.RowHeadersWidth = 51;
             this.dgvStolovi.RowTemplate.Height = 24;
-            this.dgvStolovi.Size = new System.Drawing.Size(658, 356);
+            this.dgvStolovi.Size = new System.Drawing.Size(494, 289);
             this.dgvStolovi.TabIndex = 0;
             // 
             // btnRezerviraj
             // 
-            this.btnRezerviraj.Location = new System.Drawing.Point(275, 388);
+            this.btnRezerviraj.Location = new System.Drawing.Point(206, 315);
+            this.btnRezerviraj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRezerviraj.Name = "btnRezerviraj";
-            this.btnRezerviraj.Size = new System.Drawing.Size(119, 59);
+            this.btnRezerviraj.Size = new System.Drawing.Size(89, 48);
             this.btnRezerviraj.TabIndex = 1;
             this.btnRezerviraj.Text = "Rezerviraj stol";
             this.btnRezerviraj.UseVisualStyleBackColor = true;
@@ -62,9 +64,10 @@
             // 
             // btnPonisti
             // 
-            this.btnPonisti.Location = new System.Drawing.Point(410, 388);
+            this.btnPonisti.Location = new System.Drawing.Point(308, 315);
+            this.btnPonisti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPonisti.Name = "btnPonisti";
-            this.btnPonisti.Size = new System.Drawing.Size(140, 59);
+            this.btnPonisti.Size = new System.Drawing.Size(105, 48);
             this.btnPonisti.TabIndex = 2;
             this.btnPonisti.Text = "Poništi postojeću rezervaciju";
             this.btnPonisti.UseVisualStyleBackColor = true;
@@ -72,9 +75,10 @@
             // 
             // btnIzlaz
             // 
-            this.btnIzlaz.Location = new System.Drawing.Point(573, 388);
+            this.btnIzlaz.Location = new System.Drawing.Point(430, 315);
+            this.btnIzlaz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIzlaz.Name = "btnIzlaz";
-            this.btnIzlaz.Size = new System.Drawing.Size(97, 59);
+            this.btnIzlaz.Size = new System.Drawing.Size(73, 48);
             this.btnIzlaz.TabIndex = 3;
             this.btnIzlaz.Text = "Izlaz";
             this.btnIzlaz.UseVisualStyleBackColor = true;
@@ -82,50 +86,55 @@
             // 
             // dtpDatumRezervacije
             // 
-            this.dtpDatumRezervacije.Location = new System.Drawing.Point(12, 388);
+            this.dtpDatumRezervacije.Location = new System.Drawing.Point(9, 315);
+            this.dtpDatumRezervacije.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpDatumRezervacije.Name = "dtpDatumRezervacije";
-            this.dtpDatumRezervacije.Size = new System.Drawing.Size(242, 22);
+            this.dtpDatumRezervacije.Size = new System.Drawing.Size(182, 20);
             this.dtpDatumRezervacije.TabIndex = 4;
             // 
             // dtpVrijemeRezervacijeOd
             // 
             this.dtpVrijemeRezervacijeOd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpVrijemeRezervacijeOd.Location = new System.Drawing.Point(12, 460);
+            this.dtpVrijemeRezervacijeOd.Location = new System.Drawing.Point(9, 374);
+            this.dtpVrijemeRezervacijeOd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpVrijemeRezervacijeOd.Name = "dtpVrijemeRezervacijeOd";
-            this.dtpVrijemeRezervacijeOd.Size = new System.Drawing.Size(104, 22);
+            this.dtpVrijemeRezervacijeOd.Size = new System.Drawing.Size(79, 20);
             this.dtpVrijemeRezervacijeOd.TabIndex = 5;
             // 
             // dtpVrijemeRezervacijeDo
             // 
             this.dtpVrijemeRezervacijeDo.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpVrijemeRezervacijeDo.Location = new System.Drawing.Point(150, 460);
+            this.dtpVrijemeRezervacijeDo.Location = new System.Drawing.Point(112, 374);
+            this.dtpVrijemeRezervacijeDo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpVrijemeRezervacijeDo.Name = "dtpVrijemeRezervacijeDo";
-            this.dtpVrijemeRezervacijeDo.Size = new System.Drawing.Size(104, 22);
+            this.dtpVrijemeRezervacijeDo.Size = new System.Drawing.Size(79, 20);
             this.dtpVrijemeRezervacijeDo.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 430);
+            this.label1.Location = new System.Drawing.Point(10, 349);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 16);
+            this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Vrijeme Od:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(150, 430);
+            this.label2.Location = new System.Drawing.Point(112, 349);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 16);
+            this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Vrijeme Do:";
             // 
             // frmRezervacijaStola
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 494);
+            this.ClientSize = new System.Drawing.Size(518, 401);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpVrijemeRezervacijeDo);
@@ -135,6 +144,7 @@
             this.Controls.Add(this.btnPonisti);
             this.Controls.Add(this.btnRezerviraj);
             this.Controls.Add(this.dgvStolovi);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmRezervacijaStola";
             this.Text = "Rezervacija Stola";
             this.Load += new System.EventHandler(this.frmRezervacijaStola_Load);

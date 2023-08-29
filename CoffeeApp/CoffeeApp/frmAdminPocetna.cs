@@ -104,5 +104,11 @@ namespace CoffeeApp
             frmObavijesti form = new frmObavijesti();
             form.ShowDialog();
         }
+
+        private void btnRadnoVrijeme_Click(object sender, EventArgs e)
+        {
+            frmRadnoVrijeme form = new frmRadnoVrijeme();
+            form.ShowDialog();
+        }
     }
 }

@@ -176,6 +176,18 @@
     <Compile Include="frmPromjenaRasporeda.Designer.cs">
       <DependentUpon>frmPromjenaRasporeda.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRadnoVrijeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRadnoVrijeme.Designer.cs">
+      <DependentUpon>frmRadnoVrijeme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRadnoVrijemeIzmjena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRadnoVrijemeIzmjena.Designer.cs">
+      <DependentUpon>frmRadnoVrijemeIzmjena.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRegistracija.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +293,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPromjenaRasporeda.resx">
       <DependentUpon>frmPromjenaRasporeda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRadnoVrijeme.resx">
+      <DependentUpon>frmRadnoVrijeme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRadnoVrijemeIzmjena.resx">
+      <DependentUpon>frmRadnoVrijemeIzmjena.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistracija.resx">
       <DependentUpon>frmRegistracija.cs</DependentUpon>
