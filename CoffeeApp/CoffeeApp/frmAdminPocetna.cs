@@ -110,5 +110,11 @@ namespace CoffeeApp
             frmRadnoVrijeme form = new frmRadnoVrijeme();
             form.ShowDialog();
         }
+
+        private void btnDogadaji_Click(object sender, EventArgs e)
+        {
+            frmDogadaji form = new frmDogadaji();
+            form.ShowDialog();
+        }
     }
 }

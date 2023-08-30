@@ -104,6 +104,12 @@
     <Compile Include="frmDodajPice.Designer.cs">
       <DependentUpon>frmDodajPice.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDogadaji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDogadaji.Designer.cs">
+      <DependentUpon>frmDogadaji.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGlavniKonobarPocetna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,12 @@
     </Compile>
     <Compile Include="frmNovaObavijest.Designer.cs">
       <DependentUpon>frmNovaObavijest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNoviDogadaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNoviDogadaj.Designer.cs">
+      <DependentUpon>frmNoviDogadaj.cs</DependentUpon>
     </Compile>
     <Compile Include="frmObavijesti.cs">
       <SubType>Form</SubType>
@@ -228,6 +240,7 @@
     <Compile Include="Radno_Vrijeme.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="RepozitorijDogadaja.cs" />
     <Compile Include="RepozitorijKorisnika.cs" />
     <Compile Include="RepozitorijObavijesti.cs" />
     <Compile Include="RepozitorijPica.cs" />
@@ -258,6 +271,9 @@
     <EmbeddedResource Include="frmDodajPice.resx">
       <DependentUpon>frmDodajPice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDogadaji.resx">
+      <DependentUpon>frmDogadaji.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGlavniKonobarPocetna.resx">
       <DependentUpon>frmGlavniKonobarPocetna.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNovaObavijest.resx">
       <DependentUpon>frmNovaObavijest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNoviDogadaj.resx">
+      <DependentUpon>frmNoviDogadaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmObavijesti.resx">
       <DependentUpon>frmObavijesti.cs</DependentUpon>

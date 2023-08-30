@@ -39,6 +39,7 @@
             this.dgvZaposlenici = new System.Windows.Forms.DataGridView();
             this.btnObavijesti = new System.Windows.Forms.Button();
             this.btnRadnoVrijeme = new System.Windows.Forms.Button();
+            this.btnDogadaji = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +133,7 @@
             // 
             // btnObavijesti
             // 
-            this.btnObavijesti.Location = new System.Drawing.Point(540, 11);
+            this.btnObavijesti.Location = new System.Drawing.Point(540, 27);
             this.btnObavijesti.Margin = new System.Windows.Forms.Padding(2);
             this.btnObavijesti.Name = "btnObavijesti";
             this.btnObavijesti.Size = new System.Drawing.Size(108, 39);
@@ -143,7 +144,7 @@
             // 
             // btnRadnoVrijeme
             // 
-            this.btnRadnoVrijeme.Location = new System.Drawing.Point(540, 55);
+            this.btnRadnoVrijeme.Location = new System.Drawing.Point(540, 71);
             this.btnRadnoVrijeme.Name = "btnRadnoVrijeme";
             this.btnRadnoVrijeme.Size = new System.Drawing.Size(107, 41);
             this.btnRadnoVrijeme.TabIndex = 13;
@@ -151,11 +152,22 @@
             this.btnRadnoVrijeme.UseVisualStyleBackColor = true;
             this.btnRadnoVrijeme.Click += new System.EventHandler(this.btnRadnoVrijeme_Click);
             // 
+            // btnDogadaji
+            // 
+            this.btnDogadaji.Location = new System.Drawing.Point(427, 71);
+            this.btnDogadaji.Name = "btnDogadaji";
+            this.btnDogadaji.Size = new System.Drawing.Size(107, 41);
+            this.btnDogadaji.TabIndex = 14;
+            this.btnDogadaji.Text = "Dogadaji";
+            this.btnDogadaji.UseVisualStyleBackColor = true;
+            this.btnDogadaji.Click += new System.EventHandler(this.btnDogadaji_Click);
+            // 
             // frmAdminPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(659, 405);
+            this.Controls.Add(this.btnDogadaji);
             this.Controls.Add(this.btnRadnoVrijeme);
             this.Controls.Add(this.btnObavijesti);
             this.Controls.Add(this.CoffeeApp);
@@ -190,5 +202,6 @@
         private System.Windows.Forms.DataGridView dgvZaposlenici;
         private System.Windows.Forms.Button btnObavijesti;
         private System.Windows.Forms.Button btnRadnoVrijeme;
+        private System.Windows.Forms.Button btnDogadaji;
     }
 }
