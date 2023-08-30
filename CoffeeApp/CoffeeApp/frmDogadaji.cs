@@ -50,5 +50,25 @@ namespace CoffeeApp
             form.ShowDialog();
             DohvatiDogadaje();
         }
+
+        private void btnIzbrisi_Click(object sender, EventArgs e)
+        {
+            using (var context = new PI2313_DBEntities13())
+            {
+                if (dgvDogadaji.CurrentRow != null)
+                {
+                    Dogadaj selektiraniDogadaj = dgvDogadaji.CurrentRow.DataBoundItem as Dogadaj;
+                    context.Dogadajs.Attach(selektiraniDogadaj);
+                    context.Dogadajs.Remove(selektiraniDogadaj);
+                    context.SaveChanges();
+
+                    MessageBox.Show("Događaj uspješno izbrisan");
+                } else
+                {
+                    MessageBox.Show("Morate odabrati događaj");
+                }
+            }
+            DohvatiDogadaje();
+        }
     }
 }
