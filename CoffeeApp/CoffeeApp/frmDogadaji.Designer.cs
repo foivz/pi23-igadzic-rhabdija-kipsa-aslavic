@@ -33,6 +33,7 @@
             this.btnDodajDogadaj = new System.Windows.Forms.Button();
             this.btnIzbrisi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPromjeni = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDogadaji)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,9 +67,9 @@
             // 
             // btnIzbrisi
             // 
-            this.btnIzbrisi.Location = new System.Drawing.Point(609, 385);
+            this.btnIzbrisi.Location = new System.Drawing.Point(332, 386);
             this.btnIzbrisi.Name = "btnIzbrisi";
-            this.btnIzbrisi.Size = new System.Drawing.Size(75, 45);
+            this.btnIzbrisi.Size = new System.Drawing.Size(81, 52);
             this.btnIzbrisi.TabIndex = 3;
             this.btnIzbrisi.Text = "Izbriši";
             this.btnIzbrisi.UseVisualStyleBackColor = true;
@@ -83,11 +84,22 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Popis događaja:";
             // 
+            // btnPromjeni
+            // 
+            this.btnPromjeni.Location = new System.Drawing.Point(419, 386);
+            this.btnPromjeni.Name = "btnPromjeni";
+            this.btnPromjeni.Size = new System.Drawing.Size(75, 51);
+            this.btnPromjeni.TabIndex = 5;
+            this.btnPromjeni.Text = "Promjeni događaj";
+            this.btnPromjeni.UseVisualStyleBackColor = true;
+            this.btnPromjeni.Click += new System.EventHandler(this.btnPromjeni_Click);
+            // 
             // frmDogadaji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPromjeni);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnIzbrisi);
             this.Controls.Add(this.btnDodajDogadaj);
@@ -109,5 +121,6 @@
         private System.Windows.Forms.Button btnDodajDogadaj;
         private System.Windows.Forms.Button btnIzbrisi;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPromjeni;
     }
 }

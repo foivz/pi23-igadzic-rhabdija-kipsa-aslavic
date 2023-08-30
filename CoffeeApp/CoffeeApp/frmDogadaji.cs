@@ -70,5 +70,16 @@ namespace CoffeeApp
             }
             DohvatiDogadaje();
         }
+
+        public void btnPromjeni_Click(object sender, EventArgs e)
+        {
+            if(dgvDogadaji.CurrentRow != null)
+            {
+                Dogadaj selektiraniDogadaj = dgvDogadaji.CurrentRow.DataBoundItem as Dogadaj;
+                frmIzmjeniDogadaj form = new frmIzmjeniDogadaj(selektiraniDogadaj);
+                form.ShowDialog();
+            }
+            DohvatiDogadaje();
+        }
     }
 }
