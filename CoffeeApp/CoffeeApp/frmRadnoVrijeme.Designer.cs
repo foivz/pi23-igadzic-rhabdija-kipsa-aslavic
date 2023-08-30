@@ -82,6 +82,7 @@
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.dgvRadnoVrijeme);
             this.Name = "frmRadnoVrijeme";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Radno vrijeme";
             this.Load += new System.EventHandler(this.frmRadnoVrijeme_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRadnoVrijeme)).EndInit();

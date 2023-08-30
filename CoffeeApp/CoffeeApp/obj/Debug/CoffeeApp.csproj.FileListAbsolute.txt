@@ -154,3 +154,7 @@ F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug
 F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmRadnoVrijemeIzmjena.resources
 F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmDogadaji.resources
 F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmNoviDogadaj.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmKarte.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPrikazRadnogVremena.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmPrikazObavijesti.resources
+F:\Git Projekt\pi23-igadzic-rhabdija-kipsa-aslavic\CoffeeApp\CoffeeApp\obj\Debug\CoffeeApp.frmIzmjeniDogadaj.resources

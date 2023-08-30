@@ -101,6 +101,7 @@
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnOdustani);
             this.Name = "frmNovaObavijest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje nove obavijesti";
             this.Load += new System.EventHandler(this.frmNovaObavijest_Load);
             this.ResumeLayout(false);

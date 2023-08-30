@@ -70,6 +70,7 @@
             this.Controls.Add(this.dgvPrikazObavijesti);
             this.Controls.Add(this.label1);
             this.Name = "frmPrikazObavijesti";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prikaz obavijesti";
             this.Load += new System.EventHandler(this.frmPrikazObavijesti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrikazObavijesti)).EndInit();

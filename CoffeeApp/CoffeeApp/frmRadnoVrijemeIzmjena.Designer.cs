@@ -126,6 +126,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmRadnoVrijemeIzmjena";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izmjena Radnog vremena";
             this.ResumeLayout(false);
             this.PerformLayout();

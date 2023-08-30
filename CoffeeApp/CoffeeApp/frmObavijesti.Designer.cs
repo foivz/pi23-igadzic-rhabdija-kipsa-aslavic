@@ -94,6 +94,7 @@
             this.Controls.Add(this.btnNova);
             this.Controls.Add(this.dgvObavijesti);
             this.Name = "frmObavijesti";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmObavijesti";
             this.Load += new System.EventHandler(this.frmObavijesti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvObavijesti)).EndInit();

@@ -30,7 +30,7 @@ namespace CoffeeApp
             Close();
         }
 
-        private void btnSpremiPromjene_Click(object sender, EventArgs e)
+        public void btnSpremiPromjene_Click(object sender, EventArgs e)
         {
             DateTime vrijemeOd = dtpVrijemeOd.Value;
             DateTime vrijemeDo = dtpVrijemeDo.Value;

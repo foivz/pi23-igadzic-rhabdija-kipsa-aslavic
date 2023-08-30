@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -221,6 +222,27 @@ namespace CoffeeApp
                 Artikli selectedArtikl = dgvArtikli.CurrentRow.DataBoundItem as Artikli;
                 ProvjeraKolicine(selectedArtikl);
             }
+        }
+
+        private void btnKupnjaKarata_Click(object sender, EventArgs e)
+        {
+            frmKarte forma = new frmKarte();
+            forma.ShowDialog();
+            DohvatiDetaljeNarudzbe();
+        }
+
+        private void btnRadnoVrijeme_Click(object sender, EventArgs e)
+        {
+            frmPrikazRadnogVremena forma = new frmPrikazRadnogVremena();
+            forma.ShowDialog();
+            DohvatiDetaljeNarudzbe();
+        }
+
+        private void btnObavijesti_Click(object sender, EventArgs e)
+        {
+            frmPrikazObavijesti forma = new frmPrikazObavijesti();
+            forma.ShowDialog();
+            DohvatiDetaljeNarudzbe();
         }
     }
 }

@@ -37,6 +37,9 @@
             this.btnOdjaviSe = new System.Windows.Forms.Button();
             this.dgvArtikli = new System.Windows.Forms.DataGridView();
             this.btnRezervirajStol = new System.Windows.Forms.Button();
+            this.btnKupnjaKarata = new System.Windows.Forms.Button();
+            this.btnRadnoVrijeme = new System.Windows.Forms.Button();
+            this.btnObavijesti = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdabranaPica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArtikli)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +59,7 @@
             // 
             this.dgvOdabranaPica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOdabranaPica.Location = new System.Drawing.Point(660, 47);
-            this.dgvOdabranaPica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvOdabranaPica.Margin = new System.Windows.Forms.Padding(2);
             this.dgvOdabranaPica.Name = "dgvOdabranaPica";
             this.dgvOdabranaPica.RowHeadersWidth = 51;
             this.dgvOdabranaPica.RowTemplate.Height = 24;
@@ -66,7 +69,7 @@
             // btnDodaj
             // 
             this.btnDodaj.Location = new System.Drawing.Point(482, 47);
-            this.btnDodaj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDodaj.Margin = new System.Windows.Forms.Padding(2);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(145, 51);
             this.btnDodaj.TabIndex = 7;
@@ -76,8 +79,8 @@
             // 
             // btnPosalji
             // 
-            this.btnPosalji.Location = new System.Drawing.Point(482, 120);
-            this.btnPosalji.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPosalji.Location = new System.Drawing.Point(482, 102);
+            this.btnPosalji.Margin = new System.Windows.Forms.Padding(2);
             this.btnPosalji.Name = "btnPosalji";
             this.btnPosalji.Size = new System.Drawing.Size(145, 51);
             this.btnPosalji.TabIndex = 8;
@@ -98,8 +101,8 @@
             // 
             // btnIzbrisi
             // 
-            this.btnIzbrisi.Location = new System.Drawing.Point(482, 197);
-            this.btnIzbrisi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIzbrisi.Location = new System.Drawing.Point(482, 157);
+            this.btnIzbrisi.Margin = new System.Windows.Forms.Padding(2);
             this.btnIzbrisi.Name = "btnIzbrisi";
             this.btnIzbrisi.Size = new System.Drawing.Size(145, 51);
             this.btnIzbrisi.TabIndex = 10;
@@ -109,8 +112,8 @@
             // 
             // btnOdjaviSe
             // 
-            this.btnOdjaviSe.Location = new System.Drawing.Point(482, 351);
-            this.btnOdjaviSe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOdjaviSe.Location = new System.Drawing.Point(482, 385);
+            this.btnOdjaviSe.Margin = new System.Windows.Forms.Padding(2);
             this.btnOdjaviSe.Name = "btnOdjaviSe";
             this.btnOdjaviSe.Size = new System.Drawing.Size(145, 51);
             this.btnOdjaviSe.TabIndex = 11;
@@ -122,7 +125,7 @@
             // 
             this.dgvArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArtikli.Location = new System.Drawing.Point(19, 47);
-            this.dgvArtikli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvArtikli.Margin = new System.Windows.Forms.Padding(2);
             this.dgvArtikli.Name = "dgvArtikli";
             this.dgvArtikli.RowHeadersWidth = 51;
             this.dgvArtikli.RowTemplate.Height = 24;
@@ -132,8 +135,8 @@
             // 
             // btnRezervirajStol
             // 
-            this.btnRezervirajStol.Location = new System.Drawing.Point(482, 272);
-            this.btnRezervirajStol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRezervirajStol.Location = new System.Drawing.Point(482, 212);
+            this.btnRezervirajStol.Margin = new System.Windows.Forms.Padding(2);
             this.btnRezervirajStol.Name = "btnRezervirajStol";
             this.btnRezervirajStol.Size = new System.Drawing.Size(145, 51);
             this.btnRezervirajStol.TabIndex = 12;
@@ -141,11 +144,46 @@
             this.btnRezervirajStol.UseVisualStyleBackColor = true;
             this.btnRezervirajStol.Click += new System.EventHandler(this.btnRezervirajStol_Click);
             // 
+            // btnKupnjaKarata
+            // 
+            this.btnKupnjaKarata.Location = new System.Drawing.Point(482, 330);
+            this.btnKupnjaKarata.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKupnjaKarata.Name = "btnKupnjaKarata";
+            this.btnKupnjaKarata.Size = new System.Drawing.Size(145, 51);
+            this.btnKupnjaKarata.TabIndex = 13;
+            this.btnKupnjaKarata.Text = "Kupnja karata";
+            this.btnKupnjaKarata.UseVisualStyleBackColor = true;
+            // 
+            // btnRadnoVrijeme
+            // 
+            this.btnRadnoVrijeme.Location = new System.Drawing.Point(333, 330);
+            this.btnRadnoVrijeme.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRadnoVrijeme.Name = "btnRadnoVrijeme";
+            this.btnRadnoVrijeme.Size = new System.Drawing.Size(145, 51);
+            this.btnRadnoVrijeme.TabIndex = 14;
+            this.btnRadnoVrijeme.Text = "Radno Vrijeme";
+            this.btnRadnoVrijeme.UseVisualStyleBackColor = true;
+            this.btnRadnoVrijeme.Click += new System.EventHandler(this.btnRadnoVrijeme_Click);
+            // 
+            // btnObavijesti
+            // 
+            this.btnObavijesti.Location = new System.Drawing.Point(631, 330);
+            this.btnObavijesti.Margin = new System.Windows.Forms.Padding(2);
+            this.btnObavijesti.Name = "btnObavijesti";
+            this.btnObavijesti.Size = new System.Drawing.Size(145, 51);
+            this.btnObavijesti.TabIndex = 15;
+            this.btnObavijesti.Text = "Obavijesti";
+            this.btnObavijesti.UseVisualStyleBackColor = true;
+            this.btnObavijesti.Click += new System.EventHandler(this.btnObavijesti_Click);
+            // 
             // frmKorisnikPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 447);
+            this.Controls.Add(this.btnObavijesti);
+            this.Controls.Add(this.btnRadnoVrijeme);
+            this.Controls.Add(this.btnKupnjaKarata);
             this.Controls.Add(this.btnRezervirajStol);
             this.Controls.Add(this.btnOdjaviSe);
             this.Controls.Add(this.btnIzbrisi);
@@ -155,7 +193,7 @@
             this.Controls.Add(this.dgvOdabranaPica);
             this.Controls.Add(this.dgvArtikli);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmKorisnikPocetna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CoffeeApp";
@@ -177,5 +215,8 @@
         private System.Windows.Forms.Button btnOdjaviSe;
         private System.Windows.Forms.DataGridView dgvArtikli;
         private System.Windows.Forms.Button btnRezervirajStol;
+        private System.Windows.Forms.Button btnKupnjaKarata;
+        private System.Windows.Forms.Button btnRadnoVrijeme;
+        private System.Windows.Forms.Button btnObavijesti;
     }
 }

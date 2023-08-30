@@ -106,6 +106,7 @@
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.dgvDogadaji);
             this.Name = "frmDogadaji";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Događaji";
             this.Load += new System.EventHandler(this.frmDogadaji_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDogadaji)).EndInit();

@@ -165,6 +165,7 @@
             this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.label1);
             this.Name = "frmIzmjeniDogadaj";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izmjena događaja:";
             this.Load += new System.EventHandler(this.frmIzmjeniDogadaj_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudCijena)).EndInit();

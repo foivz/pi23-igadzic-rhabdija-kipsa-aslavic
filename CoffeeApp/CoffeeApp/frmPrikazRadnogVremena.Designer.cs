@@ -59,6 +59,7 @@
             this.Controls.Add(this.btnURedu);
             this.Controls.Add(this.dgvRadnoVrijemePrikaz);
             this.Name = "frmPrikazRadnogVremena";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrikazRadnogVremena";
             this.Load += new System.EventHandler(this.frmPrikazRadnogVremena_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRadnoVrijemePrikaz)).EndInit();
