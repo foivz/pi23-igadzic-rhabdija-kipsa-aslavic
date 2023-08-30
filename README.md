@@ -27,7 +27,7 @@ F08 | Prijava manjka robe i narudžba | Glavni konobar ima mogučnost naručivan
 F09 | Kupnja karata za posebene događaje | Kupcima omogućujemo kupnju karata za posebene događaje | Karlo Ipša
 F10 | Rezervacija stola | Kupac se prijavljuje u aplikaciju, klikne na Rezervaciju stola te dobiva uvid slobodnih stolova koji se mogu rezervirati. | Andrija Slavić
 F11 | Slanje obavijesti članskim kupcima o novim promocijama | Članski kupci će primati obavijesti o novim promocijama kafića, kako bi uvijek znali koje su aktualne promocije. | Karlo Ipša
-F12 | Inventura | Administrator može provesti inventuru usporedbom prodane robe, trenutnog stanja i početnog, odnosno naručene robe. | Karlo Ipša
+F12 | Administracija radnog vremena kafića | Administrator može za svaki dan vidjeti i odrediti od kad do kad kafić radi te je korisnicima prikazano radno vrijeme | Karlo Ipša
 
 
 ## Tehnologije i oprema
