@@ -83,7 +83,7 @@
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.dgvDogadaji);
             this.Name = "frmDogadaji";
-            this.Text = "frmDogadaji";
+            this.Text = "Događaji";
             this.Load += new System.EventHandler(this.frmDogadaji_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDogadaji)).EndInit();
             this.ResumeLayout(false);
