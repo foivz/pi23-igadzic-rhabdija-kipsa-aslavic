@@ -165,7 +165,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmNoviDogadaj";
-            this.Text = "frmNoviDogadaj";
+            this.Text = "Novi događaj";
             ((System.ComponentModel.ISupportInitialize)(this.nudCijena)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

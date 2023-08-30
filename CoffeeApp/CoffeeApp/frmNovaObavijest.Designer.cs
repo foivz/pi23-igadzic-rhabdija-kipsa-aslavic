@@ -61,9 +61,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Naslov:";
+            this.label1.Text = "Naslov obavijesti:";
             // 
             // txtNaslov
             // 
@@ -101,7 +101,7 @@
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnOdustani);
             this.Name = "frmNovaObavijest";
-            this.Text = "frmNovaObavijest";
+            this.Text = "Dodavanje nove obavijesti";
             this.Load += new System.EventHandler(this.frmNovaObavijest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

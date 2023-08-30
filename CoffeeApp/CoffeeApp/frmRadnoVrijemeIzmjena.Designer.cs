@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(257, 204);
+            this.ClientSize = new System.Drawing.Size(269, 204);
             this.Controls.Add(this.btnSpremiPromjene);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.lblOdabraniDan);
@@ -126,7 +126,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmRadnoVrijemeIzmjena";
-            this.Text = "frmRadnoVrijemeIzmjena";
+            this.Text = "Izmjena Radnog vremena";
             this.ResumeLayout(false);
             this.PerformLayout();
 

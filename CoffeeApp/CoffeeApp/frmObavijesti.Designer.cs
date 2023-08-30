@@ -32,15 +32,16 @@
             this.btnNova = new System.Windows.Forms.Button();
             this.btnIzbriši = new System.Windows.Forms.Button();
             this.btnPovratak = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObavijesti)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvObavijesti
             // 
             this.dgvObavijesti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvObavijesti.Location = new System.Drawing.Point(13, 13);
+            this.dgvObavijesti.Location = new System.Drawing.Point(13, 53);
             this.dgvObavijesti.Name = "dgvObavijesti";
-            this.dgvObavijesti.Size = new System.Drawing.Size(775, 344);
+            this.dgvObavijesti.Size = new System.Drawing.Size(775, 304);
             this.dgvObavijesti.TabIndex = 0;
             // 
             // btnNova
@@ -59,7 +60,7 @@
             this.btnIzbriši.Name = "btnIzbriši";
             this.btnIzbriši.Size = new System.Drawing.Size(112, 48);
             this.btnIzbriši.TabIndex = 3;
-            this.btnIzbriši.Text = "Izbriši";
+            this.btnIzbriši.Text = "Izbriši obavijest";
             this.btnIzbriši.UseVisualStyleBackColor = true;
             this.btnIzbriši.Click += new System.EventHandler(this.btnIzbriši_Click);
             // 
@@ -73,11 +74,21 @@
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Popis obavijesti:";
+            // 
             // frmObavijesti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnIzbriši);
             this.Controls.Add(this.btnNova);
@@ -87,6 +98,7 @@
             this.Load += new System.EventHandler(this.frmObavijesti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvObavijesti)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Button btnNova;
         private System.Windows.Forms.Button btnIzbriši;
         private System.Windows.Forms.Button btnPovratak;
+        private System.Windows.Forms.Label label1;
     }
 }
