@@ -16,6 +16,7 @@ namespace CoffeeApp
         public frmRadnoVrijeme()
         {
             InitializeComponent();
+            dgvRadnoVrijeme.SelectionChanged += dgvRadnoVrijeme_SelectionChanged;
         }
 
         private void frmRadnoVrijeme_Load(object sender, EventArgs e)
@@ -44,6 +45,11 @@ namespace CoffeeApp
                             };
                 dgvRadnoVrijeme.DataSource = query.ToList();
             }
+        }
+
+        private void dgvRadnoVrijeme_SelectionChanged(object sender, EventArgs e)
+        {
+            btnIzmjeni.Enabled = dgvRadnoVrijeme.SelectedRows.Count > 0;
         }
 
         private void btnIzmjeni_Click(object sender, EventArgs e)
