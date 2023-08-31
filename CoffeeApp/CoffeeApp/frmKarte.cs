@@ -15,6 +15,18 @@ namespace CoffeeApp
         public frmKarte()
         {
             InitializeComponent();
+            dgvDogadaji.SelectionChanged += dgvDogadaji_SelectionChanged;
+            dgvKarte.SelectionChanged += dgvKarte_SelectionChanged;
+        }
+
+        private void dgvDogadaji_SelectionChanged(object sender, EventArgs e)
+        {
+            btnKupiKartu.Enabled = dgvDogadaji.SelectedRows.Count > 0;
+        }
+
+        private void dgvKarte_SelectionChanged(object sender, EventArgs e)
+        {
+            btnPoništi.Enabled = dgvKarte.SelectedRows.Count > 0;
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)

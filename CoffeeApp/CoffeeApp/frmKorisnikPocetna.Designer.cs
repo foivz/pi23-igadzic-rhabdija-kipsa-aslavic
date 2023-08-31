@@ -153,6 +153,7 @@
             this.btnKupnjaKarata.TabIndex = 13;
             this.btnKupnjaKarata.Text = "Kupnja karata";
             this.btnKupnjaKarata.UseVisualStyleBackColor = true;
+            this.btnKupnjaKarata.Click += new System.EventHandler(this.btnKupnjaKarata_Click);
             // 
             // btnRadnoVrijeme
             // 
